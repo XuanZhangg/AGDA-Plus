@@ -1,0 +1,1621 @@
+data:gisette,number_of_data:6000,dim_features:5000
+L:20, mu:1, kappa: 20
+GDA: lr_y=0.05,lr_x=7.086167800453515e-06
+AGDA: lr_y=0.05,lr_x=3.779289493575208e-05
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 0 epoch: 0 OC: 0 SC: 0
+Current Complexity:
+iter: 0 epoch: 0 OC: 0 SC: 0
+Iterates Info:
+acc: 0.5 , loss: 190.0 , primalF: 190.0
+||sto grad_x||^2: 144400.0 ||sto grad_y||^2: 0.0
+||true grad_x||^2: 144400.0 ||true grad_y||^2: 0.0
+lr_x: 6.92515979806234e-05 , lr_y: 9.999999999989999
+mu: 1 , kappa: 20
+{'b': 1, 'N': 1, 'K': 5000, 'std_x': 0, 'std_y': 0, 'method': 'NeAda', 'pjx': False, 'pjy': False}
+{'mx': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd820>, {'x': tensor([[380.]], device='cuda:0')}), 'my': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd790>, {'dual_y': tensor([[0.]], device='cuda:0')}), 'vx': tensor(144401., device='cuda:0'), 'vy': tensor(1., device='cuda:0'), 'lr_x': 6.92515979806234e-05, 'lr_y': 9.999999999989999}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 50 epoch: 50.0 OC: 50.0 SC: 50
+Current Complexity:
+iter: 50 epoch: 50.0 OC: 50.0 SC: 50
+Iterates Info:
+acc: 0.5 , loss: 147.3316526840669 , primalF: 147.33204423844333
+||sto grad_x||^2: 112347.2312094142 ||sto grad_y||^2: 0.0007831087528546356
+||true grad_x||^2: 112347.2312094142 ||true grad_y||^2: 0.0007831087528546356
+lr_x: 1.7442745636045856e-06 , lr_y: 0.4383353234519905
+mu: 1 , kappa: 20
+{'b': 1, 'N': 1, 'K': 5000, 'std_x': 0, 'std_y': 0, 'method': 'NeAda', 'pjx': False, 'pjy': False}
+{'mx': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd820>, {'x': tensor([[334.9371]], device='cuda:0')}), 'my': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd790>, {'dual_y': tensor([[-0.0280]], device='cuda:0')}), 'vx': tensor(5733042.3826, device='cuda:0'), 'vy': tensor(22.8136, device='cuda:0'), 'lr_x': 1.7442745636045856e-06, 'lr_y': 0.4383353234519905}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 100 epoch: 100.0 OC: 100.0 SC: 100
+Current Complexity:
+iter: 100 epoch: 100.0 OC: 100.0 SC: 100
+Iterates Info:
+acc: 0.5 , loss: 140.59423120710093 , primalF: 140.5943245910703
+||sto grad_x||^2: 107030.45205321218 ||sto grad_y||^2: 0.00018676793872716857
+||true grad_x||^2: 107030.45205321218 ||true grad_y||^2: 0.00018676793872716857
+lr_x: 8.934249161517384e-07 , lr_y: 0.43761518929796095
+mu: 1 , kappa: 20
+{'b': 1, 'N': 1, 'K': 5000, 'std_x': 0, 'std_y': 0, 'method': 'NeAda', 'pjx': False, 'pjy': False}
+{'mx': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd820>, {'x': tensor([[327.0355]], device='cuda:0')}), 'my': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd790>, {'dual_y': tensor([[-0.0137]], device='cuda:0')}), 'vx': tensor(11192882.3779, device='cuda:0'), 'vy': tensor(22.8511, device='cuda:0'), 'lr_x': 8.934249161517384e-07, 'lr_y': 0.43761518929796095}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 150 epoch: 150.0 OC: 150.0 SC: 150
+Current Complexity:
+iter: 150 epoch: 150.0 OC: 150.0 SC: 150
+Iterates Info:
+acc: 0.5 , loss: 136.72282413128372 , primalF: 136.72286549572937
+||sto grad_x||^2: 104026.68871012295 ||sto grad_y||^2: 8.272889123670265e-05
+||true grad_x||^2: 104026.68871012295 ||true grad_y||^2: 8.272889123670265e-05
+lr_x: 6.075560222292336e-07 , lr_y: 0.4373794721957877
+mu: 1 , kappa: 20
+{'b': 1, 'N': 1, 'K': 5000, 'std_x': 0, 'std_y': 0, 'method': 'NeAda', 'pjx': False, 'pjy': False}
+{'mx': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd820>, {'x': tensor([[322.4521]], device='cuda:0')}), 'my': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd790>, {'dual_y': tensor([[-0.0091]], device='cuda:0')}), 'vx': tensor(16459387.5036, device='cuda:0'), 'vy': tensor(22.8634, device='cuda:0'), 'lr_x': 6.075560222292336e-07, 'lr_y': 0.4373794721957877}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 200 epoch: 200.0 OC: 200.0 SC: 200
+Current Complexity:
+iter: 200 epoch: 200.0 OC: 200.0 SC: 200
+Iterates Info:
+acc: 0.5 , loss: 133.99625694145192 , primalF: 133.99628030269588
+||sto grad_x||^2: 101924.44386941986 ||sto grad_y||^2: 4.672248795973884e-05
+||true grad_x||^2: 101924.44386941986 ||true grad_y||^2: 4.672248795973884e-05
+lr_x: 4.629132850283602e-07 , lr_y: 0.4372613108832871
+mu: 1 , kappa: 20
+{'b': 1, 'N': 1, 'K': 5000, 'std_x': 0, 'std_y': 0, 'method': 'NeAda', 'pjx': False, 'pjy': False}
+{'mx': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd820>, {'x': tensor([[319.1963]], device='cuda:0')}), 'my': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd790>, {'dual_y': tensor([[-0.0068]], device='cuda:0')}), 'vx': tensor(21602318.0225, device='cuda:0'), 'vy': tensor(22.8696, device='cuda:0'), 'lr_x': 4.629132850283602e-07, 'lr_y': 0.4372613108832871}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 250 epoch: 250.0 OC: 250.0 SC: 250
+Current Complexity:
+iter: 250 epoch: 250.0 OC: 250.0 SC: 250
+Iterates Info:
+acc: 0.5 , loss: 131.89037641959914 , primalF: 131.89039145759887
+||sto grad_x||^2: 100306.16132125643 ||sto grad_y||^2: 3.0075999441401366e-05
+||true grad_x||^2: 100306.16132125643 ||true grad_y||^2: 3.0075999441401366e-05
+lr_x: 3.7517769112782436e-07 , lr_y: 0.437189986928567
+mu: 1 , kappa: 20
+{'b': 1, 'N': 1, 'K': 5000, 'std_x': 0, 'std_y': 0, 'method': 'NeAda', 'pjx': False, 'pjy': False}
+{'mx': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd820>, {'x': tensor([[316.6635]], device='cuda:0')}), 'my': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd790>, {'dual_y': tensor([[-0.0055]], device='cuda:0')}), 'vx': tensor(26654036.8377, device='cuda:0'), 'vy': tensor(22.8734, device='cuda:0'), 'lr_x': 3.7517769112782436e-07, 'lr_y': 0.437189986928567}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 300 epoch: 300.0 OC: 300.0 SC: 300
+Current Complexity:
+iter: 300 epoch: 300.0 OC: 300.0 SC: 300
+Iterates Info:
+acc: 0.5 , loss: 130.1746763274734 , primalF: 130.17468683452412
+||sto grad_x||^2: 98990.44511670056 ||sto grad_y||^2: 2.1014101480424367e-05
+||true grad_x||^2: 98990.44511670056 ||true grad_y||^2: 2.1014101480424367e-05
+lr_x: 3.1612162667710366e-07 , lr_y: 0.43714212254580376
+mu: 1 , kappa: 20
+{'b': 1, 'N': 1, 'K': 5000, 'std_x': 0, 'std_y': 0, 'method': 'NeAda', 'pjx': False, 'pjy': False}
+{'mx': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd820>, {'x': tensor([[314.5874]], device='cuda:0')}), 'my': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd790>, {'dual_y': tensor([[-0.0046]], device='cuda:0')}), 'vx': tensor(31633394.0993, device='cuda:0'), 'vy': tensor(22.8759, device='cuda:0'), 'lr_x': 3.1612162667710366e-07, 'lr_y': 0.43714212254580376}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 350 epoch: 350.0 OC: 350.0 SC: 350
+Current Complexity:
+iter: 350 epoch: 350.0 OC: 350.0 SC: 350
+Iterates Info:
+acc: 0.5 , loss: 128.72712637741844 , primalF: 128.7271341431583
+||sto grad_x||^2: 97881.93512453386 ||sto grad_y||^2: 1.553147972161092e-05
+||true grad_x||^2: 97881.93512453386 ||true grad_y||^2: 1.553147972161092e-05
+lr_x: 2.7357714317473417e-07 , lr_y: 0.43710771154261896
+mu: 1 , kappa: 20
+{'b': 1, 'N': 1, 'K': 5000, 'std_x': 0, 'std_y': 0, 'method': 'NeAda', 'pjx': False, 'pjy': False}
+{'mx': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd820>, {'x': tensor([[312.8264]], device='cuda:0')}), 'my': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd790>, {'dual_y': tensor([[-0.0039]], device='cuda:0')}), 'vx': tensor(36552761.2576, device='cuda:0'), 'vy': tensor(22.8777, device='cuda:0'), 'lr_x': 2.7357714317473417e-07, 'lr_y': 0.43710771154261896}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 400 epoch: 400.0 OC: 400.0 SC: 400
+Current Complexity:
+iter: 400 epoch: 400.0 OC: 400.0 SC: 400
+Iterates Info:
+acc: 0.5 , loss: 127.47525748032925 , primalF: 127.47526345994748
+||sto grad_x||^2: 96924.260794532 ||sto grad_y||^2: 1.1959236525024332e-05
+||true grad_x||^2: 96924.260794532 ||true grad_y||^2: 1.1959236525024332e-05
+lr_x: 2.4142407088454914e-07 , lr_y: 0.43708174419711593
+mu: 1 , kappa: 20
+{'b': 1, 'N': 1, 'K': 5000, 'std_x': 0, 'std_y': 0, 'method': 'NeAda', 'pjx': False, 'pjy': False}
+{'mx': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd820>, {'x': tensor([[311.2964]], device='cuda:0')}), 'my': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd790>, {'dual_y': tensor([[-0.0035]], device='cuda:0')}), 'vx': tensor(41420890.4827, device='cuda:0'), 'vy': tensor(22.8790, device='cuda:0'), 'lr_x': 2.4142407088454914e-07, 'lr_y': 0.43708174419711593}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 450 epoch: 450.0 OC: 450.0 SC: 450
+Current Complexity:
+iter: 450 epoch: 450.0 OC: 450.0 SC: 450
+Iterates Info:
+acc: 0.5 , loss: 126.37249995377326 , primalF: 126.37250470390532
+||sto grad_x||^2: 96081.31595734743 ||sto grad_y||^2: 9.500264106875542e-06
+||true grad_x||^2: 96081.31595734743 ||true grad_y||^2: 9.500264106875542e-06
+lr_x: 2.1624285070527912e-07 , lr_y: 0.4370614305014309
+mu: 1 , kappa: 20
+{'b': 1, 'N': 1, 'K': 5000, 'std_x': 0, 'std_y': 0, 'method': 'NeAda', 'pjx': False, 'pjy': False}
+{'mx': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd820>, {'x': tensor([[309.9429]], device='cuda:0')}), 'my': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd790>, {'dual_y': tensor([[-0.0031]], device='cuda:0')}), 'vx': tensor(46244303.4181, device='cuda:0'), 'vy': tensor(22.8801, device='cuda:0'), 'lr_x': 2.1624285070527912e-07, 'lr_y': 0.4370614305014309}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 500 epoch: 500.0 OC: 500.0 SC: 500
+Current Complexity:
+iter: 500 epoch: 500.0 OC: 500.0 SC: 500
+Iterates Info:
+acc: 0.5 , loss: 125.38714753668933 , primalF: 125.38715140385105
+||sto grad_x||^2: 95328.57849107934 ||sto grad_y||^2: 7.734323413854383e-06
+||true grad_x||^2: 95328.57849107934 ||true grad_y||^2: 7.734323413854383e-06
+lr_x: 1.959706522756683e-07 , lr_y: 0.43704509148889636
+mu: 1 , kappa: 20
+{'b': 1, 'N': 1, 'K': 5000, 'std_x': 0, 'std_y': 0, 'method': 'NeAda', 'pjx': False, 'pjy': False}
+{'mx': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd820>, {'x': tensor([[308.7290]], device='cuda:0')}), 'my': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd790>, {'dual_y': tensor([[-0.0028]], device='cuda:0')}), 'vx': tensor(51028048.7608, device='cuda:0'), 'vy': tensor(22.8809, device='cuda:0'), 'lr_x': 1.959706522756683e-07, 'lr_y': 0.43704509148889636}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 550 epoch: 550.0 OC: 550.0 SC: 550
+Current Complexity:
+iter: 550 epoch: 550.0 OC: 550.0 SC: 550
+Iterates Info:
+acc: 0.5 , loss: 124.4966372030679 , primalF: 124.4966404143698
+||sto grad_x||^2: 94648.6310831475 ||sto grad_y||^2: 6.422603825755633e-06
+||true grad_x||^2: 94648.6310831475 ||true grad_y||^2: 6.422603825755633e-06
+lr_x: 1.7928809692705788e-07 , lr_y: 0.43703165532655486
+mu: 1 , kappa: 20
+{'b': 1, 'N': 1, 'K': 5000, 'std_x': 0, 'std_y': 0, 'method': 'NeAda', 'pjx': False, 'pjy': False}
+{'mx': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd820>, {'x': tensor([[307.6280]], device='cuda:0')}), 'my': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd790>, {'dual_y': tensor([[-0.0025]], device='cuda:0')}), 'vx': tensor(55776151.1857, device='cuda:0'), 'vy': tensor(22.8816, device='cuda:0'), 'lr_x': 1.7928809692705788e-07, 'lr_y': 0.43703165532655486}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 600 epoch: 600.0 OC: 600.0 SC: 600
+Current Complexity:
+iter: 600 epoch: 600.0 OC: 600.0 SC: 600
+Iterates Info:
+acc: 0.5 , loss: 123.68434055482723 , primalF: 123.68434326539924
+||sto grad_x||^2: 94028.65722567457 ||sto grad_y||^2: 5.421144044055597e-06
+||true grad_x||^2: 94028.65722567457 ||true grad_y||^2: 5.421144044055597e-06
+lr_x: 1.6531140392991787e-07 , lr_y: 0.43702040513630336
+mu: 1 , kappa: 20
+{'b': 1, 'N': 1, 'K': 5000, 'std_x': 0, 'std_y': 0, 'method': 'NeAda', 'pjx': False, 'pjy': False}
+{'mx': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd820>, {'x': tensor([[306.6206]], device='cuda:0')}), 'my': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd790>, {'dual_y': tensor([[-0.0023]], device='cuda:0')}), 'vx': tensor(60491894.4626, device='cuda:0'), 'vy': tensor(22.8822, device='cuda:0'), 'lr_x': 1.6531140392991787e-07, 'lr_y': 0.43702040513630336}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 650 epoch: 650.0 OC: 650.0 SC: 650
+Current Complexity:
+iter: 650 epoch: 650.0 OC: 650.0 SC: 650
+Iterates Info:
+acc: 0.5 , loss: 122.9376497257567 , primalF: 122.93765204521623
+||sto grad_x||^2: 93458.95145900006 ||sto grad_y||^2: 4.638919023402253e-06
+||true grad_x||^2: 93458.95145900006 ||true grad_y||^2: 4.638919023402253e-06
+lr_x: 1.534259816394402e-07 , lr_y: 0.43701084300967674
+mu: 1 , kappa: 20
+{'b': 1, 'N': 1, 'K': 5000, 'std_x': 0, 'std_y': 0, 'method': 'NeAda', 'pjx': False, 'pjy': False}
+{'mx': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd820>, {'x': tensor([[305.6917]], device='cuda:0')}), 'my': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd790>, {'dual_y': tensor([[-0.0022]], device='cuda:0')}), 'vx': tensor(65178008.9209, device='cuda:0'), 'vy': tensor(22.8827, device='cuda:0'), 'lr_x': 1.534259816394402e-07, 'lr_y': 0.43701084300967674}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 700 epoch: 700.0 OC: 700.0 SC: 700
+Current Complexity:
+iter: 700 epoch: 700.0 OC: 700.0 SC: 700
+Iterates Info:
+acc: 0.5 , loss: 122.24677763993819 , primalF: 122.24677964796894
+||sto grad_x||^2: 92931.98763871109 ||sto grad_y||^2: 4.016061515418519e-06
+||true grad_x||^2: 92931.98763871109 ||true grad_y||^2: 4.016061515418519e-06
+lr_x: 1.431909812878379e-07 , lr_y: 0.4370026121640941
+mu: 1 , kappa: 20
+{'b': 1, 'N': 1, 'K': 5000, 'std_x': 0, 'std_y': 0, 'method': 'NeAda', 'pjx': False, 'pjy': False}
+{'mx': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd820>, {'x': tensor([[304.8300]], device='cuda:0')}), 'my': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd790>, {'dual_y': tensor([[-0.0020]], device='cuda:0')}), 'vx': tensor(69836800.5447, device='cuda:0'), 'vy': tensor(22.8832, device='cuda:0'), 'lr_x': 1.431909812878379e-07, 'lr_y': 0.4370026121640941}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 750 epoch: 750.0 OC: 750.0 SC: 750
+Current Complexity:
+iter: 750 epoch: 750.0 OC: 750.0 SC: 750
+Iterates Info:
+acc: 0.5 , loss: 121.60397482566361 , primalF: 121.60397658159928
+||sto grad_x||^2: 92441.81180413267 ||sto grad_y||^2: 3.511871304614779e-06
+||true grad_x||^2: 92441.81180413267 ||true grad_y||^2: 3.511871304614779e-06
+lr_x: 1.342818235204257e-07 , lr_y: 0.43699545014472707
+mu: 1 , kappa: 20
+{'b': 1, 'N': 1, 'K': 5000, 'std_x': 0, 'std_y': 0, 'method': 'NeAda', 'pjx': False, 'pjy': False}
+{'mx': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd820>, {'x': tensor([[304.0261]], device='cuda:0')}), 'my': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd790>, {'dual_y': tensor([[-0.0019]], device='cuda:0')}), 'vx': tensor(74470242.7911, device='cuda:0'), 'vy': tensor(22.8835, device='cuda:0'), 'lr_x': 1.342818235204257e-07, 'lr_y': 0.43699545014472707}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 800 epoch: 800.0 OC: 800.0 SC: 800
+Current Complexity:
+iter: 800 epoch: 800.0 OC: 800.0 SC: 800
+Iterates Info:
+acc: 0.5 , loss: 121.00300045408407 , primalF: 121.00300200302742
+||sto grad_x||^2: 91983.63274899386 ||sto grad_y||^2: 3.097886711952153e-06
+||true grad_x||^2: 91983.63274899386 ||true grad_y||^2: 3.097886711952153e-06
+lr_x: 1.2645415370996682e-07 , lr_y: 0.4369891595149317
+mu: 1 , kappa: 20
+{'b': 1, 'N': 1, 'K': 5000, 'std_x': 0, 'std_y': 0, 'method': 'NeAda', 'pjx': False, 'pjy': False}
+{'mx': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd820>, {'x': tensor([[303.2727]], device='cuda:0')}), 'my': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd790>, {'dual_y': tensor([[-0.0018]], device='cuda:0')}), 'vx': tensor(79080043.6887, device='cuda:0'), 'vy': tensor(22.8839, device='cuda:0'), 'lr_x': 1.2645415370996682e-07, 'lr_y': 0.4369891595149317}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 850 epoch: 850.0 OC: 850.0 SC: 850
+Current Complexity:
+iter: 850 epoch: 850.0 OC: 850.0 SC: 850
+Iterates Info:
+acc: 0.5 , loss: 120.43875459177063 , primalF: 120.43875596862759
+||sto grad_x||^2: 91553.53774696044 ||sto grad_y||^2: 2.7537139064337552e-06
+||true grad_x||^2: 91553.53774696044 ||true grad_y||^2: 2.7537139064337552e-06
+lr_x: 1.1952044189560903e-07 , lr_y: 0.4369835888507883
+mu: 1 , kappa: 20
+{'b': 1, 'N': 1, 'K': 5000, 'std_x': 0, 'std_y': 0, 'method': 'NeAda', 'pjx': False, 'pjy': False}
+{'mx': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd820>, {'x': tensor([[302.5636]], device='cuda:0')}), 'my': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd790>, {'dual_y': tensor([[-0.0017]], device='cuda:0')}), 'vx': tensor(83667696.0142, device='cuda:0'), 'vy': tensor(22.8842, device='cuda:0'), 'lr_x': 1.1952044189560903e-07, 'lr_y': 0.4369835888507883}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 900 epoch: 900.0 OC: 900.0 SC: 900
+Current Complexity:
+iter: 900 epoch: 900.0 OC: 900.0 SC: 900
+Iterates Info:
+acc: 0.5 , loss: 119.9070160834471 , primalF: 119.90701731566033
+||sto grad_x||^2: 91148.29015962912 ||sto grad_y||^2: 2.4644264685796996e-06
+||true grad_x||^2: 91148.29015962912 ||true grad_y||^2: 2.4644264685796996e-06
+lr_x: 1.1333433334582247e-07 , lr_y: 0.43697862004349
+mu: 1 , kappa: 20
+{'b': 1, 'N': 1, 'K': 5000, 'std_x': 0, 'std_y': 0, 'method': 'NeAda', 'pjx': False, 'pjy': False}
+{'mx': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd820>, {'x': tensor([[301.8940]], device='cuda:0')}), 'my': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd790>, {'dual_y': tensor([[-0.0016]], device='cuda:0')}), 'vx': tensor(88234515.5681, device='cuda:0'), 'vy': tensor(22.8844, device='cuda:0'), 'lr_x': 1.1333433334582247e-07, 'lr_y': 0.43697862004349}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 950 epoch: 950.0 OC: 950.0 SC: 950
+Current Complexity:
+iter: 950 epoch: 950.0 OC: 950.0 SC: 950
+Iterates Info:
+acc: 0.5 , loss: 119.40425162853543 , primalF: 119.40425273798229
+||sto grad_x||^2: 90765.18216177897 ||sto grad_y||^2: 2.2188937248052884e-06
+||true grad_x||^2: 90765.18216177897 ||true grad_y||^2: 2.2188937248052884e-06
+lr_x: 1.0777990852083822e-07 , lr_y: 0.4369741595927848
+mu: 1 , kappa: 20
+{'b': 1, 'N': 1, 'K': 5000, 'std_x': 0, 'std_y': 0, 'method': 'NeAda', 'pjx': False, 'pjy': False}
+{'mx': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd820>, {'x': tensor([[301.2596]], device='cuda:0')}), 'my': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd790>, {'dual_y': tensor([[-0.0015]], device='cuda:0')}), 'vx': tensor(92781670.8813, device='cuda:0'), 'vy': tensor(22.8846, device='cuda:0'), 'lr_x': 1.0777990852083822e-07, 'lr_y': 0.4369741595927848}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 1000 epoch: 1000.0 OC: 1000.0 SC: 1000
+Current Complexity:
+iter: 1000 epoch: 1000.0 OC: 1000.0 SC: 1000
+Iterates Info:
+acc: 0.5 , loss: 118.92747403984033 , primalF: 118.9274750441788
+||sto grad_x||^2: 90401.92549992619 ||sto grad_y||^2: 2.0086769561816943e-06
+||true grad_x||^2: 90401.92549992619 ||true grad_y||^2: 2.0086769561816943e-06
+lr_x: 1.0276414311409912e-07 , lr_y: 0.43697013249935723
+mu: 1 , kappa: 20
+{'b': 1, 'N': 1, 'K': 5000, 'std_x': 0, 'std_y': 0, 'method': 'NeAda', 'pjx': False, 'pjy': False}
+{'mx': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd820>, {'x': tensor([[300.6567]], device='cuda:0')}), 'my': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd790>, {'dual_y': tensor([[-0.0014]], device='cuda:0')}), 'vx': tensor(97310206.6243, device='cuda:0'), 'vy': tensor(22.8849, device='cuda:0'), 'lr_x': 1.0276414311409912e-07, 'lr_y': 0.43697013249935723}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 1050 epoch: 1050.0 OC: 1050.0 SC: 1050
+Current Complexity:
+iter: 1050 epoch: 1050.0 OC: 1050.0 SC: 1050
+Iterates Info:
+acc: 0.5 , loss: 118.4741352244851 , primalF: 118.47413613812664
+||sto grad_x||^2: 90056.56907542932 ||sto grad_y||^2: 1.8272830957757293e-06
+||true grad_x||^2: 90056.56907542932 ||true grad_y||^2: 1.8272830957757293e-06
+lr_x: 9.82115072633254e-08 , lr_y: 0.43696647789302046
+mu: 1 , kappa: 20
+{'b': 1, 'N': 1, 'K': 5000, 'std_x': 0, 'std_y': 0, 'method': 'NeAda', 'pjx': False, 'pjy': False}
+{'mx': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd820>, {'x': tensor([[300.0825]], device='cuda:0')}), 'my': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd790>, {'dual_y': tensor([[-0.0014]], device='cuda:0')}), 'vx': tensor(1.0182e+08, device='cuda:0'), 'vy': tensor(22.8851, device='cuda:0'), 'lr_x': 9.82115072633254e-08, 'lr_y': 0.43696647789302046}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 1100 epoch: 1100.0 OC: 1100.0 SC: 1100
+Current Complexity:
+iter: 1100 epoch: 1100.0 OC: 1100.0 SC: 1100
+Iterates Info:
+acc: 0.5 , loss: 118.04204415594855 , primalF: 118.04204499077325
+||sto grad_x||^2: 89727.43581728372 ||sto grad_y||^2: 1.669649367935365e-06
+||true grad_x||^2: 89727.43581728372 ||true grad_y||^2: 1.669649367935365e-06
+lr_x: 9.406002710207229e-08 , lr_y: 0.43696314584660884
+mu: 1 , kappa: 20
+{'b': 1, 'N': 1, 'K': 5000, 'std_x': 0, 'std_y': 0, 'method': 'NeAda', 'pjx': False, 'pjy': False}
+{'mx': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd820>, {'x': tensor([[299.5341]], device='cuda:0')}), 'my': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd790>, {'dual_y': tensor([[-0.0013]], device='cuda:0')}), 'vx': tensor(1.0632e+08, device='cuda:0'), 'vy': tensor(22.8852, device='cuda:0'), 'lr_x': 9.406002710207229e-08, 'lr_y': 0.43696314584660884}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 1150 epoch: 1150.0 OC: 1150.0 SC: 1150
+Current Complexity:
+iter: 1150 epoch: 1150.0 OC: 1150.0 SC: 1150
+Iterates Info:
+acc: 0.5 , loss: 117.62930314612983 , primalF: 117.62930391202012
+||sto grad_x||^2: 89413.073668805 ||sto grad_y||^2: 1.5317806030735006e-06
+||true grad_x||^2: 89413.073668805 ||true grad_y||^2: 1.5317806030735006e-06
+lr_x: 9.025836616168153e-08 , lr_y: 0.4369600950162129
+mu: 1 , kappa: 20
+{'b': 1, 'N': 1, 'K': 5000, 'std_x': 0, 'std_y': 0, 'method': 'NeAda', 'pjx': False, 'pjy': False}
+{'mx': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd820>, {'x': tensor([[299.0094]], device='cuda:0')}), 'my': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd790>, {'dual_y': tensor([[-0.0012]], device='cuda:0')}), 'vx': tensor(1.1079e+08, device='cuda:0'), 'vy': tensor(22.8854, device='cuda:0'), 'lr_x': 9.025836616168153e-08, 'lr_y': 0.4369600950162129}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 1200 epoch: 1200.0 OC: 1200.0 SC: 1200
+Current Complexity:
+iter: 1200 epoch: 1200.0 OC: 1200.0 SC: 1200
+Iterates Info:
+acc: 0.5 , loss: 117.23425772729814 , primalF: 117.23425843254296
+||sto grad_x||^2: 89112.21706341673 ||sto grad_y||^2: 1.4104896019575137e-06
+||true grad_x||^2: 89112.21706341673 ||true grad_y||^2: 1.4104896019575137e-06
+lr_x: 8.676363093105309e-08 , lr_y: 0.43695729086780427
+mu: 1 , kappa: 20
+{'b': 1, 'N': 1, 'K': 5000, 'std_x': 0, 'std_y': 0, 'method': 'NeAda', 'pjx': False, 'pjy': False}
+{'mx': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd820>, {'x': tensor([[298.5063]], device='cuda:0')}), 'my': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd790>, {'dual_y': tensor([[-0.0012]], device='cuda:0')}), 'vx': tensor(1.1526e+08, device='cuda:0'), 'vy': tensor(22.8855, device='cuda:0'), 'lr_x': 8.676363093105309e-08, 'lr_y': 0.43695729086780427}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 1250 epoch: 1250.0 OC: 1250.0 SC: 1250
+Current Complexity:
+iter: 1250 epoch: 1250.0 OC: 1250.0 SC: 1250
+Iterates Info:
+acc: 0.5 , loss: 116.85545679881166 , primalF: 116.85545745041586
+||sto grad_x||^2: 88823.75630633796 ||sto grad_y||^2: 1.3032083701975841e-06
+||true grad_x||^2: 88823.75630633796 ||true grad_y||^2: 1.3032083701975841e-06
+lr_x: 8.353969904136513e-08 , lr_y: 0.43695470432682354
+mu: 1 , kappa: 20
+{'b': 1, 'N': 1, 'K': 5000, 'std_x': 0, 'std_y': 0, 'method': 'NeAda', 'pjx': False, 'pjy': False}
+{'mx': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd820>, {'x': tensor([[298.0232]], device='cuda:0')}), 'my': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd790>, {'dual_y': tensor([[-0.0011]], device='cuda:0')}), 'vx': tensor(1.1970e+08, device='cuda:0'), 'vy': tensor(22.8857, device='cuda:0'), 'lr_x': 8.353969904136513e-08, 'lr_y': 0.43695470432682354}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 1300 epoch: 1300.0 OC: 1300.0 SC: 1300
+Current Complexity:
+iter: 1300 epoch: 1300.0 OC: 1300.0 SC: 1300
+Iterates Info:
+acc: 0.5 , loss: 116.49162061501222 , primalF: 116.49162121893667
+||sto grad_x||^2: 88546.7129919562 ||sto grad_y||^2: 1.207848928908914e-06
+||true grad_x||^2: 88546.7129919562 ||true grad_y||^2: 1.207848928908914e-06
+lr_x: 8.055593024214292e-08 , lr_y: 0.43695231073740415
+mu: 1 , kappa: 20
+{'b': 1, 'N': 1, 'K': 5000, 'std_x': 0, 'std_y': 0, 'method': 'NeAda', 'pjx': False, 'pjy': False}
+{'mx': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd820>, {'x': tensor([[297.5584]], device='cuda:0')}), 'my': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd790>, {'dual_y': tensor([[-0.0011]], device='cuda:0')}), 'vx': tensor(1.2414e+08, device='cuda:0'), 'vy': tensor(22.8858, device='cuda:0'), 'lr_x': 8.055593024214292e-08, 'lr_y': 0.43695231073740415}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 1350 epoch: 1350.0 OC: 1350.0 SC: 1350
+Current Complexity:
+iter: 1350 epoch: 1350.0 OC: 1350.0 SC: 1350
+Iterates Info:
+acc: 0.5 , loss: 116.14161483305776 , primalF: 116.14161539440742
+||sto grad_x||^2: 88280.22008327168 ||sto grad_y||^2: 1.1226993486347606e-06
+||true grad_x||^2: 88280.22008327168 ||true grad_y||^2: 1.1226993486347606e-06
+lr_x: 7.778616155452909e-08 , lr_y: 0.43695008905135163
+mu: 1 , kappa: 20
+{'b': 1, 'N': 1, 'K': 5000, 'std_x': 0, 'std_y': 0, 'method': 'NeAda', 'pjx': False, 'pjy': False}
+{'mx': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd820>, {'x': tensor([[297.1106]], device='cuda:0')}), 'my': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd790>, {'dual_y': tensor([[-0.0011]], device='cuda:0')}), 'vx': tensor(1.2856e+08, device='cuda:0'), 'vy': tensor(22.8859, device='cuda:0'), 'lr_x': 7.778616155452909e-08, 'lr_y': 0.43695008905135163}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 1400 epoch: 1400.0 OC: 1400.0 SC: 1400
+Current Complexity:
+iter: 1400 epoch: 1400.0 OC: 1400.0 SC: 1400
+Iterates Info:
+acc: 0.5 , loss: 115.804429294323 , primalF: 115.80442981749557
+||sto grad_x||^2: 88023.5056311935 ||sto grad_y||^2: 1.046345167389778e-06
+||true grad_x||^2: 88023.5056311935 ||true grad_y||^2: 1.046345167389778e-06
+lr_x: 7.520791601522647e-08 , lr_y: 0.4369480211897394
+mu: 1 , kappa: 20
+{'b': 1, 'N': 1, 'K': 5000, 'std_x': 0, 'std_y': 0, 'method': 'NeAda', 'pjx': False, 'pjy': False}
+{'mx': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd820>, {'x': tensor([[296.6786]], device='cuda:0')}), 'my': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd790>, {'dual_y': tensor([[-0.0010]], device='cuda:0')}), 'vx': tensor(1.3296e+08, device='cuda:0'), 'vy': tensor(22.8860, device='cuda:0'), 'lr_x': 7.520791601522647e-08, 'lr_y': 0.4369480211897394}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 1450 epoch: 1450.0 OC: 1450.0 SC: 1450
+Current Complexity:
+iter: 1450 epoch: 1450.0 OC: 1450.0 SC: 1450
+Iterates Info:
+acc: 0.5 , loss: 115.4791605397843 , primalF: 115.47916102858893
+||sto grad_x||^2: 87775.87936375178 ||sto grad_y||^2: 9.776093430217491e-07
+||true grad_x||^2: 87775.87936375178 ||true grad_y||^2: 9.776093430217491e-07
+lr_x: 7.280177379248965e-08 , lr_y: 0.436946091535677
+mu: 1 , kappa: 20
+{'b': 1, 'N': 1, 'K': 5000, 'std_x': 0, 'std_y': 0, 'method': 'NeAda', 'pjx': False, 'pjy': False}
+{'mx': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd820>, {'x': tensor([[296.2613]], device='cuda:0')}), 'my': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd790>, {'dual_y': tensor([[-0.0010]], device='cuda:0')}), 'vx': tensor(1.3736e+08, device='cuda:0'), 'vy': tensor(22.8861, device='cuda:0'), 'lr_x': 7.280177379248965e-08, 'lr_y': 0.436946091535677}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 1500 epoch: 1500.0 OC: 1500.0 SC: 1500
+Current Complexity:
+iter: 1500 epoch: 1500.0 OC: 1500.0 SC: 1500
+Iterates Info:
+acc: 0.5 , loss: 115.16499729769703 , primalF: 115.16499775544999
+||sto grad_x||^2: 87536.72155882805 ||sto grad_y||^2: 9.155059029362807e-07
+||true grad_x||^2: 87536.72155882805 ||true grad_y||^2: 9.155059029362807e-07
+lr_x: 7.055086803937033e-08 , lr_y: 0.4369442865278049
+mu: 1 , kappa: 20
+{'b': 1, 'N': 1, 'K': 5000, 'std_x': 0, 'std_y': 0, 'method': 'NeAda', 'pjx': False, 'pjy': False}
+{'mx': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd820>, {'x': tensor([[295.8577]], device='cuda:0')}), 'my': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd790>, {'dual_y': tensor([[-0.0010]], device='cuda:0')}), 'vx': tensor(1.4174e+08, device='cuda:0'), 'vy': tensor(22.8862, device='cuda:0'), 'lr_x': 7.055086803937033e-08, 'lr_y': 0.4369442865278049}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 1550 epoch: 1550.0 OC: 1550.0 SC: 1550
+Current Complexity:
+iter: 1550 epoch: 1550.0 OC: 1550.0 SC: 1550
+Iterates Info:
+acc: 0.5 , loss: 114.86120835718818 , primalF: 114.86120878679012
+||sto grad_x||^2: 87305.47374919111 ||sto grad_y||^2: 8.592038301232791e-07
+||true grad_x||^2: 87305.47374919111 ||true grad_y||^2: 8.592038301232791e-07
+lr_x: 6.844047750776866e-08 , lr_y: 0.4369425943319035
+mu: 1 , kappa: 20
+{'b': 1, 'N': 1, 'K': 5000, 'std_x': 0, 'std_y': 0, 'method': 'NeAda', 'pjx': False, 'pjy': False}
+{'mx': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd820>, {'x': tensor([[295.4669]], device='cuda:0')}), 'my': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd790>, {'dual_y': tensor([[-0.0009]], device='cuda:0')}), 'vx': tensor(1.4611e+08, device='cuda:0'), 'vy': tensor(22.8863, device='cuda:0'), 'lr_x': 6.844047750776866e-08, 'lr_y': 0.4369425943319035}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 1600 epoch: 1600.0 OC: 1600.0 SC: 1600
+Current Complexity:
+iter: 1600 epoch: 1600.0 OC: 1600.0 SC: 1600
+Iterates Info:
+acc: 0.5 , loss: 114.56713237205518 , primalF: 114.56713277605452
+||sto grad_x||^2: 87081.6309093283 ||sto grad_y||^2: 8.079986788098137e-07
+||true grad_x||^2: 87081.6309093283 ||true grad_y||^2: 8.079986788098137e-07
+lr_x: 6.645769490155719e-08 , lr_y: 0.4369410045736241
+mu: 1 , kappa: 20
+{'b': 1, 'N': 1, 'K': 5000, 'std_x': 0, 'std_y': 0, 'method': 'NeAda', 'pjx': False, 'pjy': False}
+{'mx': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd820>, {'x': tensor([[295.0881]], device='cuda:0')}), 'my': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd790>, {'dual_y': tensor([[-0.0009]], device='cuda:0')}), 'vx': tensor(1.5047e+08, device='cuda:0'), 'vy': tensor(22.8864, device='cuda:0'), 'lr_x': 6.645769490155719e-08, 'lr_y': 0.4369410045736241}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 1650 epoch: 1650.0 OC: 1650.0 SC: 1650
+Current Complexity:
+iter: 1650 epoch: 1650.0 OC: 1650.0 SC: 1650
+Iterates Info:
+acc: 0.5 , loss: 114.28216923747361 , primalF: 114.28216961811864
+||sto grad_x||^2: 86864.73484936975 ||sto grad_y||^2: 7.612900835803708e-07
+||true grad_x||^2: 86864.73484936975 ||true grad_y||^2: 7.612900835803708e-07
+lr_x: 6.459115501409399e-08 , lr_y: 0.4369395081194533
+mu: 1 , kappa: 20
+{'b': 1, 'N': 1, 'K': 5000, 'std_x': 0, 'std_y': 0, 'method': 'NeAda', 'pjx': False, 'pjy': False}
+{'mx': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd820>, {'x': tensor([[294.7206]], device='cuda:0')}), 'my': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd790>, {'dual_y': tensor([[-0.0009]], device='cuda:0')}), 'vx': tensor(1.5482e+08, device='cuda:0'), 'vy': tensor(22.8865, device='cuda:0'), 'lr_x': 6.459115501409399e-08, 'lr_y': 0.4369395081194533}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 1700 epoch: 1700.0 OC: 1700.0 SC: 1700
+Current Complexity:
+iter: 1700 epoch: 1700.0 OC: 1700.0 SC: 1700
+Iterates Info:
+acc: 0.5 , loss: 114.00577275716975 , primalF: 114.00577311645165
+||sto grad_x||^2: 86654.36859903546 ||sto grad_y||^2: 7.185638025518187e-07
+||true grad_x||^2: 86654.36859903546 ||true grad_y||^2: 7.185638025518187e-07
+lr_x: 6.28308104277357e-08 , lr_y: 0.4369380968960369
+mu: 1 , kappa: 20
+{'b': 1, 'N': 1, 'K': 5000, 'std_x': 0, 'std_y': 0, 'method': 'NeAda', 'pjx': False, 'pjy': False}
+{'mx': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd820>, {'x': tensor([[294.3637]], device='cuda:0')}), 'my': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd790>, {'dual_y': tensor([[-0.0008]], device='cuda:0')}), 'vx': tensor(1.5916e+08, device='cuda:0'), 'vy': tensor(22.8865, device='cuda:0'), 'lr_x': 6.28308104277357e-08, 'lr_y': 0.4369380968960369}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 1750 epoch: 1750.0 OC: 1750.0 SC: 1750
+Current Complexity:
+iter: 1750 epoch: 1750.0 OC: 1750.0 SC: 1750
+Iterates Info:
+acc: 0.5 , loss: 113.73744437606493 , primalF: 113.73744471575358
+||sto grad_x||^2: 86450.15160875168 ||sto grad_y||^2: 6.793772782844362e-07
+||true grad_x||^2: 86450.15160875168 ||true grad_y||^2: 6.793772782844362e-07
+lr_x: 6.116774533025818e-08 , lr_y: 0.43693676374023827
+mu: 1 , kappa: 20
+{'b': 1, 'N': 1, 'K': 5000, 'std_x': 0, 'std_y': 0, 'method': 'NeAda', 'pjx': False, 'pjy': False}
+{'mx': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd820>, {'x': tensor([[294.0169]], device='cuda:0')}), 'my': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd790>, {'dual_y': tensor([[-0.0008]], device='cuda:0')}), 'vx': tensor(1.6348e+08, device='cuda:0'), 'vy': tensor(22.8866, device='cuda:0'), 'lr_x': 6.116774533025818e-08, 'lr_y': 0.43693676374023827}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 1800 epoch: 1800.0 OC: 1800.0 SC: 1800
+Current Complexity:
+iter: 1800 epoch: 1800.0 OC: 1800.0 SC: 1800
+Iterates Info:
+acc: 0.5 , loss: 113.47672779787025 , primalF: 113.47672811954425
+||sto grad_x||^2: 86251.73562929571 ||sto grad_y||^2: 6.43347949757416e-07
+||true grad_x||^2: 86251.73562929571 ||true grad_y||^2: 6.43347949757416e-07
+lr_x: 5.9594020089538295e-08 , lr_y: 0.4369355022739957
+mu: 1 , kappa: 20
+{'b': 1, 'N': 1, 'K': 5000, 'std_x': 0, 'std_y': 0, 'method': 'NeAda', 'pjx': False, 'pjy': False}
+{'mx': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd820>, {'x': tensor([[293.6794]], device='cuda:0')}), 'my': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd790>, {'dual_y': tensor([[-0.0008]], device='cuda:0')}), 'vx': tensor(1.6780e+08, device='cuda:0'), 'vy': tensor(22.8867, device='cuda:0'), 'lr_x': 5.9594020089538295e-08, 'lr_y': 0.4369355022739957}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 1850 epoch: 1850.0 OC: 1850.0 SC: 1850
+Current Complexity:
+iter: 1850 epoch: 1850.0 OC: 1850.0 SC: 1850
+Iterates Info:
+acc: 0.5 , loss: 113.22320434181323 , primalF: 113.2232046468851
+||sto grad_x||^2: 86058.80115801477 ||sto grad_y||^2: 6.101437315612922e-07
+||true grad_x||^2: 86058.80115801477 ||true grad_y||^2: 6.101437315612922e-07
+lr_x: 5.810254080935793e-08 , lr_y: 0.4369343067993117
+mu: 1 , kappa: 20
+{'b': 1, 'N': 1, 'K': 5000, 'std_x': 0, 'std_y': 0, 'method': 'NeAda', 'pjx': False, 'pjy': False}
+{'mx': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd820>, {'x': tensor([[293.3510]], device='cuda:0')}), 'my': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd790>, {'dual_y': tensor([[-0.0008]], device='cuda:0')}), 'vx': tensor(1.7211e+08, device='cuda:0'), 'vy': tensor(22.8867, device='cuda:0'), 'lr_x': 5.810254080935793e-08, 'lr_y': 0.4369343067993117}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 1900 epoch: 1900.0 OC: 1900.0 SC: 1900
+Current Complexity:
+iter: 1900 epoch: 1900.0 OC: 1900.0 SC: 1900
+Iterates Info:
+acc: 0.5 , loss: 112.97648891996026 , primalF: 112.97648920969786
+||sto grad_x||^2: 85871.05436063913 ||sto grad_y||^2: 5.794752125996013e-07
+||true grad_x||^2: 85871.05436063913 ||true grad_y||^2: 5.794752125996013e-07
+lr_x: 5.668694929804961e-08 , lr_y: 0.4369331722096917
+mu: 1 , kappa: 20
+{'b': 1, 'N': 1, 'K': 5000, 'std_x': 0, 'std_y': 0, 'method': 'NeAda', 'pjx': False, 'pjy': False}
+{'mx': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd820>, {'x': tensor([[293.0310]], device='cuda:0')}), 'my': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd790>, {'dual_y': tensor([[-0.0008]], device='cuda:0')}), 'vx': tensor(1.7641e+08, device='cuda:0'), 'vy': tensor(22.8868, device='cuda:0'), 'lr_x': 5.668694929804961e-08, 'lr_y': 0.4369331722096917}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 1950 epoch: 1950.0 OC: 1950.0 SC: 1950
+Current Complexity:
+iter: 1950 epoch: 1950.0 OC: 1950.0 SC: 1950
+Iterates Info:
+acc: 0.5 , loss: 112.73622653819798 , primalF: 112.73622681374259
+||sto grad_x||^2: 85688.2243943077 ||sto grad_y||^2: 5.510892279241681e-07
+||true grad_x||^2: 85688.2243943077 ||true grad_y||^2: 5.510892279241681e-07
+lr_x: 5.534152981304465e-08 , lr_y: 0.4369320939150945
+mu: 1 , kappa: 20
+{'b': 1, 'N': 1, 'K': 5000, 'std_x': 0, 'std_y': 0, 'method': 'NeAda', 'pjx': False, 'pjy': False}
+{'mx': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd820>, {'x': tensor([[292.7190]], device='cuda:0')}), 'my': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd790>, {'dual_y': tensor([[-0.0007]], device='cuda:0')}), 'vx': tensor(1.8070e+08, device='cuda:0'), 'vy': tensor(22.8869, device='cuda:0'), 'lr_x': 5.534152981304465e-08, 'lr_y': 0.4369320939150945}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 2000 epoch: 2000.0 OC: 2000.0 SC: 2000
+Current Complexity:
+iter: 2000 epoch: 2000.0 OC: 2000.0 SC: 2000
+Iterates Info:
+acc: 0.5 , loss: 112.50208924115418 , primalF: 112.50208950353594
+||sto grad_x||^2: 85510.06107065316 ||sto grad_y||^2: 5.247635340661171e-07
+||true grad_x||^2: 85510.06107065316 ||true grad_y||^2: 5.247635340661171e-07
+lr_x: 5.406112966727305e-08 , lr_y: 0.43693106777805457
+mu: 1 , kappa: 20
+{'b': 1, 'N': 1, 'K': 5000, 'std_x': 0, 'std_y': 0, 'method': 'NeAda', 'pjx': False, 'pjy': False}
+{'mx': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd820>, {'x': tensor([[292.4147]], device='cuda:0')}), 'my': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd790>, {'dual_y': tensor([[-0.0007]], device='cuda:0')}), 'vx': tensor(1.8498e+08, device='cuda:0'), 'vy': tensor(22.8869, device='cuda:0'), 'lr_x': 5.406112966727305e-08, 'lr_y': 0.43693106777805457}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 2050 epoch: 2050.0 OC: 2050.0 SC: 2050
+Current Complexity:
+iter: 2050 epoch: 2050.0 OC: 2050.0 SC: 2050
+Iterates Info:
+acc: 0.5 , loss: 112.27377343514534 , primalF: 112.27377368529655
+||sto grad_x||^2: 85336.33280839598 ||sto grad_y||^2: 5.003023762950861e-07
+||true grad_x||^2: 85336.33280839598 ||true grad_y||^2: 5.003023762950861e-07
+lr_x: 5.284109134841082e-08 , lr_y: 0.4369300900590707
+mu: 1 , kappa: 20
+{'b': 1, 'N': 1, 'K': 5000, 'std_x': 0, 'std_y': 0, 'method': 'NeAda', 'pjx': False, 'pjy': False}
+{'mx': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd820>, {'x': tensor([[292.1177]], device='cuda:0')}), 'my': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd790>, {'dual_y': tensor([[-0.0007]], device='cuda:0')}), 'vx': tensor(1.8925e+08, device='cuda:0'), 'vy': tensor(22.8870, device='cuda:0'), 'lr_x': 5.284109134841082e-08, 'lr_y': 0.4369300900590707}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 2100 epoch: 2100.0 OC: 2100.0 SC: 2100
+Current Complexity:
+iter: 2100 epoch: 2100.0 OC: 2100.0 SC: 2100
+Iterates Info:
+acc: 0.5 , loss: 112.05099753438074 , primalF: 112.05099777314713
+||sto grad_x||^2: 85166.8248334529 ||sto grad_y||^2: 4.77532780925362e-07
+||true grad_x||^2: 85166.8248334529 ||true grad_y||^2: 4.77532780925362e-07
+lr_x: 5.1677194246584204e-08 , lr_y: 0.4369291573697323
+mu: 1 , kappa: 20
+{'b': 1, 'N': 1, 'K': 5000, 'std_x': 0, 'std_y': 0, 'method': 'NeAda', 'pjx': False, 'pjy': False}
+{'mx': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd820>, {'x': tensor([[291.8275]], device='cuda:0')}), 'my': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd790>, {'dual_y': tensor([[-0.0007]], device='cuda:0')}), 'vx': tensor(1.9351e+08, device='cuda:0'), 'vy': tensor(22.8870, device='cuda:0'), 'lr_x': 5.1677194246584204e-08, 'lr_y': 0.4369291573697323}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 2150 epoch: 2150.0 OC: 2150.0 SC: 2150
+Current Complexity:
+iter: 2150 epoch: 2150.0 OC: 2150.0 SC: 2150
+Iterates Info:
+acc: 0.5 , loss: 111.83349988469041 , primalF: 111.83350011284114
+||sto grad_x||^2: 85001.33759150389 ||sto grad_y||^2: 4.563014400901718e-07
+||true grad_x||^2: 85001.33759150389 ||true grad_y||^2: 4.563014400901718e-07
+lr_x: 5.056560443819735e-08 , lr_y: 0.43692826663233275
+mu: 1 , kappa: 20
+{'b': 1, 'N': 1, 'K': 5000, 'std_x': 0, 'std_y': 0, 'method': 'NeAda', 'pjx': False, 'pjy': False}
+{'mx': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd820>, {'x': tensor([[291.5440]], device='cuda:0')}), 'my': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd790>, {'dual_y': tensor([[-0.0007]], device='cuda:0')}), 'vx': tensor(1.9776e+08, device='cuda:0'), 'vy': tensor(22.8871, device='cuda:0'), 'lr_x': 5.056560443819735e-08, 'lr_y': 0.43692826663233275}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 2200 epoch: 2200.0 OC: 2200.0 SC: 2200
+Current Complexity:
+iter: 2200 epoch: 2200.0 OC: 2200.0 SC: 2200
+Iterates Info:
+acc: 0.5 , loss: 111.6210369264212 , primalF: 111.62103714465724
+||sto grad_x||^2: 84839.68534362045 ||sto grad_y||^2: 4.364720831160052e-07
+||true grad_x||^2: 84839.68534362045 ||true grad_y||^2: 4.364720831160052e-07
+lr_x: 4.9502831253988294e-08 , lr_y: 0.4369274150449421
+mu: 1 , kappa: 20
+{'b': 1, 'N': 1, 'K': 5000, 'std_x': 0, 'std_y': 0, 'method': 'NeAda', 'pjx': False, 'pjy': False}
+{'mx': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd820>, {'x': tensor([[291.2668]], device='cuda:0')}), 'my': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd790>, {'dual_y': tensor([[-0.0007]], device='cuda:0')}), 'vx': tensor(2.0201e+08, device='cuda:0'), 'vy': tensor(22.8871, device='cuda:0'), 'lr_x': 4.9502831253988294e-08, 'lr_y': 0.4369274150449421}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 2250 epoch: 2250.0 OC: 2250.0 SC: 2250
+Current Complexity:
+iter: 2250 epoch: 2250.0 OC: 2250.0 SC: 2250
+Iterates Info:
+acc: 0.5 , loss: 111.41338156418455 , primalF: 111.41338177314618
+||sto grad_x||^2: 84681.69492019346 ||sto grad_y||^2: 4.179232493827065e-07
+||true grad_x||^2: 84681.69492019346 ||true grad_y||^2: 4.179232493827065e-07
+lr_x: 4.848568958407716e-08 , lr_y: 0.4369266000510992
+mu: 1 , kappa: 20
+{'b': 1, 'N': 1, 'K': 5000, 'std_x': 0, 'std_y': 0, 'method': 'NeAda', 'pjx': False, 'pjy': False}
+{'mx': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd820>, {'x': tensor([[290.9955]], device='cuda:0')}), 'my': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd790>, {'dual_y': tensor([[-0.0006]], device='cuda:0')}), 'vx': tensor(2.0625e+08, device='cuda:0'), 'vy': tensor(22.8871, device='cuda:0'), 'lr_x': 4.848568958407716e-08, 'lr_y': 0.4369266000510992}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 2300 epoch: 2300.0 OC: 2300.0 SC: 2300
+Current Complexity:
+iter: 2300 epoch: 2300.0 OC: 2300.0 SC: 2300
+Iterates Info:
+acc: 0.5 , loss: 111.21032171613102 , primalF: 111.21032191640423
+||sto grad_x||^2: 84527.20461222719 ||sto grad_y||^2: 4.0054639410155186e-07
+||true grad_x||^2: 84527.20461222719 ||true grad_y||^2: 4.0054639410155186e-07
+lr_x: 4.7511267053716636e-08 , lr_y: 0.4369258193134212
+mu: 1 , kappa: 20
+{'b': 1, 'N': 1, 'K': 5000, 'std_x': 0, 'std_y': 0, 'method': 'NeAda', 'pjx': False, 'pjy': False}
+{'mx': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd820>, {'x': tensor([[290.7301]], device='cuda:0')}), 'my': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd790>, {'dual_y': tensor([[-0.0006]], device='cuda:0')}), 'vx': tensor(2.1048e+08, device='cuda:0'), 'vy': tensor(22.8872, device='cuda:0'), 'lr_x': 4.7511267053716636e-08, 'lr_y': 0.4369258193134212}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 2350 epoch: 2350.0 OC: 2350.0 SC: 2350
+Current Complexity:
+iter: 2350 epoch: 2350.0 OC: 2350.0 SC: 2350
+Iterates Info:
+acc: 0.5 , loss: 111.01165901953547 , primalF: 111.0116592116576
+||sto grad_x||^2: 84376.06318221749 ||sto grad_y||^2: 3.8424427122906507e-07
+||true grad_x||^2: 84376.06318221749 ||true grad_y||^2: 3.8424427122906507e-07
+lr_x: 4.6576895349946895e-08 , lr_y: 0.436925070690552
+mu: 1 , kappa: 20
+{'b': 1, 'N': 1, 'K': 5000, 'std_x': 0, 'std_y': 0, 'method': 'NeAda', 'pjx': False, 'pjy': False}
+{'mx': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd820>, {'x': tensor([[290.4702]], device='cuda:0')}), 'my': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd790>, {'dual_y': tensor([[-0.0006]], device='cuda:0')}), 'vx': tensor(2.1470e+08, device='cuda:0'), 'vy': tensor(22.8872, device='cuda:0'), 'lr_x': 4.6576895349946895e-08, 'lr_y': 0.436925070690552}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 2400 epoch: 2400.0 OC: 2400.0 SC: 2400
+Current Complexity:
+iter: 2400 epoch: 2400.0 OC: 2400.0 SC: 2400
+Iterates Info:
+acc: 0.5 , loss: 110.8172076729145 , primalF: 110.81720785737927
+||sto grad_x||^2: 84228.12897946588 ||sto grad_y||^2: 3.689295480391394e-07
+||true grad_x||^2: 84228.12897946588 ||true grad_y||^2: 3.689295480391394e-07
+lr_x: 4.568012509853502e-08 , lr_y: 0.43692435221697035
+mu: 1 , kappa: 20
+{'b': 1, 'N': 1, 'K': 5000, 'std_x': 0, 'std_y': 0, 'method': 'NeAda', 'pjx': False, 'pjy': False}
+{'mx': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd820>, {'x': tensor([[290.2155]], device='cuda:0')}), 'my': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd790>, {'dual_y': tensor([[-0.0006]], device='cuda:0')}), 'vx': tensor(2.1891e+08, device='cuda:0'), 'vy': tensor(22.8873, device='cuda:0'), 'lr_x': 4.568012509853502e-08, 'lr_y': 0.43692435221697035}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 2450 epoch: 2450.0 OC: 2450.0 SC: 2450
+Current Complexity:
+iter: 2450 epoch: 2450.0 OC: 2450.0 SC: 2450
+Iterates Info:
+acc: 0.5 , loss: 110.62679339775275 , primalF: 110.62679357501456
+||sto grad_x||^2: 84083.26914687347 ||sto grad_y||^2: 3.5452361424667707e-07
+||true grad_x||^2: 84083.26914687347 ||true grad_y||^2: 3.5452361424667707e-07
+lr_x: 4.4818703787991343e-08 , lr_y: 0.43692366208524624
+mu: 1 , kappa: 20
+{'b': 1, 'N': 1, 'K': 5000, 'std_x': 0, 'std_y': 0, 'method': 'NeAda', 'pjx': False, 'pjy': False}
+{'mx': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd820>, {'x': tensor([[289.9659]], device='cuda:0')}), 'my': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd790>, {'dual_y': tensor([[-0.0006]], device='cuda:0')}), 'vx': tensor(2.2312e+08, device='cuda:0'), 'vy': tensor(22.8873, device='cuda:0'), 'lr_x': 4.4818703787991343e-08, 'lr_y': 0.43692366208524624}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 2500 epoch: 2500.0 OC: 2500.0 SC: 2500
+Current Complexity:
+iter: 2500 epoch: 2500.0 OC: 2500.0 SC: 2500
+Iterates Info:
+acc: 0.5 , loss: 110.44025250531155 , primalF: 110.44025267578934
+||sto grad_x||^2: 83941.35890809233 ||sto grad_y||^2: 3.409555549648045e-07
+||true grad_x||^2: 83941.35890809233 ||true grad_y||^2: 3.409555549648045e-07
+lr_x: 4.399055631743307e-08 , lr_y: 0.4369229986304096
+mu: 1 , kappa: 20
+{'b': 1, 'N': 1, 'K': 5000, 'std_x': 0, 'std_y': 0, 'method': 'NeAda', 'pjx': False, 'pjy': False}
+{'mx': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd820>, {'x': tensor([[289.7212]], device='cuda:0')}), 'my': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd790>, {'dual_y': tensor([[-0.0006]], device='cuda:0')}), 'vx': tensor(2.2732e+08, device='cuda:0'), 'vy': tensor(22.8873, device='cuda:0'), 'lr_x': 4.399055631743307e-08, 'lr_y': 0.4369229986304096}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 2550 epoch: 2550.0 OC: 2550.0 SC: 2550
+Current Complexity:
+iter: 2550 epoch: 2550.0 OC: 2550.0 SC: 2550
+Iterates Info:
+acc: 0.5 , loss: 110.25743105601545 , primalF: 110.25743122009608
+||sto grad_x||^2: 83802.2809254632 ||sto grad_y||^2: 3.2816126220072274e-07
+||true grad_x||^2: 83802.2809254632 ||true grad_y||^2: 3.2816126220072274e-07
+lr_x: 4.3193767811010977e-08 , lr_y: 0.43692236031613807
+mu: 1 , kappa: 20
+{'b': 1, 'N': 1, 'K': 5000, 'std_x': 0, 'std_y': 0, 'method': 'NeAda', 'pjx': False, 'pjy': False}
+{'mx': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd820>, {'x': tensor([[289.4812]], device='cuda:0')}), 'my': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd790>, {'dual_y': tensor([[-0.0006]], device='cuda:0')}), 'vx': tensor(2.3151e+08, device='cuda:0'), 'vy': tensor(22.8874, device='cuda:0'), 'lr_x': 4.3193767811010977e-08, 'lr_y': 0.43692236031613807}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 2600 epoch: 2600.0 OC: 2600.0 SC: 2600
+Current Complexity:
+iter: 2600 epoch: 2600.0 OC: 2600.0 SC: 2600
+Iterates Info:
+acc: 0.5 , loss: 110.07818410060737 , primalF: 110.0781842586487
+||sto grad_x||^2: 83665.92472046726 ||sto grad_y||^2: 3.160826639957465e-07
+||true grad_x||^2: 83665.92472046726 ||true grad_y||^2: 3.160826639957465e-07
+lr_x: 4.242656839621213e-08 , lr_y: 0.4369217457225284
+mu: 1 , kappa: 20
+{'b': 1, 'N': 1, 'K': 5000, 'std_x': 0, 'std_y': 0, 'method': 'NeAda', 'pjx': False, 'pjy': False}
+{'mx': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd820>, {'x': tensor([[289.2457]], device='cuda:0')}), 'my': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd790>, {'dual_y': tensor([[-0.0006]], device='cuda:0')}), 'vx': tensor(2.3570e+08, device='cuda:0'), 'vy': tensor(22.8874, device='cuda:0'), 'lr_x': 4.242656839621213e-08, 'lr_y': 0.4369217457225284}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 2650 epoch: 2650.0 OC: 2650.0 SC: 2650
+Current Complexity:
+iter: 2650 epoch: 2650.0 OC: 2650.0 SC: 2650
+Iterates Info:
+acc: 0.5 , loss: 109.90237499371396 , primalF: 109.90237514604748
+||sto grad_x||^2: 83532.18614953008 ||sto grad_y||^2: 3.046670536354345e-07
+||true grad_x||^2: 83532.18614953008 ||true grad_y||^2: 3.046670536354345e-07
+lr_x: 4.168731968873183e-08 , lr_y: 0.4369211535352375
+mu: 1 , kappa: 20
+{'b': 1, 'N': 1, 'K': 5000, 'std_x': 0, 'std_y': 0, 'method': 'NeAda', 'pjx': False, 'pjy': False}
+{'mx': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd820>, {'x': tensor([[289.0145]], device='cuda:0')}), 'my': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd790>, {'dual_y': tensor([[-0.0006]], device='cuda:0')}), 'vx': tensor(2.3988e+08, device='cuda:0'), 'vy': tensor(22.8874, device='cuda:0'), 'lr_x': 4.168731968873183e-08, 'lr_y': 0.4369211535352375}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 2700 epoch: 2700.0 OC: 2700.0 SC: 2700
+Current Complexity:
+iter: 2700 epoch: 2700.0 OC: 2700.0 SC: 2700
+Iterates Info:
+acc: 0.5 , loss: 109.72987477168388 , primalF: 109.72987491861716
+||sto grad_x||^2: 83400.96692895194 ||sto grad_y||^2: 2.9386650437436473e-07
+||true grad_x||^2: 83400.96692895194 ||true grad_y||^2: 2.9386650437436473e-07
+lr_x: 4.097450276446833e-08 , lr_y: 0.43692058253582056
+mu: 1 , kappa: 20
+{'b': 1, 'N': 1, 'K': 5000, 'std_x': 0, 'std_y': 0, 'method': 'NeAda', 'pjx': False, 'pjy': False}
+{'mx': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd820>, {'x': tensor([[288.7875]], device='cuda:0')}), 'my': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd790>, {'dual_y': tensor([[-0.0005]], device='cuda:0')}), 'vx': tensor(2.4405e+08, device='cuda:0'), 'vy': tensor(22.8875, device='cuda:0'), 'lr_x': 4.097450276446833e-08, 'lr_y': 0.43692058253582056}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 2750 epoch: 2750.0 OC: 2750.0 SC: 2750
+Current Complexity:
+iter: 2750 epoch: 2750.0 OC: 2750.0 SC: 2750
+Iterates Info:
+acc: 0.5 , loss: 109.56056158761241 , primalF: 109.56056172943109
+||sto grad_x||^2: 83272.17420354334 ||sto grad_y||^2: 2.836373574431804e-07
+||true grad_x||^2: 83272.17420354334 ||true grad_y||^2: 2.836373574431804e-07
+lr_x: 4.028670743089591e-08 , lr_y: 0.43692003159311277
+mu: 1 , kappa: 20
+{'b': 1, 'N': 1, 'K': 5000, 'std_x': 0, 'std_y': 0, 'method': 'NeAda', 'pjx': False, 'pjy': False}
+{'mx': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd820>, {'x': tensor([[288.5645]], device='cuda:0')}), 'my': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd790>, {'dual_y': tensor([[-0.0005]], device='cuda:0')}), 'vx': tensor(2.4822e+08, device='cuda:0'), 'vy': tensor(22.8875, device='cuda:0'), 'lr_x': 4.028670743089591e-08, 'lr_y': 0.43692003159311277}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 2800 epoch: 2800.0 OC: 2800.0 SC: 2800
+Current Complexity:
+iter: 2800 epoch: 2800.0 OC: 2800.0 SC: 2800
+Iterates Info:
+acc: 0.5 , loss: 109.39432019735865 , primalF: 109.39432033432854
+||sto grad_x||^2: 83145.72015422786 ||sto grad_y||^2: 2.739397729677613e-07
+||true grad_x||^2: 83145.72015422786 ||true grad_y||^2: 2.739397729677613e-07
+lr_x: 3.962262263670859e-08 , lr_y: 0.4369194996555243
+mu: 1 , kappa: 20
+{'b': 1, 'N': 1, 'K': 5000, 'std_x': 0, 'std_y': 0, 'method': 'NeAda', 'pjx': False, 'pjy': False}
+{'mx': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd820>, {'x': tensor([[288.3454]], device='cuda:0')}), 'my': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd790>, {'dual_y': tensor([[-0.0005]], device='cuda:0')}), 'vx': tensor(2.5238e+08, device='cuda:0'), 'vy': tensor(22.8875, device='cuda:0'), 'lr_x': 3.962262263670859e-08, 'lr_y': 0.4369194996555243}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 2850 epoch: 2850.0 OC: 2850.0 SC: 2850
+Current Complexity:
+iter: 2850 epoch: 2850.0 OC: 2850.0 SC: 2850
+Iterates Info:
+acc: 0.5 , loss: 109.231041491131 , primalF: 109.23104162349966
+||sto grad_x||^2: 83021.52164046332 ||sto grad_y||^2: 2.647373351974073e-07
+||true grad_x||^2: 83021.52164046332 ||true grad_y||^2: 2.647373351974073e-07
+lr_x: 3.898102788108289e-08 , lr_y: 0.43691898574414245
+mu: 1 , kappa: 20
+{'b': 1, 'N': 1, 'K': 5000, 'std_x': 0, 'std_y': 0, 'method': 'NeAda', 'pjx': False, 'pjy': False}
+{'mx': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd820>, {'x': tensor([[288.1301]], device='cuda:0')}), 'my': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd790>, {'dual_y': tensor([[-0.0005]], device='cuda:0')}), 'vx': tensor(2.5654e+08, device='cuda:0'), 'vy': tensor(22.8875, device='cuda:0'), 'lr_x': 3.898102788108289e-08, 'lr_y': 0.43691898574414245}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 2900 epoch: 2900.0 OC: 2900.0 SC: 2900
+Current Complexity:
+iter: 2900 epoch: 2900.0 OC: 2900.0 SC: 2900
+Iterates Info:
+acc: 0.5 , loss: 109.07062206587824 , primalF: 109.07062219387659
+||sto grad_x||^2: 82899.49987383978 ||sto grad_y||^2: 2.5599670454925155e-07
+||true grad_x||^2: 82899.49987383978 ||true grad_y||^2: 2.5599670454925155e-07
+lr_x: 3.836078550289975e-08 , lr_y: 0.43691848894653806
+mu: 1 , kappa: 20
+{'b': 1, 'N': 1, 'K': 5000, 'std_x': 0, 'std_y': 0, 'method': 'NeAda', 'pjx': False, 'pjy': False}
+{'mx': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd820>, {'x': tensor([[287.9183]], device='cuda:0')}), 'my': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd790>, {'dual_y': tensor([[-0.0005]], device='cuda:0')}), 'vx': tensor(2.6068e+08, device='cuda:0'), 'vy': tensor(22.8876, device='cuda:0'), 'lr_x': 3.836078550289975e-08, 'lr_y': 0.43691848894653806}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 2950 epoch: 2950.0 OC: 2950.0 SC: 2950
+Current Complexity:
+iter: 2950 epoch: 2950.0 OC: 2950.0 SC: 2950
+Iterates Info:
+acc: 0.5 , loss: 108.91296383429413 , primalF: 108.9129639581378
+||sto grad_x||^2: 82779.58011964828 ||sto grad_y||^2: 2.476873103333622e-07
+||true grad_x||^2: 82779.58011964828 ||true grad_y||^2: 2.476873103333622e-07
+lr_x: 3.7760833746378665e-08 , lr_y: 0.4369180084111983
+mu: 1 , kappa: 20
+{'b': 1, 'N': 1, 'K': 5000, 'std_x': 0, 'std_y': 0, 'method': 'NeAda', 'pjx': False, 'pjy': False}
+{'mx': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd820>, {'x': tensor([[287.7101]], device='cuda:0')}), 'my': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd790>, {'dual_y': tensor([[-0.0005]], device='cuda:0')}), 'vx': tensor(2.6482e+08, device='cuda:0'), 'vy': tensor(22.8876, device='cuda:0'), 'lr_x': 3.7760833746378665e-08, 'lr_y': 0.4369180084111983}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 3000 epoch: 3000.0 OC: 3000.0 SC: 3000
+Current Complexity:
+iter: 3000 epoch: 3000.0 OC: 3000.0 SC: 3000
+Iterates Info:
+acc: 0.5 , loss: 108.75797366673717 , primalF: 108.75797378662769
+||sto grad_x||^2: 82661.69142359246 ||sto grad_y||^2: 2.3978107869583634e-07
+||true grad_x||^2: 82661.69142359246 ||true grad_y||^2: 2.3978107869583634e-07
+lr_x: 3.7180180513286816e-08 , lr_y: 0.4369175433425071
+mu: 1 , kappa: 20
+{'b': 1, 'N': 1, 'K': 5000, 'std_x': 0, 'std_y': 0, 'method': 'NeAda', 'pjx': False, 'pjy': False}
+{'mx': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd820>, {'x': tensor([[287.5052]], device='cuda:0')}), 'my': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd790>, {'dual_y': tensor([[-0.0005]], device='cuda:0')}), 'vx': tensor(2.6896e+08, device='cuda:0'), 'vy': tensor(22.8876, device='cuda:0'), 'lr_x': 3.7180180513286816e-08, 'lr_y': 0.4369175433425071}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 3050 epoch: 3050.0 OC: 3050.0 SC: 3050
+Current Complexity:
+iter: 3050 epoch: 3050.0 OC: 3050.0 SC: 3050
+Iterates Info:
+acc: 0.5 , loss: 108.6055630627956 , primalF: 108.60556317892168
+||sto grad_x||^2: 82545.76636114449 ||sto grad_y||^2: 2.3225219135027934e-07
+||true grad_x||^2: 82545.76636114449 ||true grad_y||^2: 2.3225219135027934e-07
+lr_x: 3.661789772358543e-08 , lr_y: 0.43691709299621917
+mu: 1 , kappa: 20
+{'b': 1, 'N': 1, 'K': 5000, 'std_x': 0, 'std_y': 0, 'method': 'NeAda', 'pjx': False, 'pjy': False}
+{'mx': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd820>, {'x': tensor([[287.3036]], device='cuda:0')}), 'my': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd790>, {'dual_y': tensor([[-0.0005]], device='cuda:0')}), 'vx': tensor(2.7309e+08, device='cuda:0'), 'vy': tensor(22.8876, device='cuda:0'), 'lr_x': 3.661789772358543e-08, 'lr_y': 0.43691709299621917}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 3100 epoch: 3100.0 OC: 3100.0 SC: 3100
+Current Complexity:
+iter: 3100 epoch: 3100.0 OC: 3100.0 SC: 3100
+Iterates Info:
+acc: 0.5 , loss: 108.45564784960186 , primalF: 108.45564796214029
+||sto grad_x||^2: 82431.74080732983 ||sto grad_y||^2: 2.250768710580083e-07
+||true grad_x||^2: 82431.74080732983 ||true grad_y||^2: 2.250768710580083e-07
+lr_x: 3.607311621638722e-08 , lr_y: 0.4369166566753655
+mu: 1 , kappa: 20
+{'b': 1, 'N': 1, 'K': 5000, 'std_x': 0, 'std_y': 0, 'method': 'NeAda', 'pjx': False, 'pjy': False}
+{'mx': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd820>, {'x': tensor([[287.1051]], device='cuda:0')}), 'my': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd790>, {'dual_y': tensor([[-0.0005]], device='cuda:0')}), 'vx': tensor(2.7721e+08, device='cuda:0'), 'vy': tensor(22.8877, device='cuda:0'), 'lr_x': 3.607311621638722e-08, 'lr_y': 0.4369166566753655}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 3150 epoch: 3150.0 OC: 3150.0 SC: 3150
+Current Complexity:
+iter: 3150 epoch: 3150.0 OC: 3150.0 SC: 3150
+Iterates Info:
+acc: 0.5 , loss: 108.308147904323 , primalF: 108.3081480134396
+||sto grad_x||^2: 82319.55372497567 ||sto grad_y||^2: 2.182331906223721e-07
+||true grad_x||^2: 82319.55372497567 ||true grad_y||^2: 2.182331906223721e-07
+lr_x: 3.5545021131688585e-08 , lr_y: 0.43691623372654464
+mu: 1 , kappa: 20
+{'b': 1, 'N': 1, 'K': 5000, 'std_x': 0, 'std_y': 0, 'method': 'NeAda', 'pjx': False, 'pjy': False}
+{'mx': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd820>, {'x': tensor([[286.9098]], device='cuda:0')}), 'my': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd790>, {'dual_y': tensor([[-0.0005]], device='cuda:0')}), 'vx': tensor(2.8133e+08, device='cuda:0'), 'vy': tensor(22.8877, device='cuda:0'), 'lr_x': 3.5545021131688585e-08, 'lr_y': 0.43691623372654464}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 3200 epoch: 3200.0 OC: 3200.0 SC: 3200
+Current Complexity:
+iter: 3200 epoch: 3200.0 OC: 3200.0 SC: 3200
+Iterates Info:
+acc: 0.5 , loss: 108.16298689854021 , primalF: 108.16298700439067
+||sto grad_x||^2: 82209.14696967388 ||sto grad_y||^2: 2.11700902426434e-07
+||true grad_x||^2: 82209.14696967388 ||true grad_y||^2: 2.11700902426434e-07
+lr_x: 3.503284772072974e-08 , lr_y: 0.43691582353656033
+mu: 1 , kappa: 20
+{'b': 1, 'N': 1, 'K': 5000, 'std_x': 0, 'std_y': 0, 'method': 'NeAda', 'pjx': False, 'pjy': False}
+{'mx': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd820>, {'x': tensor([[286.7174]], device='cuda:0')}), 'my': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd790>, {'dual_y': tensor([[-0.0005]], device='cuda:0')}), 'vx': tensor(2.8545e+08, device='cuda:0'), 'vy': tensor(22.8877, device='cuda:0'), 'lr_x': 3.503284772072974e-08, 'lr_y': 0.43691582353656033}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 3250 epoch: 3250.0 OC: 3250.0 SC: 3250
+Current Complexity:
+iter: 3250 epoch: 3250.0 OC: 3250.0 SC: 3250
+Iterates Info:
+acc: 0.5 , loss: 108.02009206247835 , primalF: 108.02009216520901
+||sto grad_x||^2: 82100.46510990094 ||sto grad_y||^2: 2.054612860347196e-07
+||true grad_x||^2: 82100.46510990094 ||true grad_y||^2: 2.054612860347196e-07
+lr_x: 3.4535877539208266e-08 , lr_y: 0.43691542552936646
+mu: 1 , kappa: 20
+{'b': 1, 'N': 1, 'K': 5000, 'std_x': 0, 'std_y': 0, 'method': 'NeAda', 'pjx': False, 'pjy': False}
+{'mx': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd820>, {'x': tensor([[286.5278]], device='cuda:0')}), 'my': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd790>, {'dual_y': tensor([[-0.0005]], device='cuda:0')}), 'vx': tensor(2.8955e+08, device='cuda:0'), 'vy': tensor(22.8877, device='cuda:0'), 'lr_x': 3.4535877539208266e-08, 'lr_y': 0.43691542552936646}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 3300 epoch: 3300.0 OC: 3300.0 SC: 3300
+Current Complexity:
+iter: 3300 epoch: 3300.0 OC: 3300.0 SC: 3300
+Iterates Info:
+acc: 0.5 , loss: 107.87939396726209 , primalF: 107.8793940670106
+||sto grad_x||^2: 81993.45526090133 ||sto grad_y||^2: 1.9949701173940298e-07
+||true grad_x||^2: 81993.45526090133 ||true grad_y||^2: 1.9949701173940298e-07
+lr_x: 3.4053434983080706e-08 , lr_y: 0.4369150391632829
+mu: 1 , kappa: 20
+{'b': 1, 'N': 1, 'K': 5000, 'std_x': 0, 'std_y': 0, 'method': 'NeAda', 'pjx': False, 'pjy': False}
+{'mx': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd820>, {'x': tensor([[286.3411]], device='cuda:0')}), 'my': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd790>, {'dual_y': tensor([[-0.0004]], device='cuda:0')}), 'vx': tensor(2.9366e+08, device='cuda:0'), 'vy': tensor(22.8877, device='cuda:0'), 'lr_x': 3.4053434983080706e-08, 'lr_y': 0.4369150391632829}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 3350 epoch: 3350.0 OC: 3350.0 SC: 3350
+Current Complexity:
+iter: 3350 epoch: 3350.0 OC: 3350.0 SC: 3350
+Iterates Info:
+acc: 0.5 , loss: 107.74082632357309 , primalF: 107.74082642046909
+||sto grad_x||^2: 81888.06693109268 ||sto grad_y||^2: 1.9379201812129952e-07
+||true grad_x||^2: 81888.06693109268 ||true grad_y||^2: 1.9379201812129952e-07
+lr_x: 3.3584884131459965e-08 , lr_y: 0.43691466392846495
+mu: 1 , kappa: 20
+{'b': 1, 'N': 1, 'K': 5000, 'std_x': 0, 'std_y': 0, 'method': 'NeAda', 'pjx': False, 'pjy': False}
+{'mx': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd820>, {'x': tensor([[286.1571]], device='cuda:0')}), 'my': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd790>, {'dual_y': tensor([[-0.0004]], device='cuda:0')}), 'vx': tensor(2.9775e+08, device='cuda:0'), 'vy': tensor(22.8878, device='cuda:0'), 'lr_x': 3.3584884131459965e-08, 'lr_y': 0.43691466392846495}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 3400 epoch: 3400.0 OC: 3400.0 SC: 3400
+Current Complexity:
+iter: 3400 epoch: 3400.0 OC: 3400.0 SC: 3400
+Iterates Info:
+acc: 0.5 , loss: 107.60432579524524 , primalF: 107.60432588941093
+||sto grad_x||^2: 81784.25187987376 ||sto grad_y||^2: 1.8833140202054354e-07
+||true grad_x||^2: 81784.25187987376 ||true grad_y||^2: 1.8833140202054354e-07
+lr_x: 3.312962586526232e-08 , lr_y: 0.4369142993445887
+mu: 1 , kappa: 20
+{'b': 1, 'N': 1, 'K': 5000, 'std_x': 0, 'std_y': 0, 'method': 'NeAda', 'pjx': False, 'pjy': False}
+{'mx': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd820>, {'x': tensor([[285.9757]], device='cuda:0')}), 'my': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd790>, {'dual_y': tensor([[-0.0004]], device='cuda:0')}), 'vx': tensor(3.0184e+08, device='cuda:0'), 'vy': tensor(22.8878, device='cuda:0'), 'lr_x': 3.312962586526232e-08, 'lr_y': 0.4369142993445887}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 3450 epoch: 3450.0 OC: 3450.0 SC: 3450
+Current Complexity:
+iter: 3450 epoch: 3450.0 OC: 3450.0 SC: 3450
+Iterates Info:
+acc: 0.5 , loss: 107.4698318264896 , primalF: 107.46983191804027
+||sto grad_x||^2: 81681.96398583762 ||sto grad_y||^2: 1.8310131952508238e-07
+||true grad_x||^2: 81681.96398583762 ||true grad_y||^2: 1.8310131952508238e-07
+lr_x: 3.26870952338657e-08 , lr_y: 0.4369139449587377
+mu: 1 , kappa: 20
+{'b': 1, 'N': 1, 'K': 5000, 'std_x': 0, 'std_y': 0, 'method': 'NeAda', 'pjx': False, 'pjy': False}
+{'mx': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd820>, {'x': tensor([[285.7968]], device='cuda:0')}), 'my': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd790>, {'dual_y': tensor([[-0.0004]], device='cuda:0')}), 'vx': tensor(3.0593e+08, device='cuda:0'), 'vy': tensor(22.8878, device='cuda:0'), 'lr_x': 3.26870952338657e-08, 'lr_y': 0.4369139449587377}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 3500 epoch: 3500.0 OC: 3500.0 SC: 3500
+Current Complexity:
+iter: 3500 epoch: 3500.0 OC: 3500.0 SC: 3500
+Iterates Info:
+acc: 0.5 , loss: 107.3372864815685 , primalF: 107.33728657061293
+||sto grad_x||^2: 81581.15912448679 ||sto grad_y||^2: 1.7808889669014148e-07
+||true grad_x||^2: 81581.15912448679 ||true grad_y||^2: 1.7808889669014148e-07
+lr_x: 3.225675904518785e-08 , lr_y: 0.43691360034347143
+mu: 1 , kappa: 20
+{'b': 1, 'N': 1, 'K': 5000, 'std_x': 0, 'std_y': 0, 'method': 'NeAda', 'pjx': False, 'pjy': False}
+{'mx': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd820>, {'x': tensor([[285.6205]], device='cuda:0')}), 'my': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd790>, {'dual_y': tensor([[-0.0004]], device='cuda:0')}), 'vx': tensor(3.1001e+08, device='cuda:0'), 'vy': tensor(22.8878, device='cuda:0'), 'lr_x': 3.225675904518785e-08, 'lr_y': 0.43691360034347143}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 3550 epoch: 3550.0 OC: 3550.0 SC: 3550
+Current Complexity:
+iter: 3550 epoch: 3550.0 OC: 3550.0 SC: 3550
+Iterates Info:
+acc: 0.5 , loss: 107.20663429586006 , primalF: 107.20663438250114
+||sto grad_x||^2: 81481.79505464203 ||sto grad_y||^2: 1.7328214892746403e-07
+||true grad_x||^2: 81481.79505464203 ||true grad_y||^2: 1.7328214892746403e-07
+lr_x: 3.1838113657344984e-08 , lr_y: 0.4369132650950474
+mu: 1 , kappa: 20
+{'b': 1, 'N': 1, 'K': 5000, 'std_x': 0, 'std_y': 0, 'method': 'NeAda', 'pjx': False, 'pjy': False}
+{'mx': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd820>, {'x': tensor([[285.4465]], device='cuda:0')}), 'my': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd790>, {'dual_y': tensor([[-0.0004]], device='cuda:0')}), 'vx': tensor(3.1409e+08, device='cuda:0'), 'vy': tensor(22.8878, device='cuda:0'), 'lr_x': 3.1838113657344984e-08, 'lr_y': 0.4369132650950474}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 3600 epoch: 3600.0 OC: 3600.0 SC: 3600
+Current Complexity:
+iter: 3600 epoch: 3600.0 OC: 3600.0 SC: 3600
+Iterates Info:
+acc: 0.5 , loss: 107.07782213735418 , primalF: 107.07782222168912
+||sto grad_x||^2: 81383.83131281266 ||sto grad_y||^2: 1.686699081374653e-07
+||true grad_x||^2: 81383.83131281266 ||true grad_y||^2: 1.686699081374653e-07
+lr_x: 3.143068295245887e-08 , lr_y: 0.43691293883180193
+mu: 1 , kappa: 20
+{'b': 1, 'N': 1, 'K': 5000, 'std_x': 0, 'std_y': 0, 'method': 'NeAda', 'pjx': False, 'pjy': False}
+{'mx': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd820>, {'x': tensor([[285.2749]], device='cuda:0')}), 'my': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd790>, {'dual_y': tensor([[-0.0004]], device='cuda:0')}), 'vx': tensor(3.1816e+08, device='cuda:0'), 'vy': tensor(22.8879, device='cuda:0'), 'lr_x': 3.143068295245887e-08, 'lr_y': 0.43691293883180193}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 3650 epoch: 3650.0 OC: 3650.0 SC: 3650
+Current Complexity:
+iter: 3650 epoch: 3650.0 OC: 3650.0 SC: 3650
+Iterates Info:
+acc: 0.5 , loss: 106.95079907771563 , primalF: 106.9507991598365
+||sto grad_x||^2: 81287.22911486804 ||sto grad_y||^2: 1.6424175669795005e-07
+||true grad_x||^2: 81287.22911486804 ||true grad_y||^2: 1.6424175669795005e-07
+lr_x: 3.103401647529567e-08 , lr_y: 0.43691262119265006
+mu: 1 , kappa: 20
+{'b': 1, 'N': 1, 'K': 5000, 'std_x': 0, 'std_y': 0, 'method': 'NeAda', 'pjx': False, 'pjy': False}
+{'mx': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd820>, {'x': tensor([[285.1056]], device='cuda:0')}), 'my': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd790>, {'dual_y': tensor([[-0.0004]], device='cuda:0')}), 'vx': tensor(3.2223e+08, device='cuda:0'), 'vy': tensor(22.8879, device='cuda:0'), 'lr_x': 3.103401647529567e-08, 'lr_y': 0.43691262119265006}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 3700 epoch: 3700.0 OC: 3700.0 SC: 3700
+Current Complexity:
+iter: 3700 epoch: 3700.0 OC: 3700.0 SC: 3700
+Iterates Info:
+acc: 0.5 , loss: 106.8255162721341 , primalF: 106.82551635212808
+||sto grad_x||^2: 81191.951264414 ||sto grad_y||^2: 1.5998796760773243e-07
+||true grad_x||^2: 81191.951264414 ||true grad_y||^2: 1.5998796760773243e-07
+lr_x: 3.0647687721277586e-08 , lr_y: 0.436912311835718
+mu: 1 , kappa: 20
+{'b': 1, 'N': 1, 'K': 5000, 'std_x': 0, 'std_y': 0, 'method': 'NeAda', 'pjx': False, 'pjy': False}
+{'mx': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd820>, {'x': tensor([[284.9385]], device='cuda:0')}), 'my': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd790>, {'dual_y': tensor([[-0.0004]], device='cuda:0')}), 'vx': tensor(3.2629e+08, device='cuda:0'), 'vy': tensor(22.8879, device='cuda:0'), 'lr_x': 3.0647687721277586e-08, 'lr_y': 0.436912311835718}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 3750 epoch: 3750.0 OC: 3750.0 SC: 3750
+Current Complexity:
+iter: 3750 epoch: 3750.0 OC: 3750.0 SC: 3750
+Iterates Info:
+acc: 0.5 , loss: 106.70192684724815 , primalF: 106.70192692519788
+||sto grad_x||^2: 81097.96206733157 ||sto grad_y||^2: 1.5589945016641286e-07
+||true grad_x||^2: 81097.96206733157 ||true grad_y||^2: 1.5589945016641286e-07
+lr_x: 3.027129256004577e-08 , lr_y: 0.43691201043707373
+mu: 1 , kappa: 20
+{'b': 1, 'N': 1, 'K': 5000, 'std_x': 0, 'std_y': 0, 'method': 'NeAda', 'pjx': False, 'pjy': False}
+{'mx': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd820>, {'x': tensor([[284.7736]], device='cuda:0')}), 'my': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd790>, {'dual_y': tensor([[-0.0004]], device='cuda:0')}), 'vx': tensor(3.3035e+08, device='cuda:0'), 'vy': tensor(22.8879, device='cuda:0'), 'lr_x': 3.027129256004577e-08, 'lr_y': 0.43691201043707373}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 3800 epoch: 3800.0 OC: 3800.0 SC: 3800
+Current Complexity:
+iter: 3800 epoch: 3800.0 OC: 3800.0 SC: 3800
+Iterates Info:
+acc: 0.5 , loss: 106.57998579650626 , primalF: 106.57998587249011
+||sto grad_x||^2: 81005.22725198825 ||sto grad_y||^2: 1.519677005378288e-07
+||true grad_x||^2: 81005.22725198825 ||true grad_y||^2: 1.519677005378288e-07
+lr_x: 2.990444778219613e-08 , lr_y: 0.436911716689563
+mu: 1 , kappa: 20
+{'b': 1, 'N': 1, 'K': 5000, 'std_x': 0, 'std_y': 0, 'method': 'NeAda', 'pjx': False, 'pjy': False}
+{'mx': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd820>, {'x': tensor([[284.6108]], device='cuda:0')}), 'my': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd790>, {'dual_y': tensor([[-0.0004]], device='cuda:0')}), 'vx': tensor(3.3440e+08, device='cuda:0'), 'vy': tensor(22.8879, device='cuda:0'), 'lr_x': 2.990444778219613e-08, 'lr_y': 0.436911716689563}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 3850 epoch: 3850.0 OC: 3850.0 SC: 3850
+Current Complexity:
+iter: 3850 epoch: 3850.0 OC: 3850.0 SC: 3850
+Iterates Info:
+acc: 0.5 , loss: 106.45964988237574 , primalF: 106.45964995646811
+||sto grad_x||^2: 80913.7138946763 ||sto grad_y||^2: 1.4818475677943703e-07
+||true grad_x||^2: 80913.7138946763 ||true grad_y||^2: 1.4818475677943703e-07
+lr_x: 2.9546789758087932e-08 , lr_y: 0.43691143030173196
+mu: 1 , kappa: 20
+{'b': 1, 'N': 1, 'K': 5000, 'std_x': 0, 'std_y': 0, 'method': 'NeAda', 'pjx': False, 'pjy': False}
+{'mx': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd820>, {'x': tensor([[284.4500]], device='cuda:0')}), 'my': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd790>, {'dual_y': tensor([[-0.0004]], device='cuda:0')}), 'vx': tensor(3.3845e+08, device='cuda:0'), 'vy': tensor(22.8879, device='cuda:0'), 'lr_x': 2.9546789758087932e-08, 'lr_y': 0.43691143030173196}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 3900 epoch: 3900.0 OC: 3900.0 SC: 3900
+Current Complexity:
+iter: 3900 epoch: 3900.0 OC: 3900.0 SC: 3900
+Iterates Info:
+acc: 0.5 , loss: 106.34087754487106 , primalF: 106.34087761714264
+||sto grad_x||^2: 80823.390349871 ||sto grad_y||^2: 1.4454315782924815e-07
+||true grad_x||^2: 80823.390349871 ||true grad_y||^2: 1.4454315782924815e-07
+lr_x: 2.9197973198753458e-08 , lr_y: 0.4369111509968353
+mu: 1 , kappa: 20
+{'b': 1, 'N': 1, 'K': 5000, 'std_x': 0, 'std_y': 0, 'method': 'NeAda', 'pjx': False, 'pjy': False}
+{'mx': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd820>, {'x': tensor([[284.2912]], device='cuda:0')}), 'my': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd790>, {'dual_y': tensor([[-0.0004]], device='cuda:0')}), 'vx': tensor(3.4249e+08, device='cuda:0'), 'vy': tensor(22.8879, device='cuda:0'), 'lr_x': 2.9197973198753458e-08, 'lr_y': 0.4369111509968353}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 3950 epoch: 3950.0 OC: 3950.0 SC: 3950
+Current Complexity:
+iter: 3950 epoch: 3950.0 OC: 3950.0 SC: 3950
+Iterates Info:
+acc: 0.5 , loss: 106.22362881591837 , primalF: 106.22362888643633
+||sto grad_x||^2: 80734.22618494161 ||sto grad_y||^2: 1.4103590607128142e-07
+||true grad_x||^2: 80734.22618494161 ||true grad_y||^2: 1.4103590607128142e-07
+lr_x: 2.885767000994074e-08 , lr_y: 0.4369108785119136
+mu: 1 , kappa: 20
+{'b': 1, 'N': 1, 'K': 5000, 'std_x': 0, 'std_y': 0, 'method': 'NeAda', 'pjx': False, 'pjy': False}
+{'mx': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd820>, {'x': tensor([[284.1344]], device='cuda:0')}), 'my': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd790>, {'dual_y': tensor([[-0.0004]], device='cuda:0')}), 'vx': tensor(3.4653e+08, device='cuda:0'), 'vy': tensor(22.8880, device='cuda:0'), 'lr_x': 2.885767000994074e-08, 'lr_y': 0.4369108785119136}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 4000 epoch: 4000.0 OC: 4000.0 SC: 4000
+Current Complexity:
+iter: 4000 epoch: 4000.0 OC: 4000.0 SC: 4000
+Iterates Info:
+acc: 0.5 , loss: 106.1078652391138 , primalF: 106.10786530794202
+||sto grad_x||^2: 80646.19211897762 ||sto grad_y||^2: 1.3765643315431956e-07
+||true grad_x||^2: 80646.19211897762 ||true grad_y||^2: 1.3765643315431956e-07
+lr_x: 2.852556823121035e-08 , lr_y: 0.43691061259694514
+mu: 1 , kappa: 20
+{'b': 1, 'N': 1, 'K': 5000, 'std_x': 0, 'std_y': 0, 'method': 'NeAda', 'pjx': False, 'pjy': False}
+{'mx': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd820>, {'x': tensor([[283.9795]], device='cuda:0')}), 'my': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd790>, {'dual_y': tensor([[-0.0004]], device='cuda:0')}), 'vx': tensor(3.5056e+08, device='cuda:0'), 'vy': tensor(22.8880, device='cuda:0'), 'lr_x': 2.852556823121035e-08, 'lr_y': 0.43691061259694514}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 4050 epoch: 4050.0 OC: 4050.0 SC: 4050
+Current Complexity:
+iter: 4050 epoch: 4050.0 OC: 4050.0 SC: 4050
+Iterates Info:
+acc: 0.5 , loss: 105.99354979447295 , primalF: 105.99354986167224
+||sto grad_x||^2: 80559.25996542184 ||sto grad_y||^2: 1.3439856869211537e-07
+||true grad_x||^2: 80559.25996542184 ||true grad_y||^2: 1.3439856869211537e-07
+lr_x: 2.8201371052800184e-08 , lr_y: 0.4369103530140569
+mu: 1 , kappa: 20
+{'b': 1, 'N': 1, 'K': 5000, 'std_x': 0, 'std_y': 0, 'method': 'NeAda', 'pjx': False, 'pjy': False}
+{'mx': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd820>, {'x': tensor([[283.8264]], device='cuda:0')}), 'my': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd790>, {'dual_y': tensor([[-0.0004]], device='cuda:0')}), 'vx': tensor(3.5459e+08, device='cuda:0'), 'vy': tensor(22.8880, device='cuda:0'), 'lr_x': 2.8201371052800184e-08, 'lr_y': 0.4369103530140569}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 4100 epoch: 4100.0 OC: 4100.0 SC: 4100
+Current Complexity:
+iter: 4100 epoch: 4100.0 OC: 4100.0 SC: 4100
+Iterates Info:
+acc: 0.5 , loss: 105.88064682780504 , primalF: 105.88064689343331
+||sto grad_x||^2: 80473.40257823127 ||sto grad_y||^2: 1.3125651160819797e-07
+||true grad_x||^2: 80473.40257823127 ||true grad_y||^2: 1.3125651160819797e-07
+lr_x: 2.788479590367723e-08 , lr_y: 0.4369100995367905
+mu: 1 , kappa: 20
+{'b': 1, 'N': 1, 'K': 5000, 'std_x': 0, 'std_y': 0, 'method': 'NeAda', 'pjx': False, 'pjy': False}
+{'mx': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd820>, {'x': tensor([[283.6752]], device='cuda:0')}), 'my': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd790>, {'dual_y': tensor([[-0.0004]], device='cuda:0')}), 'vx': tensor(3.5862e+08, device='cuda:0'), 'vy': tensor(22.8880, device='cuda:0'), 'lr_x': 2.788479590367723e-08, 'lr_y': 0.4369100995367905}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 4150 epoch: 4150.0 OC: 4150.0 SC: 4150
+Current Complexity:
+iter: 4150 epoch: 4150.0 OC: 4150.0 SC: 4150
+Iterates Info:
+acc: 0.5 , loss: 105.76912198437314 , primalF: 105.76912204848556
+||sto grad_x||^2: 80388.59380130765 ||sto grad_y||^2: 1.2822480387856642e-07
+||true grad_x||^2: 80388.59380130765 ||true grad_y||^2: 1.2822480387856642e-07
+lr_x: 2.757557360482483e-08 , lr_y: 0.4369098519494268
+mu: 1 , kappa: 20
+{'b': 1, 'N': 1, 'K': 5000, 'std_x': 0, 'std_y': 0, 'method': 'NeAda', 'pjx': False, 'pjy': False}
+{'mx': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd820>, {'x': tensor([[283.5257]], device='cuda:0')}), 'my': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd790>, {'dual_y': tensor([[-0.0004]], device='cuda:0')}), 'vx': tensor(3.6264e+08, device='cuda:0'), 'vy': tensor(22.8880, device='cuda:0'), 'lr_x': 2.757557360482483e-08, 'lr_y': 0.4369098519494268}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 4200 epoch: 4200.0 OC: 4200.0 SC: 4200
+Current Complexity:
+iter: 4200 epoch: 4200.0 OC: 4200.0 SC: 4200
+Iterates Info:
+acc: 0.5 , loss: 105.65894214653339 , primalF: 105.65894220918256
+||sto grad_x||^2: 80304.80842096223 ||sto grad_y||^2: 1.2529830640944198e-07
+||true grad_x||^2: 80304.80842096223 ||true grad_y||^2: 1.2529830640944198e-07
+lr_x: 2.7273447582377032e-08 , lr_y: 0.43690961004635126
+mu: 1 , kappa: 20
+{'b': 1, 'N': 1, 'K': 5000, 'std_x': 0, 'std_y': 0, 'method': 'NeAda', 'pjx': False, 'pjy': False}
+{'mx': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd820>, {'x': tensor([[283.3779]], device='cuda:0')}), 'my': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd790>, {'dual_y': tensor([[-0.0004]], device='cuda:0')}), 'vx': tensor(3.6666e+08, device='cuda:0'), 'vy': tensor(22.8880, device='cuda:0'), 'lr_x': 2.7273447582377032e-08, 'lr_y': 0.43690961004635126}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 4250 epoch: 4250.0 OC: 4250.0 SC: 4250
+Current Complexity:
+iter: 4250 epoch: 4250.0 OC: 4250.0 SC: 4250
+Iterates Info:
+acc: 0.5 , loss: 105.55007537507028 , primalF: 105.55007543630636
+||sto grad_x||^2: 80222.02212119987 ||sto grad_y||^2: 1.2247217687123206e-07
+||true grad_x||^2: 80222.02212119987 ||true grad_y||^2: 1.2247217687123206e-07
+lr_x: 2.6978173135714233e-08 , lr_y: 0.4369093736314692
+mu: 1 , kappa: 20
+{'b': 1, 'N': 1, 'K': 5000, 'std_x': 0, 'std_y': 0, 'method': 'NeAda', 'pjx': False, 'pjy': False}
+{'mx': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd820>, {'x': tensor([[283.2319]], device='cuda:0')}), 'my': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd790>, {'dual_y': tensor([[-0.0003]], device='cuda:0')}), 'vx': tensor(3.7067e+08, device='cuda:0'), 'vy': tensor(22.8880, device='cuda:0'), 'lr_x': 2.6978173135714233e-08, 'lr_y': 0.4369093736314692}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 4300 epoch: 4300.0 OC: 4300.0 SC: 4300
+Current Complexity:
+iter: 4300 epoch: 4300.0 OC: 4300.0 SC: 4300
+Iterates Info:
+acc: 0.5 , loss: 105.44249085396642 , primalF: 105.44249091383733
+||sto grad_x||^2: 80140.2114416226 ||sto grad_y||^2: 1.1974184934253218e-07
+||true grad_x||^2: 80140.2114416226 ||true grad_y||^2: 1.1974184934253218e-07
+lr_x: 2.6689516756086114e-08 , lr_y: 0.4369091425176581
+mu: 1 , kappa: 20
+{'b': 1, 'N': 1, 'K': 5000, 'std_x': 0, 'std_y': 0, 'method': 'NeAda', 'pjx': False, 'pjy': False}
+{'mx': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd820>, {'x': tensor([[283.0874]], device='cuda:0')}), 'my': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd790>, {'dual_y': tensor([[-0.0003]], device='cuda:0')}), 'vx': tensor(3.7468e+08, device='cuda:0'), 'vy': tensor(22.8881, device='cuda:0'), 'lr_x': 2.6689516756086114e-08, 'lr_y': 0.4369091425176581}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 4350 epoch: 4350.0 OC: 4350.0 SC: 4350
+Current Complexity:
+iter: 4350 epoch: 4350.0 OC: 4350.0 SC: 4350
+Iterates Info:
+acc: 0.5 , loss: 105.33615883837113 , primalF: 105.33615889692265
+||sto grad_x||^2: 80059.35373777257 ||sto grad_y||^2: 1.1710301553452305e-07
+||true grad_x||^2: 80059.35373777257 ||true grad_y||^2: 1.1710301553452305e-07
+lr_x: 2.6407255491731992e-08 , lr_y: 0.4369089165262602
+mu: 1 , kappa: 20
+{'b': 1, 'N': 1, 'K': 5000, 'std_x': 0, 'std_y': 0, 'method': 'NeAda', 'pjx': False, 'pjy': False}
+{'mx': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd820>, {'x': tensor([[282.9446]], device='cuda:0')}), 'my': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd790>, {'dual_y': tensor([[-0.0003]], device='cuda:0')}), 'vx': tensor(3.7868e+08, device='cuda:0'), 'vy': tensor(22.8881, device='cuda:0'), 'lr_x': 2.6407255491731992e-08, 'lr_y': 0.4369089165262602}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 4400 epoch: 4400.0 OC: 4400.0 SC: 4400
+Current Complexity:
+iter: 4400 epoch: 4400.0 OC: 4400.0 SC: 4400
+Iterates Info:
+acc: 0.5 , loss: 105.23105060554595 , primalF: 105.23105066282174
+||sto grad_x||^2: 79979.42714374475 ||sto grad_y||^2: 1.1455160750627474e-07
+||true grad_x||^2: 79979.42714374475 ||true grad_y||^2: 1.1455160750627474e-07
+lr_x: 2.613117635583264e-08 , lr_y: 0.43690869548660366
+mu: 1 , kappa: 20
+{'b': 1, 'N': 1, 'K': 5000, 'std_x': 0, 'std_y': 0, 'method': 'NeAda', 'pjx': False, 'pjy': False}
+{'mx': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd820>, {'x': tensor([[282.8034]], device='cuda:0')}), 'my': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd790>, {'dual_y': tensor([[-0.0003]], device='cuda:0')}), 'vx': tensor(3.8268e+08, device='cuda:0'), 'vy': tensor(22.8881, device='cuda:0'), 'lr_x': 2.613117635583264e-08, 'lr_y': 0.43690869548660366}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 4450 epoch: 4450.0 OC: 4450.0 SC: 4450
+Current Complexity:
+iter: 4450 epoch: 4450.0 OC: 4450.0 SC: 4450
+Iterates Info:
+acc: 0.5 , loss: 105.1271384085859 , primalF: 105.1271384646278
+||sto grad_x||^2: 79900.41053691712 ||sto grad_y||^2: 1.1208378171064465e-07
+||true grad_x||^2: 79900.41053691712 ||true grad_y||^2: 1.1208378171064465e-07
+lr_x: 2.5861075773954425e-08 , lr_y: 0.4369084792355646
+mu: 1 , kappa: 20
+{'b': 1, 'N': 1, 'K': 5000, 'std_x': 0, 'std_y': 0, 'method': 'NeAda', 'pjx': False, 'pjy': False}
+{'mx': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd820>, {'x': tensor([[282.6637]], device='cuda:0')}), 'my': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd790>, {'dual_y': tensor([[-0.0003]], device='cuda:0')}), 'vx': tensor(3.8668e+08, device='cuda:0'), 'vy': tensor(22.8881, device='cuda:0'), 'lr_x': 2.5861075773954425e-08, 'lr_y': 0.4369084792355646}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 4500 epoch: 4500.0 OC: 4500.0 SC: 4500
+Current Complexity:
+iter: 4500 epoch: 4500.0 OC: 4500.0 SC: 4500
+Iterates Info:
+acc: 0.5 , loss: 105.02439543273019 , primalF: 105.02439548757815
+||sto grad_x||^2: 79822.28350465483 ||sto grad_y||^2: 1.0969590427366654e-07
+||true grad_x||^2: 79822.28350465483 ||true grad_y||^2: 1.0969590427366654e-07
+lr_x: 2.559675906794151e-08 , lr_y: 0.43690826761714935
+mu: 1 , kappa: 20
+{'b': 1, 'N': 1, 'K': 5000, 'std_x': 0, 'std_y': 0, 'method': 'NeAda', 'pjx': False, 'pjy': False}
+{'mx': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd820>, {'x': tensor([[282.5255]], device='cuda:0')}), 'my': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd790>, {'dual_y': tensor([[-0.0003]], device='cuda:0')}), 'vx': tensor(3.9067e+08, device='cuda:0'), 'vy': tensor(22.8881, device='cuda:0'), 'lr_x': 2.559675906794151e-08, 'lr_y': 0.43690826761714935}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 4550 epoch: 4550.0 OC: 4550.0 SC: 4550
+Current Complexity:
+iter: 4550 epoch: 4550.0 OC: 4550.0 SC: 4550
+Iterates Info:
+acc: 0.5 , loss: 104.92279575408969 , primalF: 104.92279580778195
+||sto grad_x||^2: 79745.02631285746 ||sto grad_y||^2: 1.0738453738495397e-07
+||true grad_x||^2: 79745.02631285746 ||true grad_y||^2: 1.0738453738495397e-07
+lr_x: 2.533803997347694e-08 , lr_y: 0.43690806048210906
+mu: 1 , kappa: 20
+{'b': 1, 'N': 1, 'K': 5000, 'std_x': 0, 'std_y': 0, 'method': 'NeAda', 'pjx': False, 'pjy': False}
+{'mx': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd820>, {'x': tensor([[282.3888]], device='cuda:0')}), 'my': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd790>, {'dual_y': tensor([[-0.0003]], device='cuda:0')}), 'vx': tensor(3.9466e+08, device='cuda:0'), 'vy': tensor(22.8881, device='cuda:0'), 'lr_x': 2.533803997347694e-08, 'lr_y': 0.43690806048210906}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 4600 epoch: 4600.0 OC: 4600.0 SC: 4600
+Current Complexity:
+iter: 4600 epoch: 4600.0 OC: 4600.0 SC: 4600
+Iterates Info:
+acc: 0.5 , loss: 104.82231430063399 , primalF: 104.8223143532072
+||sto grad_x||^2: 79668.61987622885 ||sto grad_y||^2: 1.0514642671020455e-07
+||true grad_x||^2: 79668.61987622885 ||true grad_y||^2: 1.0514642671020455e-07
+lr_x: 2.508474018877391e-08 , lr_y: 0.4369078576875769
+mu: 1 , kappa: 20
+{'b': 1, 'N': 1, 'K': 5000, 'std_x': 0, 'std_y': 0, 'method': 'NeAda', 'pjx': False, 'pjy': False}
+{'mx': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd820>, {'x': tensor([[282.2535]], device='cuda:0')}), 'my': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd790>, {'dual_y': tensor([[-0.0003]], device='cuda:0')}), 'vx': tensor(3.9865e+08, device='cuda:0'), 'vy': tensor(22.8881, device='cuda:0'), 'lr_x': 2.508474018877391e-08, 'lr_y': 0.4369078576875769}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 4650 epoch: 4650.0 OC: 4650.0 SC: 4650
+Current Complexity:
+iter: 4650 epoch: 4650.0 OC: 4650.0 SC: 4650
+Iterates Info:
+acc: 0.5 , loss: 104.72292681528975 , primalF: 104.72292686677899
+||sto grad_x||^2: 79593.04573015714 ||sto grad_y||^2: 1.0297848973548086e-07
+||true grad_x||^2: 79593.04573015714 ||true grad_y||^2: 1.0297848973548086e-07
+lr_x: 2.4836688952074534e-08 , lr_y: 0.4369076590967319
+mu: 1 , kappa: 20
+{'b': 1, 'N': 1, 'K': 5000, 'std_x': 0, 'std_y': 0, 'method': 'NeAda', 'pjx': False, 'pjy': False}
+{'mx': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd820>, {'x': tensor([[282.1196]], device='cuda:0')}), 'my': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd790>, {'dual_y': tensor([[-0.0003]], device='cuda:0')}), 'vx': tensor(4.0263e+08, device='cuda:0'), 'vy': tensor(22.8881, device='cuda:0'), 'lr_x': 2.4836688952074534e-08, 'lr_y': 0.4369076590967319}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 4700 epoch: 4700.0 OC: 4700.0 SC: 4700
+Current Complexity:
+iter: 4700 epoch: 4700.0 OC: 4700.0 SC: 4700
+Iterates Info:
+acc: 0.5 , loss: 104.62460982101511 , primalF: 104.62460987145401
+||sto grad_x||^2: 79518.28600410096 ||sto grad_y||^2: 1.0087780497091991e-07
+||true grad_x||^2: 79518.28600410096 ||true grad_y||^2: 1.0087780497091991e-07
+lr_x: 2.4593722645830418e-08 , lr_y: 0.4369074645784774
+mu: 1 , kappa: 20
+{'b': 1, 'N': 1, 'K': 5000, 'std_x': 0, 'std_y': 0, 'method': 'NeAda', 'pjx': False, 'pjy': False}
+{'mx': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd820>, {'x': tensor([[281.9871]], device='cuda:0')}), 'my': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd790>, {'dual_y': tensor([[-0.0003]], device='cuda:0')}), 'vx': tensor(4.0661e+08, device='cuda:0'), 'vy': tensor(22.8881, device='cuda:0'), 'lr_x': 2.4593722645830418e-08, 'lr_y': 0.4369074645784774}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 4750 epoch: 4750.0 OC: 4750.0 SC: 4750
+Current Complexity:
+iter: 4750 epoch: 4750.0 OC: 4750.0 SC: 4750
+Iterates Info:
+acc: 0.5 , loss: 104.52734058772613 , primalF: 104.5273406371469
+||sto grad_x||^2: 79444.32339638786 ||sto grad_y||^2: 9.88416019400498e-08
+||true grad_x||^2: 79444.32339638786 ||true grad_y||^2: 9.88416019400498e-08
+lr_x: 2.435568442561607e-08 , lr_y: 0.43690727400714585
+mu: 1 , kappa: 20
+{'b': 1, 'N': 1, 'K': 5000, 'std_x': 0, 'std_y': 0, 'method': 'NeAda', 'pjx': False, 'pjy': False}
+{'mx': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd820>, {'x': tensor([[281.8559]], device='cuda:0')}), 'my': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd790>, {'dual_y': tensor([[-0.0003]], device='cuda:0')}), 'vx': tensor(4.1058e+08, device='cuda:0'), 'vy': tensor(22.8882, device='cuda:0'), 'lr_x': 2.435568442561607e-08, 'lr_y': 0.43690727400714585}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 4800 epoch: 4800.0 OC: 4800.0 SC: 4800
+Current Complexity:
+iter: 4800 epoch: 4800.0 OC: 4800.0 SC: 4800
+Iterates Info:
+acc: 0.5 , loss: 104.4310971009548 , primalF: 104.4310971493884
+||sto grad_x||^2: 79371.1411503328 ||sto grad_y||^2: 9.686725188624495e-08
+||true grad_x||^2: 79371.1411503328 ||true grad_y||^2: 9.686725188624495e-08
+lr_x: 2.4122423871988174e-08 , lr_y: 0.4369070872622216
+mu: 1 , kappa: 20
+{'b': 1, 'N': 1, 'K': 5000, 'std_x': 0, 'std_y': 0, 'method': 'NeAda', 'pjx': False, 'pjy': False}
+{'mx': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd820>, {'x': tensor([[281.7261]], device='cuda:0')}), 'my': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd790>, {'dual_y': tensor([[-0.0003]], device='cuda:0')}), 'vx': tensor(4.1455e+08, device='cuda:0'), 'vy': tensor(22.8882, device='cuda:0'), 'lr_x': 2.4122423871988174e-08, 'lr_y': 0.4369070872622216}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 4850 epoch: 4850.0 OC: 4850.0 SC: 4850
+Current Complexity:
+iter: 4850 epoch: 4850.0 OC: 4850.0 SC: 4850
+Iterates Info:
+acc: 0.5 , loss: 104.33585803213596 , primalF: 104.33585807961211
+||sto grad_x||^2: 79298.72303159842 ||sto grad_y||^2: 9.495225913605879e-08
+||true grad_x||^2: 79298.72303159842 ||true grad_y||^2: 9.495225913605879e-08
+lr_x: 2.3893796663649477e-08 , lr_y: 0.4369069042280744
+mu: 1 , kappa: 20
+{'b': 1, 'N': 1, 'K': 5000, 'std_x': 0, 'std_y': 0, 'method': 'NeAda', 'pjx': False, 'pjy': False}
+{'mx': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd820>, {'x': tensor([[281.5976]], device='cuda:0')}), 'my': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd790>, {'dual_y': tensor([[-0.0003]], device='cuda:0')}), 'vx': tensor(4.1852e+08, device='cuda:0'), 'vy': tensor(22.8882, device='cuda:0'), 'lr_x': 2.3893796663649477e-08, 'lr_y': 0.4369069042280744}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 4900 epoch: 4900.0 OC: 4900.0 SC: 4900
+Current Complexity:
+iter: 4900 epoch: 4900.0 OC: 4900.0 SC: 4900
+Iterates Info:
+acc: 0.5 , loss: 104.24160271041954 , primalF: 104.24160275696667
+||sto grad_x||^2: 79227.05330671796 ||sto grad_y||^2: 9.309425308621099e-08
+||true grad_x||^2: 79227.05330671796 ||true grad_y||^2: 9.309425308621099e-08
+lr_x: 2.366966427040908e-08 , lr_y: 0.43690672479371684
+mu: 1 , kappa: 20
+{'b': 1, 'N': 1, 'K': 5000, 'std_x': 0, 'std_y': 0, 'method': 'NeAda', 'pjx': False, 'pjy': False}
+{'mx': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd820>, {'x': tensor([[281.4703]], device='cuda:0')}), 'my': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd790>, {'dual_y': tensor([[-0.0003]], device='cuda:0')}), 'vx': tensor(4.2248e+08, device='cuda:0'), 'vy': tensor(22.8882, device='cuda:0'), 'lr_x': 2.366966427040908e-08, 'lr_y': 0.43690672479371684}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 4950 epoch: 4950.0 OC: 4950.0 SC: 4950
+Current Complexity:
+iter: 4950 epoch: 4950.0 OC: 4950.0 SC: 4950
+Iterates Info:
+acc: 0.5 , loss: 104.14831109591381 , primalF: 104.1483111415593
+||sto grad_x||^2: 79156.11672270951 ||sto grad_y||^2: 9.12909807327218e-08
+||true grad_x||^2: 79156.11672270951 ||true grad_y||^2: 9.12909807327218e-08
+lr_x: 2.344989366455224e-08 , lr_y: 0.4369065488525705
+mu: 1 , kappa: 20
+{'b': 1, 'N': 1, 'K': 5000, 'std_x': 0, 'std_y': 0, 'method': 'NeAda', 'pjx': False, 'pjy': False}
+{'mx': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd820>, {'x': tensor([[281.3443]], device='cuda:0')}), 'my': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd790>, {'dual_y': tensor([[-0.0003]], device='cuda:0')}), 'vx': tensor(4.2644e+08, device='cuda:0'), 'vy': tensor(22.8882, device='cuda:0'), 'lr_x': 2.344989366455224e-08, 'lr_y': 0.4369065488525705}
+-----------------------------------------------------------------------------------------------
+
+
+=================================================================================================
+=================1th sim is done!!! method:NeAda. contraction:0=================
+Total Complexity:
+sim times: 0 iter: 5000 epoch: 5000.0 OC: 5000.0 SC: 5000
+Current Complexity:
+iter: 5000 epoch: 5000.0 OC: 5000.0 SC: 5000
+Iterates Info:
+acc: 0.5 , loss: 104.05596375427776 , primalF: 104.0559637990479
+||sto grad_x||^2: 79085.89848771786 ||sto grad_y||^2: 8.954029972399906e-08
+||true grad_x||^2: 79085.89848771786 ||true grad_y||^2: 8.954029972399906e-08
+lr_x: 2.3234357049342177e-08 , lr_y: 0.4369063763022507
+mu: 1 , kappa: 20
+{'b': 1, 'N': 1, 'K': 5000, 'std_x': 0, 'std_y': 0, 'method': 'NeAda', 'pjx': False, 'pjy': False}
+{'mx': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd820>, {'x': tensor([[281.2195]], device='cuda:0')}), 'my': defaultdict(<function ALG.optimizer.<locals>.<lambda> at 0x7f95c14dd790>, {'dual_y': tensor([[-0.0003]], device='cuda:0')}), 'vx': tensor(4.3040e+08, device='cuda:0'), 'vy': tensor(22.8882, device='cuda:0'), 'lr_x': 2.3234357049342177e-08, 'lr_y': 0.4369063763022507}
+=================================================================================================
+
+

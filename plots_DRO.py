@@ -5,8 +5,8 @@ import matplotlib.ticker as ticker
 from ALG.Utils import *
 import numpy as np
 
-DATA_LIMIT = 5500
-PLOT_LIMIT = 5500*6000
+DATA_LIMIT = 100000
+PLOT_LIMIT = 1.8*1e7
 is_last = False
 for is_last in [False,True]:
     for mu_y in [0.01]:
@@ -16,16 +16,17 @@ for is_last in [False,True]:
             G = {}
             # G['GS-GDA-B,N=2'] = data_path +'/primal_line_search_N_2_AGDA'
             # G['GS-GDA-B,N=5'] = data_path +'/primal_line_search_N_5_AGDA'
-            # G['GS-GDA-B,N=1'] = data_path +'/primal_line_search_N_1_AGDA'
+            G['GS-GDA-B,N=1'] = data_path +'/primal_line_search_N_1_AGDA'
             G['LS-GS-GDA-S'] = data_path + '/LS-GS-GDA-S'
             G['LS-GS-GDA'] = data_path +'/LS-GS-GDA'
-            G['GS-GDA-B,N=1'] = data_path +'/primal_line_search_N_1_AGDA'
+            # G['GS-GDA-B,N=1'] = data_path +'/primal_line_search_N_1_AGDA'
             G['TiAda'] = data_path +'/TiAda'
             #G['LS-GS-GDA-R'] = data_path +'/LS-GS-GDA-R'
             # G['LS-GS-GDA-S-R'] = data_path + '/LS-GS-GDA-S-R'
             #G['Smooth-AGDA'] = data_path + '/Smooth-AGDA'
             G['GS-GDA'] = data_path +'/AGDA'
             G['J-GDA'] = data_path +'/GDA'
+            G['NeAda'] = data_path + '/NeAda'
 
 
             plt.figure(dpi=150)
@@ -52,7 +53,7 @@ for is_last in [False,True]:
                     data_xLimit = min(data_xLimit, len(counter))
 
                     # load y-axis data
-                    valid_line_search = [i for i in range(len(record['acc']))]
+                    valid_line_search = [i for i in range(len(record['loss'])) if not np.isnan(record['loss'][i][data_xLimit-1])]
                     print(valid_line_search)
 
                     acc = record['acc']
@@ -83,7 +84,7 @@ for is_last in [False,True]:
                     contraction_times = record['contraction_times']
                     b = record['config'][-1]['b']
                     N = record['config'][-1]['N']
-
+                    
                     if plot_part == 'x':
                         shadowplot(counter, norm_sqaure_full_grad_x, label_input=alg_name, alpha=0.5, center=C, is_log=is_log,
                                     is_var=False, alg_name=alg_name, is_last=is_last)

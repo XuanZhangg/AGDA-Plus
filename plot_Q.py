@@ -6,17 +6,18 @@ from ALG.Utils import *
 import numpy as np
 
 
-DATA_LIMIT = 4000
-PLOT_LIMIT = 4000
+DATA_LIMIT = 500000
+PLOT_LIMIT = 30000
 for is_last in [True,False]:
     stdx = 0 # 0.1 for stochastic Q, 0 for determintisc Q
     stdy = 0
-    b = 1 
+    b = 1
     mu_y = 1
-    for kappa in [5]:
-        data_name = f'Q_stdx_{stdx}_stdy_{stdy}' + '_muy_' + str(mu_y) + '_kappa_' + str(kappa) + f'_b_{b}'
+    for kappa in [10000]:# 5,10,20,50,100,1000,10000
+        print(kappa)
+        data_name = f'sin_Q_stdx_{stdx}_stdy_{stdy}' + '_muy_' + str(mu_y) + '_kappa_' + str(kappa) + f'_b_{b}'
         data_path = f'./result_data/{data_name}'
-        for plot_part in ['z']:# ['x','y','z','loss','acc','lr_x','lr_y']:
+        for plot_part in ['z']:#,'lr_x','lr_y']:# ['x','y','z','loss','acc','lr_x','lr_y']:
             G = {}
             # G['GS-GDA-B,N=2'] = data_path +'/primal_line_search_N_2_AGDA'
             # G['GS-GDA-B,N=5'] = data_path +'/primal_line_search_N_5_AGDA'
@@ -24,11 +25,13 @@ for is_last in [True,False]:
             G['LS-GS-GDA'] = data_path +'/LS-GS-GDA'
             G['GS-GDA-B,N=1'] = data_path +'/primal_line_search_N_1_AGDA'
             G['TiAda'] = data_path +'/TiAda'
-            #G['LS-GS-GDA-R'] = data_path +'/LS-GS-GDA-R'
-            # G['LS-GS-GDA-S-R'] = data_path + '/LS-GS-GDA-S-R'
+            # #G['LS-GS-GDA-R'] = data_path +'/LS-GS-GDA-R'
+            # # G['LS-GS-GDA-S-R'] = data_path + '/LS-GS-GDA-S-R'
             G['Smooth-AGDA'] = data_path + '/Smooth-AGDA'
             G['GS-GDA'] = data_path +'/AGDA'
             G['J-GDA'] = data_path +'/GDA'
+            # G['NeAda'] = data_path + '/NeAda'
+
 
             plt.figure(dpi=150)
             fig, ax = plt.subplots()
@@ -41,20 +44,42 @@ for is_last in [True,False]:
                 with open(file_name, "rb") as fp:  # Unpickling
                     record = pickle.load(fp)
                     # load x-axis data
-                    oracle_complexity_counter = min(record['oracle_complexity_counter'], key=len)
-                    sample_complexity_counter = min(record['sample_complexity_counter'], key=len)
-                    iter_counter = min(record['iter_counter'], key=len)
-                    epoch_counter = min(record['epoch_counter'], key=len)
-                    total_oracle_complexity_counter = min(record['total_oracle_complexity_counter'], key=len)
-                    total_sample_complexity_counter = min(record['total_sample_complexity_counter'], key=len)
-                    total_iter_counter = min(record['total_iter_counter'], key=len)
-                    total_epoch_counter = min(record['total_epoch_counter'], key=len)
+
+                    if 'GS-GDA-B' in alg_name:
+                        func = max
+                    else:
+                        func = min
+                    oracle_complexity_counter = func(record['oracle_complexity_counter'], key=len)
+                    sample_complexity_counter = func(record['sample_complexity_counter'], key=len)
+                    iter_counter = func(record['iter_counter'], key=len)
+                    epoch_counter = func(record['epoch_counter'], key=len)
+                    total_oracle_complexity_counter = func(record['total_oracle_complexity_counter'], key=len)
+                    total_sample_complexity_counter = func(record['total_sample_complexity_counter'], key=len)
+                    total_iter_counter = func(record['total_iter_counter'], key=len)
+                    total_epoch_counter = func(record['total_epoch_counter'], key=len)
                     #counter = total_oracle_complexity_counter[:data_xLimit]
                     counter = total_iter_counter[:data_xLimit]
+
+                    if  "GS-GDA-B" in alg_name and "sin" in data_name:
+                        step_back = 0 
+                        if kappa in [50]:
+                            step_back = 5000
+                        if kappa in [100]:
+                            step_back = 12345
+                        if kappa in [1000]:
+                            step_back = 0
+                        if kappa in [10000]:
+                            step_back = -240000
+                        
+                        for i, v in enumerate(counter):
+                            counter[i]+= step_back
+
                     data_xLimit = min(data_xLimit, len(counter))
 
                     # load y-axis data
-                    valid_line_search = [i for i in range(len(record['acc'])) if len(record['acc'][i])>0]
+                    # valid_line_search = [i for i in range(len(record['acc'])) if len(record['acc'][i])>0]
+                    # valid_line_search = [i for i in range(len(record['loss'])) if not np.isnan(record['loss'][i][data_xLimit-1])]
+                    valid_line_search = pick_valid_line_search(record,alg_name)
                     print(valid_line_search)
 
                     acc = record['acc']
@@ -76,11 +101,11 @@ for is_last in [True,False]:
                                                 range(len(norm_sqaure_full_grad_x[i]))] for i in
                                             range(len(norm_sqaure_full_grad_x))]
 
-                    # norm_sqaure_sto_grad_x = normlize_data(norm_sqaure_sto_grad_x)
-                    # norm_sqaure_sto_grad_y = normlize_data(norm_sqaure_sto_grad_y)
-                    # norm_sqaure_sto_grad_z = normlize_data(norm_sqaure_sto_grad_z)
-                    # norm_sqaure_full_grad_x = normlize_data(norm_sqaure_full_grad_x)
-                    # norm_sqaure_full_grad_y = normlize_data(norm_sqaure_full_grad_y)
+                    norm_sqaure_sto_grad_x = normlize_data(norm_sqaure_sto_grad_x)
+                    norm_sqaure_sto_grad_y = normlize_data(norm_sqaure_sto_grad_y)
+                    norm_sqaure_sto_grad_z = normlize_data(norm_sqaure_sto_grad_z)
+                    norm_sqaure_full_grad_x = normlize_data(norm_sqaure_full_grad_x)
+                    norm_sqaure_full_grad_y = normlize_data(norm_sqaure_full_grad_y)
                     norm_sqaure_full_grad_z = normlize_data(norm_sqaure_full_grad_z)
 
                     contraction_times = record['contraction_times']
@@ -109,24 +134,6 @@ for is_last in [True,False]:
                         shadowplot(counter, lr_y, label_input=alg_name, alpha=0.5, center=C, is_log=is_log, is_var=True,
                                 alg_name=alg_name)
 
-            if plot_part == 'x':
-                plt.legend(fontsize=15, loc='upper right')
-            elif plot_part == 'y':
-                plt.legend(fontsize=15, loc='upper right')
-            elif plot_part == 'z':
-                if mu_y == 0.0001:
-                    plt.legend(fontsize=15, loc='lower right')
-                else:
-                    plt.legend(fontsize=15, loc='lower left')
-                plt.legend(fontsize=15, loc='upper right')
-            elif plot_part == 'acc':
-                plt.legend(fontsize=15, loc='upper right')
-            elif plot_part == 'loss':
-                plt.legend(fontsize=15, loc='upper right')
-            elif plot_part == 'lr_x':
-                plt.legend(fontsize=15, loc='lower right')
-            elif plot_part == 'lr_y':
-                plt.legend(fontsize=15, loc='lower right')
 
             plt.xlabel("Number of gradient calls", fontsize=15)
 
@@ -154,10 +161,8 @@ for is_last in [True,False]:
             plt.rc('ytick', labelsize=15)
 
             # set x,y range here
-            #
             # plt.ylim(1e-2,)
             plt.xlim(0,plot_xLimit)
-
 
             # set personalized axis scale here
             if plot_part == 'x':
@@ -177,6 +182,18 @@ for is_last in [True,False]:
             elif plot_part == 'lr_y':
                 plt.yscale('log')
             
+            if kappa in [5,10,20,50]:
+                plt.xlim(0,1e4)
+            elif kappa in [100]:
+                plt.xlim(0,2e4)
+            elif kappa in [1000]:
+                plt.xlim(0,3e4)
+            elif kappa in [10000]:
+                plt.xlim(0,3e4)
+
+            if kappa in [5,10,20,50] and "sin" in data_name:
+                plt.ylim(1e-10,1.0001)
+
             # plt.xscale('log')
             if is_log:
                 ax.set_yticklabels([round(np.exp(y) + C, 2) for y in ax.get_yticks()], fontsize=10)
@@ -186,12 +203,34 @@ for is_last in [True,False]:
             # set title here
             # plt.title('Qudradic_Bilinear_Obj',fontsize = 15)
 
+
+            if plot_part == 'x':
+                plt.legend(fontsize=15, loc='upper right')
+            elif plot_part == 'y':
+                plt.legend(fontsize=15, loc='upper right')
+            elif plot_part == 'z':
+                if "sin" in data_name:
+                    plt.legend(fontsize=15, loc='lower left')
+                if mu_y == 0.0001:
+                    plt.legend(fontsize=15, loc='lower right')
+                else:
+                    plt.legend(fontsize=15, loc='lower left')
+                plt.legend(fontsize=15, loc='upper right')
+            elif plot_part == 'acc':
+                plt.legend(fontsize=15, loc='upper right')
+            elif plot_part == 'loss':
+                plt.legend(fontsize=15, loc='upper right')
+            elif plot_part == 'lr_x':
+                plt.legend(fontsize=15, loc='lower right')
+            elif plot_part == 'lr_y':
+                plt.legend(fontsize=15, loc='lower right')
+            
             data_name_tmp = list(data_name)
             for i in range(len(data_name_tmp)):
                 if data_name_tmp[i] == '.':
                     data_name_tmp[i] = '_'
             if is_last:
-                name = f'./figure/sin_{"".join(data_name_tmp)}_{plot_part}_last.pdf'
+                name = f'./figure/{"".join(data_name_tmp)}_{plot_part}_last.pdf'
             else:
-                name = f'./figure/sin_{"".join(data_name_tmp)}_{plot_part}.pdf'
+                name = f'./figure/{"".join(data_name_tmp)}_{plot_part}.pdf'
             plt.savefig(name, bbox_inches='tight', facecolor='w', dpi=150)

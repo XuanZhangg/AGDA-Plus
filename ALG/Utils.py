@@ -15,6 +15,35 @@ import copy
 #         unit_x = x / norm_x
 #         return radius * unit_x
 
+def pick_valid_line_search(record, alg_name):
+    start_index = []
+    for _,data in enumerate(record['loss']):
+        if 'LS-GDA' in alg_name:
+            start_index.append(1e31)
+        else:
+            start_index.append(1e31)
+
+        for start,_ in enumerate(data):
+            if not np.isnan(data[start]):
+                start_index[-1] = start
+                break
+
+    valid = []
+    if 'LS-GDA' in alg_name:
+        target = min(start_index)
+    else:      
+        target = max(start_index)
+    
+    if target == 1e31 or target == -1e31:
+        return []
+
+    for i,value in enumerate(start_index):
+        if value == target:
+            valid.append(i)
+    
+    return valid
+
+
 def projection_simplex_bisection(v, z=1, tau=0.0001, max_iter=1000):
     if np.isinf(v).any():
         return v
@@ -134,10 +163,10 @@ def shadowplot(x: list, y: list, alg_name: str, center=0, alpha=0.5, label_input
     colors = {'GS-GDA-B,N=1': 'y',
               'GS-GDA-B,N=5': 'g','GS-GDA-B,N=10': 'y','GS-GDA-B,N=2': 'y','primal_line_search_100': 'saddlebrown',\
               'LS-GS-GDA':'r', 'LS-GS-GDA-S':'g', 'LS-GS-GDA-R':'lightgreen', 'LS-GS-GDA-S-R':'r', \
-              'J-GDA': 'saddlebrown', 'GS-GDA': 'b', 'TiAda': 'c', \
+              'J-GDA': 'saddlebrown', 'GS-GDA': 'b', 'TiAda': 'c','NeAda': 'orange', \
               'Smooth-AGDA':'m',
               }
-    linestyle_input = {'GS-GDA-B,N=1': '-', 'J-GDA':'-','GS-GDA':'-' ,'TiAda':'-',\
+    linestyle_input = {'GS-GDA-B,N=1': '-', 'J-GDA':'-','GS-GDA':'-' ,'TiAda':'-','NeAda':'-',\
                        'GS-GDA-B,N=5': '-','GS-GDA-B,N=10': '-','GS-GDA-B,N=2': '-','GS-GDA-B,N=100': '-', \
                        'LS-GS-GDA': '-','LS-GS-GDA-S': '-','LS-GS-GDA-R': '-','LS-GS-GDA-S-R': '-',\
                        'Smooth-AGDA':'-',
@@ -145,7 +174,7 @@ def shadowplot(x: list, y: list, alg_name: str, center=0, alpha=0.5, label_input
     if is_speical:
         label = {'GS-GDA_lr_y':r'AGDA,$\sigma=1/L$','GS-GDA_lr_x':r'AGDA,$\tau=\Theta(\frac{1}{L\kappa^2})$','GS-GDA_ratio':r'AGDA,$\sigma/\tau =\Theta(\kappa^2)$'}
     else:
-        label = {'TiAda':'TiAda','J-GDA': 'GDA', 'GS-GDA': 'AGDA','Smooth-AGDA':'Sm-AGDA',\
+        label = {'TiAda':'TiAda','NeAda':'NeAda', 'J-GDA': 'GDA', 'GS-GDA': 'AGDA','Smooth-AGDA':'Sm-AGDA',\
             'LS-GS-GDA':'AGDA+','LS-GS-GDA-S': 'AGDA+ max','LS-GS-GDA-R': 'RAGDA+','LS-GS-GDA-S-R': 'ADGA+SR',\
             'GS-GDA-B,N=1':'SGDA-B'
                        }
@@ -268,7 +297,30 @@ def smooth_data(data, window_size):
 
     return smoothed
 def normlize_data(input:list[list]):
-    return [[ele[i]/(ele[0]+1e-10) for i in range(len(ele))] for ele in input]
+    result = []
+
+    for i, ele in enumerate(input):
+        # if ele[0]>=0 or ele[0]<=0:
+        #     intial = ele[0]
+        # else:
+        #     lo, hi = 0, len(input) - 1
+        #     intial = None
+
+        #     while lo <= hi:
+        #         mid = (lo + hi) // 2
+        #         if ele[mid]>=0 or ele[mid]<=0:
+        #             intial = ele[mid]
+        #             hi = mid - 1  
+        #         else:
+        #             lo = mid + 1
+        for v in input[i]:
+            if v>=0 or v<=0:
+                intial = v
+                break
+
+        result.append([ele[j]/(intial+1e-10) for j in range(len(ele))])
+        
+    return result # [[ele[i]/(ele[0]+1e-10) for i in range(len(ele))] for ele in input]
 
 def getxyFromStateModel(model:Problem, grad = False):
     x = []

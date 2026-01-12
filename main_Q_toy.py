@@ -36,7 +36,8 @@ for mu_y in [1]:
     for kappa in [20]:
         model_type = 'Q' # Q: projection_y=False,DRO,FairCNN: projection_y=True
         sim_time=1
-        max_iter=1000
+        max_iter=5000
+        max_iter_SGDA_B=1000
         freq=50# print result by freq
         my_optimizer = ALG(train_set=train_set,data_name=data_name,mu_y=mu_y,kappa=kappa,
                             sim_time=sim_time,max_iter=max_iter,
@@ -57,7 +58,13 @@ for mu_y in [1]:
         gamma1 = 0.95**2
         gamma2 = 0.95
         sgd_b = b
-        result = my_optimizer.line_search_one_step(gamma1 = gamma1, gamma2 = gamma2, isMaxSolver=False, isRestart=False, verbose=False)
-        result = my_optimizer.line_search_one_step(gamma1 = gamma1, gamma2 = gamma2, isMaxSolver=False, isRestart=True, verbose=False)
-        result = my_optimizer.optimizer(lr_x=1, lr_y=1, method='TiAda', b=sgd_b)
-        result = my_optimizer.optimizer(lr_x=1/3/L/(1+kappa)**2,lr_y=1/L,method='AGDA',b=sgd_b)
+        # my_optimizer.max_iter = max_iter_SGDA_B
+        # result = my_optimizer.line_search(N=1,T=1)
+        # my_optimizer.max_iter = max_iter
+        # result = my_optimizer.line_search_one_step(gamma1 = gamma1, gamma2 = gamma2, isMaxSolver=False, isRestart=False, verbose=False)
+        # result = my_optimizer.line_search_one_step(gamma1 = gamma1, gamma2 = gamma2, isMaxSolver=True, isRestart=False, verbose=False)
+        # result = my_optimizer.optimizer(lr_x=1, lr_y=1, method='TiAda', b=sgd_b)
+        # result = my_optimizer.optimizer(lr_x=1/3/L/(1+kappa)**2,lr_y=1/L,method='AGDA',b=sgd_b)
+        result = my_optimizer.optimizer(lr_x=1, lr_y=1, method='NeAda', b=sgd_b)
+
+2

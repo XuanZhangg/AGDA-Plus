@@ -7,6 +7,7 @@ import copy
 import pickle
 import random
 import math
+import uuid
 from collections import OrderedDict
 from importlib import reload
 from ALG.Utils import projection_simplex_bisection as pj_y
@@ -38,6 +39,7 @@ class ALG():
         model_type = 'DRO', toymodel = False,
         inject_noise_x=0,
         inject_noise_y=0,
+        has_sin = False,
         isSameInitial = False, optimize_batch = False,
                  ) -> None:
 
@@ -67,6 +69,7 @@ class ALG():
         self.data = train_set.data.clone()
         self.targets = train_set.targets.clone()
         self.total_number_data = len(train_set.targets)
+        self.has_sin = has_sin
 
         self.isSameInitial = isSameInitial
         self.toymodel = toymodel
@@ -101,14 +104,13 @@ class ALG():
         kappa = self.kappa
 
         Model = call_model(model_type)
-        self.start_model = Model(self.data_size, mu_y, kappa, device=device, injected_noise_x=self.std_x, injected_noise_y=self.std_y).to(device) # initial model
+        self.start_model = Model(self.data_size, mu_y, kappa, device=device, injected_noise_x=self.std_x, injected_noise_y=self.std_y, has_sin=self.has_sin).to(device) # initial model
         self.y_opt = self.maximizer_solver(start=self.start_model,lr_y=self.maxsolver_step) # set y as y_opt for initial model
         self.start_model.dual_y.data = self.y_opt.clone()
-        self.model_copy = Model(self.data_size, mu_y, kappa, device=device, injected_noise_x=self.std_x, injected_noise_y=self.std_y).to(device) # initial model
-        self.model_bk = Model(self.data_size, mu_y, device=device, injected_noise_x=self.std_x, injected_noise_y=self.std_y).to(device) # initial model
+        self.model_copy = Model(self.data_size, mu_y, kappa, device=device, injected_noise_x=self.std_x, injected_noise_y=self.std_y, has_sin=self.has_sin).to(device) # initial model
+        self.model_bk = Model(self.data_size, mu_y, device=device, injected_noise_x=self.std_x, injected_noise_y=self.std_y, has_sin=self.has_sin).to(device) # initial model
 
     def generate_initial_model(self):
-        return
         StartModelSet = {}
         for i in range(self.sim_time):
             #initilize start model
@@ -118,27 +120,35 @@ class ALG():
             kappa = self.kappa
 
             Model = call_model(model_type)
-            start_model = Model(self.data_size, mu_y, kappa, device=device,injected_noise_x=self.std_x, injected_noise_y=self.std_y).to(device) # initial model
+            start_model = Model(self.data_size, mu_y, kappa, device=device,injected_noise_x=self.std_x, injected_noise_y=self.std_y, has_sin=self.has_sin).to(device) # initial model
             y_opt = self.maximizer_solver(start=start_model,lr_y=self.maxsolver_step) # set y as y_opt for initial model
+
+            # if not self.toymodel:
+            #     start_model.dual_y.data = y_opt.clone()
             start_model.dual_y.data = y_opt.clone()
-            model_copy = Model(self.data_size, mu_y, kappa, device=device,injected_noise_x=self.std_x, injected_noise_y=self.std_y).to(device) # initial model
-            model_bk = Model(self.data_size, mu_y, kappa, device=device,injected_noise_x=self.std_x, injected_noise_y=self.std_y).to(device) # initial model
-            
+            model_copy = Model(self.data_size, mu_y, kappa, device=device,injected_noise_x=self.std_x, injected_noise_y=self.std_y, has_sin=self.has_sin).to(device) # initial model
+            model_bk = Model(self.data_size, mu_y, kappa, device=device,injected_noise_x=self.std_x, injected_noise_y=self.std_y, has_sin=self.has_sin).to(device) # initial model
+
             if self.isSameInitial:
                 for i in range(self.sim_time):
                     StartModelSet[i] = [start_model, y_opt, model_copy, model_bk]
                 break
 
             StartModelSet[i] = [start_model, y_opt, model_copy, model_bk]
-            
-        torch.save(StartModelSet, 'initial.pt')
+        
+        self.initial_model_pt_name = f"./data/initial_pts/{self.model_type}"
+        if self.toymodel:
+            self.initial_model_pt_name += "_toy"
+        self.initial_model_pt_name += ".pt"
+
+        torch.save(StartModelSet, self.initial_model_pt_name)
 
     def load_initial_model(self, sim_time):
-        start = torch.load('initial.pt')
+        start = torch.load(self.initial_model_pt_name, weights_only=False)
         self.start_model,self.y_opt,self.model_copy,self.model_bk = start[sim_time]
         self.start_model.device = self.device
         self.model_bk.device = self.device
-        self.model_bk.copy = self.device
+        # self.model_bk.copy = self.device
         self.start_model.to(self.device)
         self.y_opt.to(self.device)
         self.model_bk.to(self.device)
@@ -193,6 +203,8 @@ class ALG():
 
     def reset_contraction(self, s):
         #the following saver will be reset for a new contraction at the s-th simulation
+        self.record['config'][s] = {}
+
         self.record['sample_complexity'][s] = 0
         self.record['oracle_complexity'][s] = 0
         self.record['iter'][s] = 0
@@ -203,19 +215,26 @@ class ALG():
         self.record['iter_counter'][s] = []
         self.record['epoch_counter'][s] = []
 
-        self.record['total_sample_complexity_counter'][s] = []
-        self.record['total_oracle_complexity_counter'][s] = []
-        self.record['total_iter_counter'][s] = []
-        self.record['total_epoch_counter'][s] = []
+        # self.record['total_sample_complexity_counter'][s] = []
+        # self.record['total_oracle_complexity_counter'][s] = []
+        # self.record['total_iter_counter'][s] = []
+        # self.record['total_epoch_counter'][s] = []
 
-        self.record['loss'][s] = []
-        self.record['primalF'][s] = []
-        self.record['acc'][s] = []
-        self.record['norm_square_sto_grad_x'][s] = []
-        self.record['norm_square_sto_grad_y'][s] = []
-        self.record['norm_square_full_grad_x'][s] = []
-        self.record['norm_square_full_grad_y'][s] = [] 
-        self.record['config'][s] = {}
+        # self.record['loss'][s] = [] 
+        # self.record['primalF'][s] = []
+        # self.record['acc'][s] = []
+        # self.record['norm_square_sto_grad_x'][s] = []
+        # self.record['norm_square_sto_grad_y'][s] = []
+        # self.record['norm_square_full_grad_x'][s] = []
+        # self.record['norm_square_full_grad_y'][s] = [] 
+
+        self.record['loss'][s] = [np.nan] * len(self.record['loss'][s])
+        self.record['primalF'][s] = [np.nan] * len(self.record['loss'][s])
+        self.record['acc'][s] = [np.nan] * len(self.record['loss'][s])
+        self.record['norm_square_sto_grad_x'][s] = [np.nan] * len(self.record['loss'][s])
+        self.record['norm_square_sto_grad_y'][s] = [np.nan] * len(self.record['loss'][s])
+        self.record['norm_square_full_grad_x'][s] = [np.nan] * len(self.record['loss'][s])
+        self.record['norm_square_full_grad_y'][s] = [np.nan] * len(self.record['loss'][s])
 
     def line_search_one_step(self, gamma1:float=0.9,gamma2=0.9, gamma3=1e-3, b:int=None, N:int=1, method:str='LS-GS-GDA', min_b:int=1, force_b:int=-1, kernal='AGDA',\
                              isMaxSolver = True, isRestart = True, mu_coeff = 1,\
@@ -255,7 +274,7 @@ class ALG():
             #load the start model
             start = self.start_model
 
-            self.model_curr = Model(data_size=self.data_size,mu_y=self.mu_y, kappa=self.kappa, device=self.device,injected_noise_x=self.std_x, injected_noise_y=self.std_y).to(self.device)
+            self.model_curr = Model(data_size=self.data_size,mu_y=self.mu_y, kappa=self.kappa, device=self.device,injected_noise_x=self.std_x, injected_noise_y=self.std_y, has_sin=self.has_sin).to(self.device)
             self.model_curr.load_state_dict(copy.deepcopy(start.state_dict()))
 
             if self.model_type == 'Q':
@@ -277,7 +296,11 @@ class ALG():
             reset_flag = True
             R_k,Lambda_k = 0,0
             bar_D_y = self.Dy
-            eta = 1
+
+            if self.toymodel:
+                eta = 0.001
+            else:
+                eta = 1
 
             while True:
                 #break the if beyond max iter 
@@ -285,7 +308,7 @@ class ALG():
                     break
 
                 if len(self.record['acc'][s])>1 and self.record['acc'][s][-1] > self.record['acc'][s][-2]+0.1:
-                    print(11)
+                    print(f"Warning: Accuracy Increased Jump detected!!!The gap is{self.record['acc'][s][-1]-self.record['acc'][s][-2]}")
 
                 #select data by batch index
                 if self.optimize_batch and torch.sum(self.model_curr.dual_y.flatten()[data_loader_dumb[batch_start:batch_start+b]])==0:
@@ -335,7 +358,7 @@ class ALG():
                             f, x, y, z, gx, gy = {}, {}, {}, {}, {}, {}
                             self.model_curr.zero_grad()
                             computeGrad(self.model_curr, data_by_batch, target_by_batch, batch_index, b)
-                            #Deltak = max(Deltak, torch.tensor(upper_delta)/ foo_i ** 1.1)
+                            # Deltak = max(Deltak, torch.tensor(upper_delta)/ foo_i ** 1.1)
                         elif not isMaxSolver:
                             y_temp = self.model_curr.dual_y.data.clone()
                             def Y_Step(lr_y):
@@ -353,6 +376,9 @@ class ALG():
                             self.model_bk.zero_grad()
                             computeGrad(self.model_curr, data_by_batch, target_by_batch, batch_index, b)
 
+                        if isMaxSolver and self.toymodel:
+                            reset_flag = True #TODO FIX BUG 
+                        
                         while l<=L:
                             self.model_bk.load_state_dict(self.model_curr.state_dict())
                             self.model_bk.zero_grad()
@@ -366,9 +392,6 @@ class ALG():
 
                             lr_y = 1/l
                             lr_x = (1-gamma3)/l/(4+1/gamma2+4*(1-lr_y*self.mu_y)*(2-lr_y*self.mu_y)*(15*L-8*self.mu_y)*L**3/self.mu_y**4 )
-                            # if lr_x<0.001:
-                            #     print(lr_x)
-                            # lr_x = (1-gamma3)/(l**2/2 + lr_y*l**2/2 + (1-lr_y*self.mu_y)*(2-lr_y*self.mu_y)*24* (L/self.mu_y)**4/lr_y)
 
                             def ASGDA_X(lr_x,lr_y):
                                 #update x then
@@ -443,6 +466,8 @@ class ALG():
                             # set tolerance eps for numerical issues
                             if self.toymodel:
                                 eps = 1e-2
+                                # if isMaxSolver:
+                                #     eps = 1e-36
                             elif self.std_x>0:
                                 eps = self.std_x+self.std_y # variance guess for sto q problem
                             elif self.model_type == 'DRO':
@@ -450,13 +475,26 @@ class ALG():
                                     eps = 0.005/lr_y # variance guess for sto dro problem
                                 else:
                                     eps = 1e-2
+                            elif self.model_type == "Q" and self.kappa>=100 and not self.has_sin:
+                                eps = 1e-2
+                            elif self.model_type == "Q" and self.kappa>=50 and self.has_sin:
+                                if self.kappa == 50:
+                                    if isMaxSolver:
+                                        eps = 1e-8
+                                    else:
+                                        eps = 1e-2/self.record['total_iter'][s]**0.1
+                                elif self.kappa == 100:
+                                    if isMaxSolver:
+                                        eps = 1e-8
+                                    else:
+                                        eps = 0
+                                else:
+                                    eps = 100
                             else:
                                 eps = 1e-6 #1e-12, -1e-12, larger means large variance but faster
                             
-
                             condition1 = (c1<=eps and c2<=eps and c3<=eps and c4<=eps)
                             
-
                             if verbose:
                                 if not condition1:
                                     print(f'violation,L={L},l={l},eps={eps}')
@@ -476,8 +514,7 @@ class ALG():
                                 self.record['Deltak'][s].append(Deltak)
 
                                 #L = max(self.mu_y, L*0.6)
-                                # y_opt = self.maximizer_solver(start=self.model_curr,lr_y=self.maxsolver_step)
-                                # Deltak = torch.norm(y_opt-self.model_curr.dual_y)**2 #+1e2
+
 
                                 if self.is_show_result and self.record['iter'][s]%self.freq==0:
                                     self.show_result(s,batch_index, sim_done=False)
@@ -502,324 +539,16 @@ class ALG():
                                 # if self.record['iter'][s]%10==0:
                                 #     l = tilde_l
 
+                                # if isMaxSolver:
+                                #     y_opt = self.maximizer_solver(start=self.model_curr,lr_y=self.maxsolver_step)
+                                #     Deltak = torch.norm(y_opt-self.model_curr.dual_y)**2 #+1e2
+
                                 return lr_x,lr_y
                             else:
                                 l = l/gamma2
                         L = L/gamma1
                         reset_flag = True
                 backtrack()
-                    
-                # update the complexity and iterations
-                self.record['sample_complexity'][s] += b
-                self.record['oracle_complexity'][s] += b/N
-                self.record['iter'][s] += 1
-                self.record['epoch'][s] += b/self.data_number_in_each_epoch
-
-            #show this simulation result
-            self.show_result(s,batch_index, sim_done=False)
-            if self.is_save_data:
-                if self.model_type == 'Q':
-                    foo = self.start_model.name
-                    if self.toymodel:
-                        foo += '_toy'
-                    save_kappa = self.kappa
-                else:
-                    foo = self.data_name
-                    save_kappa = 1
-                import os
-                folder_path = './result_data/' + foo + '_muy_' + str(self.mu_y) + '_kappa_' + str(save_kappa) + '_b_' + str(self.b)
-                if not os.path.exists(folder_path):
-                    os.makedirs(folder_path)
-                file_name =  folder_path + '/' + method 
-                with open(file_name , "wb") as fp:  
-                    pickle.dump(self.record, fp)
-
-        return self.record
-
-    def line_search_one_step_archive(self, gamma1:float=0.9,gamma2=0.9, gamma3=1e-3, b:int=None, N:int=1, method:str='LS-GS-GDA', min_b:int=1, force_b:int=-1, kernal='AGDA',\
-                             isMaxSolver = True, isRestart = True, mu_coeff = 1,\
-                             max_epoch=None,start=None,max_iter=None,is_tell_gamma=False):
-        self.reset_all()
-        if is_tell_gamma:
-            method += f'-g1-{int(100*gamma1)}-g2-{int(100*gamma2)}-g3-{int(1000*gamma3)}'
-        Model = call_model(self.model_type)
-        if not b:
-            b = self.b
-        if not max_epoch:
-            max_epoch = self.max_epoch
-        if not max_iter:
-            max_iter = self.max_iter
-
-        if isMaxSolver:
-            method += '-S'
-
-        if isRestart:
-            method += '-R'
-
-        # Generate full block
-        N = 1
-
-        flattened_x = torch.cat([param.flatten() for name,param in self.start_model.named_parameters() if name!='dual_y'])
-        indices = np.arange(flattened_x.shape[0])
-        full_block = copy.deepcopy(indices)
-
-        for s in range(self.sim_time):
-            self.load_initial_model(s)
-            self.reset_contraction(s)
-            self.record['contraction_times'][s] += 1
-            self.record['config'][s] = {'b':b,'N':N,'K':self.max_iter,'std_x':self.start_model.std_x, 'std_y':self.start_model.std_y}
-            self.record['config'][s]['method'] = method
-            self.record['config'][s]['pjx'] = self.projection_x
-            self.record['config'][s]['pjy'] = self.projection_y
-
-            #load the start model
-            start = self.start_model
-
-            self.model_curr = Model(data_size=self.data_size,mu_y=self.mu_y, kappa=self.kappa, device=self.device,injected_noise_x=self.std_x, injected_noise_y=self.std_y).to(self.device)
-            self.model_curr.load_state_dict(copy.deepcopy(start.state_dict()))
-
-            if self.model_type == 'Q':
-                self.model_curr.b = b
-                self.data_number_in_each_epoch = b
-
-            #initialize the data loader and full batch
-            data_loader_dumb = self.batchselect()
-            #data_loader_dumb = torch.randperm(self.total_number_data).to(self.device)
-            batch_start = 0
-
-            L = self.mu_y/gamma2
-            upper_delta = 10
-            deltak = min(self.Dy, torch.norm(self.y_opt - self.model_curr.dual_y) ** 2 + upper_delta)
-            Deltak = deltak
-
-            foo_i = 1
-            self.new_stage = True
-
-            while True:
-                #break the if beyond max iter 
-                if self.record['total_iter'][s]>=self.max_iter:
-                    break
-
-                if self.record['total_iter'][s]==0:
-                    y_opt = self.maximizer_solver(start=self.model_curr,lr_y=self.maxsolver_step)
-                    self.model_curr.dual_y.data = y_opt.clone()
-                    deltak = min(self.Dy, torch.norm(self.y_opt - self.model_curr.dual_y) ** 2 + upper_delta)
-                    Deltak = deltak
-
-                if self.record['iter'][s]%int(50*foo_i) == 0 and self.record['iter'][s]>0 and isRestart:
-                    L = self.mu_y
-                    y_opt = self.maximizer_solver(start=self.model_curr,lr_y=self.maxsolver_step)
-                    self.model_curr.dual_y.data = y_opt.clone()
-                    deltak = min(self.Dy, torch.norm(y_opt-self.model_curr.dual_y)**2 + upper_delta/foo_i**1.1)
-                    Deltak = deltak
-                    foo_i += 1
-                    self.new_stage = True
-
-                if len(self.record['acc'][s])>1 and self.record['acc'][s][-1] > self.record['acc'][s][-2]+0.1:
-                    print(11)
-
-                #select data by batch index
-                if self.optimize_batch and torch.sum(self.model_curr.dual_y.flatten()[data_loader_dumb[batch_start:batch_start+b]])==0:
-                    # skip if the batch are all invalid
-                    data_loader_dumb = self.batchselect()
-                    batch_start = 0
-                    continue
-                elif batch_start+b <= len(data_loader_dumb):
-                    batch_index = data_loader_dumb[batch_start:batch_start+b]
-                    batch_start += b
-                elif b >= len(data_loader_dumb):
-                    batch_index = data_loader_dumb
-                    batch_start = 0
-                else:
-                    #drop the incomplete data if they can not form a full batch
-                    #data_loader_dumb = torch.randperm(self.total_number_data).to(self.device)
-                    data_loader_dumb = self.batchselect()
-                    batch_start = 0
-                    continue
-                data_by_batch = torch.index_select(self.data,0,index=batch_index) #unseueeze is to make [64,28,28] to [64,1,28,28]
-                target_by_batch = torch.index_select(self.targets,0,index=batch_index)
-                                      
-                def backtrack(gamma1,gamma2):
-                    nonlocal L,Deltak,upper_delta
-                    f,x,y,z,gx,gy,GMx,GMy = {},{},{},{},{},{},{},{}
-
-                    self.model_curr.zero_grad()
-                    computeGrad(self.model_curr,data_by_batch,target_by_batch, batch_index,b)
-
-                    self.model_bk.load_state_dict(self.model_curr.state_dict())
-                    self.model_bk.zero_grad()
-                    f['k'] = computeGrad(self.model_bk,data_by_batch,target_by_batch, batch_index,b)
-                    z['k'] = copy.deepcopy(self.model_bk.state_dict())
-                    x['k'],y['k'] = getxyFromStateModel(self.model_bk)
-                    gx['k'], gy['k'] = getxyFromStateModel(self.model_bk, grad = True)
-                    gz = {}
-                    for name, param in self.model_bk.named_parameters():
-                        gz[name] = param.grad.data.clone()
-
-                    if self.new_stage or self.toymodel:
-                        initial_l =  mu_coeff * self.mu_y + 1e-6
-                    else:
-                        initial_l = max( mu_coeff * self.mu_y + 1e-6, self.record['l(small)'][s][-1]*gamma2)
-
-                    l = initial_l
-
-                    while True:
-                        l = max(l*gamma2, initial_l)
-                        if self.new_stage:
-                            l = initial_l
-                            self.new_stage = False
-
-                        while l<=L:
-                            self.model_bk.load_state_dict(z['k'])
-                            for name, param in self.model_bk.named_parameters():
-                                param.grad.data = gz[name].clone()
-
-                            lr_y = 1/l
-                            lr_x = (1-gamma3)/(l**2/2 + lr_y*l**2/2 + (1-lr_y*self.mu_y)*(2-lr_y*self.mu_y)*24* (L/self.mu_y)**4/lr_y)
-                            Ck = (1-self.mu_y*lr_y)*(2-self.mu_y*lr_y)/(self.mu_y*lr_y)*L**2/self.mu_y**2*lr_x**2
-                            Bk = 1-self.mu_y*lr_y/2
-
-                            def ASGDA_X(lr_x,lr_y):
-                                #update x then
-                                for (name,param) in self.model_bk.named_parameters():
-                                    if name != 'dual_y':
-                                        if self.projection_x:
-                                            projection_center =  param.data - lr_x*param.grad.data
-                                            param.data = torch.tensor(pj_x(projection_center.cpu().detach().numpy()),dtype=torch.float64).to(self.device).clone()
-                                        else:
-                                            param.data = param.data - lr_x*param.grad.data
-
-                                #compute the gradients of current model using batches, not that the batch does not change here
-                                self.model_bk.zero_grad()
-                                f['k+1,k'] = computeGrad(self.model_bk,data_by_batch,target_by_batch, batch_index,b)
-                                z['k+1,k'] = copy.deepcopy(self.model_bk.state_dict())
-                                x['k+1'], _ = getxyFromStateModel(self.model_bk)
-                                gx['k+1,k'], gy['k+1,k'] = getxyFromStateModel(self.model_bk, grad = True)
-
-                                #update y then
-                                for (name,param) in self.model_bk.named_parameters():
-                                    if name == 'dual_y':
-                                        if self.projection_y:
-                                            projection_center =  param.data + lr_y*param.grad.data
-                                            param.data = torch.tensor(pj_y(projection_center.cpu().detach().numpy()),dtype=torch.float64).to(self.device)
-                                        else:
-                                            param.data = param.data + lr_y*param.grad.data 
-
-                            ASGDA_X(lr_x,lr_y)
-
-                            #compute the gradients of current model using batches, not that the batch does not change here
-                            self.model_bk.zero_grad()
-                            f['k+1'] = computeGrad(self.model_bk,data_by_batch,target_by_batch, batch_index,b)
-                            z['k+1'] = copy.deepcopy(self.model_bk.state_dict())
-                            x['k+1'],y['k+1'] = getxyFromStateModel(self.model_bk)
-                            gx['k+1'], gy['k+1'] = getxyFromStateModel(self.model_bk, grad = True)
-
-                            state_xk = OrderedDict(
-                                (key, value) for key, value in z['k'].items() if 'dual_y' not in key
-                            )
-
-                            self.model_bk.load_state_dict(state_xk,strict=False)
-                            self.model_bk.zero_grad()
-                            f['k,k+1'] = computeGrad(self.model_bk,data_by_batch,target_by_batch, batch_index,b)
-                            z['k,k+1'] = copy.deepcopy(self.model_bk.state_dict())
-                            gx['k,k+1'], gy['k,k+1'] = getxyFromStateModel(self.model_bk, grad = True)
-
-
-                            # compute condition from here
-                            GMx['k'],GMy['k'] = -(x['k+1']-x['k'])/lr_x, (y['k+1'] - y['k'])/lr_y
-                            #c1 = f['k+1,k']-f['k']-torch.dot(x['k+1']-x['k'],gx['k'])-l/2*torch.norm(x['k+1']-x['k'])**2
-                            c1 = f['k+1,k'] - f['k'] - (x['k+1'] - x['k']).T@gx['k'] - l / 2 * torch.norm(
-                                x['k+1'] - x['k']) ** 2
-                            c2 = torch.norm(gy['k+1,k']-gy['k'])-l*torch.norm(x['k+1']-x['k'])
-                            c3 = -f['k+1']+f['k+1,k'] + (y['k+1']-y['k']).T@gy['k+1,k']-l/2*torch.norm(y['k+1']-y['k'])**2
-                            c4 = torch.norm(gy['k,k+1']-gy['k'])-l*torch.norm(y['k+1']-y['k'])
-                            c5 = 1/lr_y*torch.norm(y['k+1']-y['k'])-torch.sqrt((6/lr_y**2+2*l**2)*Deltak)
-                            
-                            c6 = lr_x-lr_x**2*l/2-l**2*lr_x**2*lr_y/2
-                            
-                            if self.record['iter'][s] == 0:
-                                c7 = c6*torch.norm(GMx['k'])**2 + lr_y**2*self.mu_y/2*torch.norm(GMy['k'])**2 \
-                                    - f['k'] + f['k+1'] + 1e-10\
-                                    -lr_y/2*(4/lr_y**2 + 2*l**2)*Deltak
-                            else:
-                                lr_y_prev = self.record['lr_y'][s][-1]
-                                l_prev = self.record['l(small)'][s][-1]
-                                c7 = c6*torch.norm(GMx['k'])**2 \
-                                    + lr_y**2*self.mu_y/2*torch.norm(GMy['k'])**2 \
-                                    - f['k'] + f['k+1'] + 1e-10 \
-                                    - lr_y / 2 * (4 / lr_y ** 2 + 2 * l ** 2) * Deltak\
-                                    - (lr_y_prev/2 + lr_y_prev**3*l_prev**2/2)*(4/lr_y_prev**2 + 2*l_prev**2)*self.record['Deltak'][s][-1]\
-                                    - (lr_y**2/2/lr_y_prev)*(4/lr_y**2 + 2*l**2)*Deltak
-
-                            self.record['total_sample_complexity'][s] += b
-                            self.record['total_oracle_complexity'][s] += b / N
-                            self.record['total_iter'][s] += 1
-                            self.record['total_epoch'][s] += b / self.data_number_in_each_epoch
-                           
-                            eps2 = 1e-12
-                            if self.toymodel:
-                                eps = -1e-12
-                            elif self.std_x>0:
-                                eps = self.std_x # variance guess for sto q problem
-                            elif self.model_type == 'DRO' and b<6000:
-                                eps = 0.005/lr_y # variance guess for sto dro problem
-                            else:
-                                eps = -1e-32 #1e-12, -1e-12, larger means large variance but faster
-                            
-                            
-                            condition1 = (c1<=eps and c2<=eps and c3<=eps and c4<=eps and c5<=eps)
-                            condition2 = c7<=eps and c6>=1e-32 and c3<=eps2 and c4<=eps2
-                            if condition1 or condition2:
-                                #print(f'L={L},l={l},c1={c1.item()},c2={c2.item()},c3={c3.item()},c4={c4.item()},c5={c5.item()}, c7={c7.item()}')
-                                # save and show the current data before updating
-                                self.save_iterates_info(s,batch_index,lr_x,lr_y,full_block)
-                                self.record['lr_x'][s].append(lr_x)
-                                self.record['lr_y'][s].append(lr_y)
-                                self.record['l(small)'][s].append(l)
-                                self.record['L(large)'][s].append(L)
-                                self.record['Deltak'][s].append(Deltak)
-
-                                #L = max(self.mu_y, L*0.6)
-                                # y_opt = self.maximizer_solver(start=self.model_curr,lr_y=self.maxsolver_step)
-                                # Deltak = torch.norm(y_opt-self.model_curr.dual_y)**2 #+1e2
-
-                                if self.is_show_result and self.record['iter'][s]%self.freq==0:
-                                    self.show_result(s,batch_index, sim_done=False)
-
-                                #     if self.record['iter'][s]>0:
-                                #         print(-self.ff + f['k'])
-                                # self.ff = f['k+1']
-
-                                    #print('GMX',torch.norm(GMx['k']).item()**2,'xk+1-xk', torch.norm(x['k+1']-x['k']).item()**2,"grad x^2", torch.norm(gx['k']).item() ** 2, "grad y^2", torch.norm(gy['k']).item() ** 2)
-                                    #print(condition1,condition2)
-                                # update the model state to k+1
-                                self.model_curr.zero_grad()
-                                self.model_curr.load_state_dict(z['k+1'])
-                                Deltak = Bk*Deltak + Ck*torch.norm(GMx['k'])**2
-                                return lr_x,lr_y
-
-                            l = l/gamma2
-
-                        L = L/gamma1
-
-                        y_opt = self.maximizer_solver(start=self.model_curr,lr_y=self.maxsolver_step)
-                        deltak = min(self.Dy, torch.norm(y_opt - self.model_curr.dual_y) ** 2 + upper_delta / foo_i ** 1.1)
-                        Deltak = deltak
-
-                        if isMaxSolver:
-                            self.model_curr.dual_y.data = y_opt.clone()
-                            f, x, y, z, gx, gy = {}, {}, {}, {}, {}, {}
-                            self.model_bk.zero_grad()
-                            computeGrad(self.model_curr, data_by_batch, target_by_batch, batch_index, b)
-                            self.model_bk.load_state_dict(self.model_curr.state_dict())
-                            self.model_bk.zero_grad()
-                            f['k'] = computeGrad(self.model_bk, data_by_batch, target_by_batch, batch_index, b)
-                            z['k'] = copy.deepcopy(self.model_bk.state_dict())
-                            x['k'], y['k'] = getxyFromStateModel(self.model_bk)
-                            gx['k'], gy['k'] = getxyFromStateModel(self.model_bk, grad=True)
-                            #Deltak = max(Deltak, torch.tensor(upper_delta)/ foo_i ** 1.1)
-
-                lr_x,lr_y = backtrack(gamma1,gamma2)
                     
                 # update the complexity and iterations
                 self.record['sample_complexity'][s] += b
@@ -1215,6 +944,7 @@ class ALG():
             #b = 64/eps**2*(self.start_model.std_x**2+(1+6*(2-lr_y*self.mu_y)/lr_y/self.mu_y/(1-lr_y*self.mu_y)*self.start_model.std_y**2)) 
             #b = int(max(b,min_b))
             b = min(self.b,len(self.targets))
+
         max_iters = [random.randint(1, self.max_iter) for _ in range(T)]
         max_iters = [self.max_iter for _ in range(T)]
 
@@ -1241,7 +971,7 @@ class ALG():
                     #load the start model
                     self.reset_contraction(s)
                     self.record['contraction_times'][s] += 1
-                    self.model_curr = Model(data_size=self.data_size,mu_y=self.mu_y, kappa=self.kappa, device=self.device,injected_noise_x=self.std_x, injected_noise_y=self.std_y).to(self.device)
+                    self.model_curr = Model(data_size=self.data_size,mu_y=self.mu_y, kappa=self.kappa, device=self.device,injected_noise_x=self.std_x, injected_noise_y=self.std_y, has_sin=self.has_sin).to(self.device)
                     self.model_curr.load_state_dict(copy.deepcopy(self.start_model.state_dict()))
 
                     #initilize delta0
@@ -1429,7 +1159,9 @@ class ALG():
                     # print('sigma =',lr_y, 'tau =',lr_x)
                 
                                     #assert contraction_times<=100
-                        
+                if min(self.record['acc'][s])<0.6 and "DRO" in self.model_type:
+                    find = False
+
                 if self.record['contraction_times'][s] >=100:
                     sim_find = False
                     break
@@ -1601,6 +1333,88 @@ class ALG():
                     
         assert 'Fail to find the optimal y, please adjust the parameters'
 
+    def NeAda_max_solver(self, start, outer_iter, lr_y, beta_y, b=None,eps=None):
+        from torch import optim
+        import time
+        s = time.time()
+        if not lr_y:
+            lr_y=min(1,self.maxsolver_step)
+        if not b:
+            b = self.maxsolver_b
+
+        #print(f'maximizer solver start, the stepsize is {lr_y}')
+        Model = call_model(self.model_type)
+        #load the start model
+        model_tmp = Model(data_size=self.data_size,mu_y=self.mu_y,kappa=self.kappa, device=self.device,injected_noise_x=self.std_x, injected_noise_y=self.std_y, has_sin=self.has_sin).to(self.device)
+        model_tmp.load_state_dict(copy.deepcopy(start.state_dict()))
+        #initialize the data loader
+        data_loader_dumb = self.batchselect(model=model_tmp).to(self.device)
+        #initialize the batch counters
+        batch_start = 0
+        time_counter = 1
+
+        if torch.norm(model_tmp.dual_y.data.clone() )**2 >1e100 or torch.isnan(torch.norm(model_tmp.dual_y.data.clone() )**2):
+            print('maximizer intial point not valid!!! Please debug from maximizer_solver!!!')
+        
+        for k in range(10000):
+            #select data by batch index
+            if self.model_type!='Q':
+                #select data by batch index
+                if torch.sum(model_tmp.dual_y.flatten()[batch_start:batch_start+b])==0:
+                    # skip if the batch are all invalid
+                    data_loader_dumb = self.batchselect()
+                    batch_start = 0
+                    continue
+                elif batch_start+b <= len(data_loader_dumb):
+                    batch_index = data_loader_dumb[batch_start:batch_start+b]
+                    batch_start += b
+                elif b >= len(data_loader_dumb):
+                    batch_index = data_loader_dumb
+                    batch_start = 0
+                else:
+                    #drop the incomplete data if they can not form a full batch
+                    #data_loader_dumb = torch.randperm(self.total_number_data).to(self.device)
+                    data_loader_dumb = self.batchselect(model=model_tmp).to(self.device)
+                    batch_start = 0
+                    continue
+            else:
+                batch_index = torch.tensor([],device=self.device)
+
+            data_by_batch = torch.index_select(self.data,0,index=batch_index) #unseueeze is to make [64,28,28] to [64,1,28,28]
+            target_by_batch = torch.index_select(self.targets,0,index=batch_index)
+
+            #compute the gradients of current model using batches
+            for (name,param) in model_tmp.named_parameters():
+                if name != 'dual_y':
+                    param.requires_grad_(False)
+            model_tmp.zero_grad()
+            loss_tmp = model_tmp.loss(data_by_batch,batch_index, target_by_batch) #we take -loss as gradient so that it is gradient descent now.
+            loss_tmp.backward()
+            y_prev = model_tmp.dual_y.data.clone()
+
+            NeAda_find = False
+
+            # compute psi and stop condition
+            psi = 0
+            for (name,param) in model_tmp.named_parameters():
+                if name == 'dual_y':
+                    psi += torch.norm(param.grad.data)**2
+            if psi <= 1/(outer_iter+1):
+                NeAda_find = True
+                break
+
+            self.NeAda_param['vy'] += psi
+            for (name,param) in model_tmp.named_parameters():
+                if name == 'dual_y':
+                        self.NeAda_param['my'][name] = beta_y*self.NeAda_param['my'][name] + (1-beta_y)*param.grad.data.clone()
+                        self.NeAda_param['vy'] += torch.norm(param.grad.data)**2
+                        param.data = param.data + lr_y/(self.NeAda_param['vy']+1e-12)*self.NeAda_param['my'][name]
+        if not NeAda_find:
+            print("NeAda not find a maximizer for inner loop!!!")
+
+        return model_tmp, k*b
+
+
     def optimizer(self, method:str, lr_x=None, lr_y=None,alpha=0.6,beta=0.4,p=0, b=None, max_epoch=None,start=None,max_iter=None):
         self.reset_all()
         Model = call_model(self.model_type)
@@ -1629,7 +1443,7 @@ class ALG():
             #load the start model
             start = self.start_model
 
-            self.model_curr = Model(data_size=self.data_size, mu_y=self.mu_y, kappa=self.kappa, device=self.device,injected_noise_x=self.std_x, injected_noise_y=self.std_y).to(self.device)
+            self.model_curr = Model(data_size=self.data_size, mu_y=self.mu_y, kappa=self.kappa, device=self.device,injected_noise_x=self.std_x, injected_noise_y=self.std_y, has_sin=self.has_sin).to(self.device)
             self.model_curr.load_state_dict(copy.deepcopy(start.state_dict()))
 
             if self.model_type == 'Q':
@@ -1643,6 +1457,9 @@ class ALG():
 
             #initialize the TiAda
             self.vx,self.vy = 1,1
+
+            #initialize the NeAda
+            self.NeAda_param = {'mx':defaultdict(lambda:0), 'my':defaultdict(lambda:0), 'vx':1, 'vy':1, 'lr_x':np.nan, 'lr_y':np.nan}
 
             if method == 'TiAda':
                 lr_x_TiAda = lr_x / math.pow(np.maximum(self.vx, self.vy), alpha)
@@ -1823,8 +1640,57 @@ class ALG():
                             else:
                                 param.data = param.data + lr_y*param.grad.data
                     return lr_x,lr_y
+                
 
+                def NeAda(lr_x, lr_y, NeAda_beta_x=0,NeAda_beta_y=0):
+                    def to_norm(input):
+                        if isinstance(input, torch.Tensor):
+                            return input.item()
+                    #update y
 
+                    # compute psi for update y
+                    psi = 0
+                    for (name,param) in self.model_curr.named_parameters():
+                        if name == 'dual_y':
+                            psi += torch.norm(param.grad.data)**2
+                    self.NeAda_param['vy'] += psi
+
+                    for (name,param) in self.model_curr.named_parameters():
+                        if name == 'dual_y':
+                                self.NeAda_param['my'][name] = NeAda_beta_y*self.NeAda_param['my'][name] + (1-NeAda_beta_y)*param.grad.data.clone()
+                                self.NeAda_param['vy'] += torch.norm(param.grad.data)**2
+                                param.data = param.data + lr_y/(self.NeAda_param['vy']+1e-12)*self.NeAda_param['my'][name]
+
+                    self.NeAda_param['lr_y'] = to_norm(lr_y/(self.NeAda_param['vy']+1e-12))
+
+                    self.model_curr.zero_grad()
+                    self.model_curr.loss(data_by_batch, batch_index, target_by_batch).backward()
+
+                    # check condition for y
+                    psi = 0
+                    for (name,param) in self.model_curr.named_parameters():
+                        if name == 'dual_y':
+                            psi += torch.norm(param.grad.data)**2
+                    if psi > 1/(1+self.record['iter'][s]+1):
+                            return
+                    else:
+                        self.NeAda_updated_x = True
+
+                    #update x
+                    psi = 0
+                    for (name,param) in self.model_curr.named_parameters():
+                        if name != 'dual_y':
+                            psi += torch.norm(param.grad.data)**2
+                    self.NeAda_param['vx'] += psi
+
+                    for (name,param) in self.model_curr.named_parameters():
+                        if name != 'dual_y':
+                                self.NeAda_param['mx'][name] = NeAda_beta_x * self.NeAda_param['mx'][name] + (1 - NeAda_beta_x) * param.grad.data
+                                param.data = param.data - lr_x/(self.NeAda_param['vx']+1e-12)*self.NeAda_param['mx'][name]
+
+                    self.NeAda_param['lr_x'] = to_norm(lr_x/(self.NeAda_param['vx']+1e-12))
+                
+                    return
 
                 if method == 'GDA':
                     SGDA(lr_x,lr_y)
@@ -1838,11 +1704,15 @@ class ALG():
                     lr_x_TiAda,lr_y_TiAda = TiAda(lr_x,lr_y,alpha,beta)
                 elif method == 'Smooth-AGDA':
                     Smooth_AGDA(lr_x, lr_y, p, beta)
-
+                elif method == 'NeAda':
+                    NeAda(lr_x, lr_y)
 
                 if method == 'TiAda':
                     self.record['lr_x'][s].append(lr_x_TiAda)
                     self.record['lr_y'][s].append(lr_y_TiAda)
+                elif method == 'NeAda':
+                    self.record['lr_x'][s].append(self.NeAda_param['lr_x'])
+                    self.record['lr_y'][s].append(self.NeAda_param['lr_y'])
                 else:
                     self.record['lr_x'][s].append(lr_x)
                     self.record['lr_y'][s].append(lr_y)
@@ -1855,15 +1725,26 @@ class ALG():
                     self.show_result(s,batch_index, sim_done=False)
 
                 # update the complexity and iterations
-                self.record['total_sample_complexity'][s] += b
-                self.record['total_oracle_complexity'][s] += b/N
-                self.record['total_iter'][s] += 1
-                self.record['total_epoch'][s] += b/self.data_number_in_each_epoch
+                if 0:
+                    self.record['total_sample_complexity'][s] += SC_NeAda_used
+                    self.record['total_oracle_complexity'][s] += SC_NeAda_used/N
+                    self.record['total_epoch'][s] += SC_NeAda_used/self.data_number_in_each_epoch
 
-                self.record['sample_complexity'][s] += b
-                self.record['oracle_complexity'][s] += b/N
+                    self.record['sample_complexity'][s] += SC_NeAda_used
+                    self.record['oracle_complexity'][s] += SC_NeAda_used/N
+                    self.record['epoch'][s] += SC_NeAda_used/self.data_number_in_each_epoch
+
+                else:
+                    self.record['total_sample_complexity'][s] += b
+                    self.record['total_oracle_complexity'][s] += b/N
+                    self.record['total_epoch'][s] += b/self.data_number_in_each_epoch
+
+                    self.record['sample_complexity'][s] += b
+                    self.record['oracle_complexity'][s] += b/N
+                    self.record['epoch'][s] += b/self.data_number_in_each_epoch
+                
+                self.record['total_iter'][s] += 1
                 self.record['iter'][s] += 1
-                self.record['epoch'][s] += b/self.data_number_in_each_epoch
 
             #show this simulation result
             self.show_result(s,batch_index,sim_done=True)
@@ -1996,7 +1877,7 @@ class ALG():
         else:
             print(f'-----------------------------------------------------------------------------------------------')
         print('Total Complexity:')
-        print('iter:', self.record['total_iter'][s], 'epoch:', self.record['total_epoch'][s], 'OC:',  self.record['total_oracle_complexity'][s], 'SC:',  self.record['total_sample_complexity'][s])
+        print('sim times:', s, 'iter:', self.record['total_iter'][s], 'epoch:', self.record['total_epoch'][s], 'OC:',  self.record['total_oracle_complexity'][s], 'SC:',  self.record['total_sample_complexity'][s])
         print('Current Complexity:')
         print('iter:', self.record['iter'][s], 'epoch:', self.record['epoch'][s], 'OC:',  self.record['oracle_complexity'][s], 'SC:',  self.record['sample_complexity'][s])
         print('Iterates Info:')
@@ -2019,6 +1900,9 @@ class ALG():
             print('positive number of yi(total):',torch.sum(self.model_curr.dual_y>0).item(), \
                     'max y_i:' , torch.max(self.model_curr.dual_y).item(),\
                     'min y_i:' , torch.min(self.model_curr.dual_y).item())
+        if method == 'NeAda':
+            pass
+            #print(self.NeAda_param)
         if sim_done:
             print(f'=================================================================================================\n\n')
         else:

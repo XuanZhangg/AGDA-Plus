@@ -1,0 +1,887 @@
+nohup: ignoring input
+data:gisette,number_of_data:6000,dim_features:5000
+L:20, mu:1, kappa: 20
+GDA: lr_y=0.05,lr_x=7.086167800453515e-06
+AGDA: lr_y=0.05,lr_x=3.779289493575208e-05
+Phi0 = 190.0
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 0 epoch: 0 OC: 0 SC: 0
+Current Complexity:
+iter: 0 epoch: 0 OC: 0 SC: 0
+Iterates Info:
+acc: 0.5 , loss: 190.0 , primalF: 190.0
+||sto grad_x||^2: 144400.0 ||sto grad_y||^2: 0.0
+||true grad_x||^2: 144400.0 ||true grad_y||^2: 0.0
+lr_x: 0.07914361999221865 , lr_y: 0.8999999999999999
+mu: 1 , kappa: 20
+{'lr_x': 0.07914361999221865, 'lr_y': 0.8999999999999999, 'b': 1, 'eps': tensor(12.3954, device='cuda:0', grad_fn=<PowBackward0>), 'N': 1, 'K': 1000, 'real_K': 1000, 'L': 1.1111111111111112, 'mu': 1, 'std_x': 0, 'std_y': 0, 'is_force_b': False, 'method': 'primal_line_search_N_1_AGDA', 'pjx': False, 'pjy': False}
+-----------------------------------------------------------------------------------------------
+
+
+maximizer intial point not valid!!! Please debug from maximizer_solver!!!
+maximizer intial point not valid!!! Please debug from maximizer_solver!!!
+maximizer intial point not valid!!! Please debug from maximizer_solver!!!
+maximizer intial point not valid!!! Please debug from maximizer_solver!!!
+maximizer intial point not valid!!! Please debug from maximizer_solver!!!
+maximizer intial point not valid!!! Please debug from maximizer_solver!!!
+maximizer intial point not valid!!! Please debug from maximizer_solver!!!
+maximizer intial point not valid!!! Please debug from maximizer_solver!!!
+maximizer intial point not valid!!! Please debug from maximizer_solver!!!
+maximizer intial point not valid!!! Please debug from maximizer_solver!!!
+maximizer intial point not valid!!! Please debug from maximizer_solver!!!
+contraction 0 fails, the gap is nan
+Phi0 = 190.0
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 46 epoch: 46.0 OC: 46.0 SC: 46
+Current Complexity:
+iter: 0 epoch: 0 OC: 0 SC: 0
+Iterates Info:
+acc: 0.5 , loss: 190.0 , primalF: 190.0
+||sto grad_x||^2: 144400.0 ||sto grad_y||^2: 0.0
+||true grad_x||^2: 144400.0 ||true grad_y||^2: 0.0
+lr_x: 0.05769569897432742 , lr_y: 0.81
+mu: 1 , kappa: 20
+{'lr_x': 0.05769569897432742, 'lr_y': 0.81, 'b': 1, 'eps': tensor(14.5176, device='cuda:0', grad_fn=<PowBackward0>), 'N': 1, 'K': 1000, 'real_K': 1000, 'L': 1.2345679012345678, 'mu': 1, 'std_x': 0, 'std_y': 0, 'is_force_b': False, 'method': 'primal_line_search_N_1_AGDA', 'pjx': False, 'pjy': False}
+-----------------------------------------------------------------------------------------------
+
+
+maximizer intial point not valid!!! Please debug from maximizer_solver!!!
+maximizer intial point not valid!!! Please debug from maximizer_solver!!!
+maximizer intial point not valid!!! Please debug from maximizer_solver!!!
+maximizer intial point not valid!!! Please debug from maximizer_solver!!!
+maximizer intial point not valid!!! Please debug from maximizer_solver!!!
+maximizer intial point not valid!!! Please debug from maximizer_solver!!!
+maximizer intial point not valid!!! Please debug from maximizer_solver!!!
+maximizer intial point not valid!!! Please debug from maximizer_solver!!!
+maximizer intial point not valid!!! Please debug from maximizer_solver!!!
+maximizer intial point not valid!!! Please debug from maximizer_solver!!!
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 96 epoch: 96.0 OC: 96.0 SC: 96
+Current Complexity:
+iter: 50 epoch: 50.0 OC: 50.0 SC: 50
+Iterates Info:
+acc: 0.5 , loss: 5.753178667751214e+123 , primalF: 6.004271712533588e+123
+||sto grad_x||^2: 2.8492950272191806e+126 ||sto grad_y||^2: 5.021860895647462e+122
+||true grad_x||^2: 2.8492950272191806e+126 ||true grad_y||^2: 5.021860895647462e+122
+lr_x: 0.05769569897432742 , lr_y: 0.81
+mu: 1 , kappa: 20
+{'lr_x': 0.05769569897432742, 'lr_y': 0.81, 'b': 1, 'eps': tensor(14.5176, device='cuda:0', grad_fn=<PowBackward0>), 'N': 1, 'K': 1000, 'real_K': 1000, 'L': 1.2345679012345678, 'mu': 1, 'std_x': 0, 'std_y': 0, 'is_force_b': False, 'method': 'primal_line_search_N_1_AGDA', 'pjx': False, 'pjy': False}
+-----------------------------------------------------------------------------------------------
+
+
+maximizer intial point not valid!!! Please debug from maximizer_solver!!!
+maximizer intial point not valid!!! Please debug from maximizer_solver!!!
+contraction 1 fails, the gap is nan
+Phi0 = 190.0
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 99 epoch: 99.0 OC: 99.0 SC: 99
+Current Complexity:
+iter: 0 epoch: 0 OC: 0 SC: 0
+Iterates Info:
+acc: 0.5 , loss: 190.0 , primalF: 190.0
+||sto grad_x||^2: 144400.0 ||sto grad_y||^2: 0.0
+||true grad_x||^2: 144400.0 ||true grad_y||^2: 0.0
+lr_x: 0.0420601645522847 , lr_y: 0.7290000000000001
+mu: 1 , kappa: 20
+{'lr_x': 0.0420601645522847, 'lr_y': 0.7290000000000001, 'b': 1, 'eps': tensor(17.0032, device='cuda:0', grad_fn=<PowBackward0>), 'N': 1, 'K': 1000, 'real_K': 1000, 'L': 1.371742112482853, 'mu': 1, 'std_x': 0, 'std_y': 0, 'is_force_b': False, 'method': 'primal_line_search_N_1_AGDA', 'pjx': False, 'pjy': False}
+-----------------------------------------------------------------------------------------------
+
+
+maximizer intial point not valid!!! Please debug from maximizer_solver!!!
+maximizer intial point not valid!!! Please debug from maximizer_solver!!!
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 149 epoch: 149.0 OC: 149.0 SC: 149
+Current Complexity:
+iter: 50 epoch: 50.0 OC: 50.0 SC: 50
+Iterates Info:
+acc: 0.5 , loss: 1.0662144918015675e+103 , primalF: 1.1698039098733126e+103
+||sto grad_x||^2: 4.290522886186926e+105 ||sto grad_y||^2: 2.0717883614349048e+102
+||true grad_x||^2: 4.290522886186926e+105 ||true grad_y||^2: 2.0717883614349048e+102
+lr_x: 0.0420601645522847 , lr_y: 0.7290000000000001
+mu: 1 , kappa: 20
+{'lr_x': 0.0420601645522847, 'lr_y': 0.7290000000000001, 'b': 1, 'eps': tensor(17.0032, device='cuda:0', grad_fn=<PowBackward0>), 'N': 1, 'K': 1000, 'real_K': 1000, 'L': 1.371742112482853, 'mu': 1, 'std_x': 0, 'std_y': 0, 'is_force_b': False, 'method': 'primal_line_search_N_1_AGDA', 'pjx': False, 'pjy': False}
+-----------------------------------------------------------------------------------------------
+
+
+maximizer intial point not valid!!! Please debug from maximizer_solver!!!
+maximizer intial point not valid!!! Please debug from maximizer_solver!!!
+maximizer intial point not valid!!! Please debug from maximizer_solver!!!
+maximizer intial point not valid!!! Please debug from maximizer_solver!!!
+maximizer intial point not valid!!! Please debug from maximizer_solver!!!
+maximizer intial point not valid!!! Please debug from maximizer_solver!!!
+maximizer intial point not valid!!! Please debug from maximizer_solver!!!
+maximizer intial point not valid!!! Please debug from maximizer_solver!!!
+maximizer intial point not valid!!! Please debug from maximizer_solver!!!
+maximizer intial point not valid!!! Please debug from maximizer_solver!!!
+maximizer intial point not valid!!! Please debug from maximizer_solver!!!
+maximizer intial point not valid!!! Please debug from maximizer_solver!!!
+maximizer intial point not valid!!! Please debug from maximizer_solver!!!
+contraction 2 fails, the gap is nan
+Phi0 = 190.0
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 163 epoch: 163.0 OC: 163.0 SC: 163
+Current Complexity:
+iter: 0 epoch: 0 OC: 0 SC: 0
+Iterates Info:
+acc: 0.5 , loss: 190.0 , primalF: 190.0
+||sto grad_x||^2: 144400.0 ||sto grad_y||^2: 0.0
+||true grad_x||^2: 144400.0 ||true grad_y||^2: 0.0
+lr_x: 0.03066185995861555 , lr_y: 0.6561000000000001
+mu: 1 , kappa: 20
+{'lr_x': 0.03066185995861555, 'lr_y': 0.6561000000000001, 'b': 1, 'eps': tensor(19.9144, device='cuda:0', grad_fn=<PowBackward0>), 'N': 1, 'K': 1000, 'real_K': 1000, 'L': 1.5241579027587255, 'mu': 1, 'std_x': 0, 'std_y': 0, 'is_force_b': False, 'method': 'primal_line_search_N_1_AGDA', 'pjx': False, 'pjy': False}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 213 epoch: 213.0 OC: 213.0 SC: 213
+Current Complexity:
+iter: 50 epoch: 50.0 OC: 50.0 SC: 50
+Iterates Info:
+acc: 0.5 , loss: 3.216961541708667e+80 , primalF: 3.7917360930740107e+80
+||sto grad_x||^2: 1.03930433629891e+83 ||sto grad_y||^2: 1.1495491027306874e+80
+||true grad_x||^2: 1.03930433629891e+83 ||true grad_y||^2: 1.1495491027306874e+80
+lr_x: 0.03066185995861555 , lr_y: 0.6561000000000001
+mu: 1 , kappa: 20
+{'lr_x': 0.03066185995861555, 'lr_y': 0.6561000000000001, 'b': 1, 'eps': tensor(19.9144, device='cuda:0', grad_fn=<PowBackward0>), 'N': 1, 'K': 1000, 'real_K': 1000, 'L': 1.5241579027587255, 'mu': 1, 'std_x': 0, 'std_y': 0, 'is_force_b': False, 'method': 'primal_line_search_N_1_AGDA', 'pjx': False, 'pjy': False}
+-----------------------------------------------------------------------------------------------
+
+
+maximizer intial point not valid!!! Please debug from maximizer_solver!!!
+maximizer intial point not valid!!! Please debug from maximizer_solver!!!
+maximizer intial point not valid!!! Please debug from maximizer_solver!!!
+maximizer intial point not valid!!! Please debug from maximizer_solver!!!
+maximizer intial point not valid!!! Please debug from maximizer_solver!!!
+maximizer intial point not valid!!! Please debug from maximizer_solver!!!
+maximizer intial point not valid!!! Please debug from maximizer_solver!!!
+maximizer intial point not valid!!! Please debug from maximizer_solver!!!
+maximizer intial point not valid!!! Please debug from maximizer_solver!!!
+maximizer intial point not valid!!! Please debug from maximizer_solver!!!
+maximizer intial point not valid!!! Please debug from maximizer_solver!!!
+maximizer intial point not valid!!! Please debug from maximizer_solver!!!
+maximizer intial point not valid!!! Please debug from maximizer_solver!!!
+maximizer intial point not valid!!! Please debug from maximizer_solver!!!
+maximizer intial point not valid!!! Please debug from maximizer_solver!!!
+maximizer intial point not valid!!! Please debug from maximizer_solver!!!
+maximizer intial point not valid!!! Please debug from maximizer_solver!!!
+maximizer intial point not valid!!! Please debug from maximizer_solver!!!
+maximizer intial point not valid!!! Please debug from maximizer_solver!!!
+contraction 3 fails, the gap is nan
+Phi0 = 190.0
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 245 epoch: 245.0 OC: 245.0 SC: 245
+Current Complexity:
+iter: 0 epoch: 0 OC: 0 SC: 0
+Iterates Info:
+acc: 0.5 , loss: 190.0 , primalF: 190.0
+||sto grad_x||^2: 144400.0 ||sto grad_y||^2: 0.0
+||true grad_x||^2: 144400.0 ||true grad_y||^2: 0.0
+lr_x: 0.022352495909830745 , lr_y: 0.5904900000000002
+mu: 1 , kappa: 20
+{'lr_x': 0.022352495909830745, 'lr_y': 0.5904900000000002, 'b': 1, 'eps': tensor(23.3240, device='cuda:0', grad_fn=<PowBackward0>), 'N': 1, 'K': 1000, 'real_K': 1000, 'L': 1.6935087808430282, 'mu': 1, 'std_x': 0, 'std_y': 0, 'is_force_b': False, 'method': 'primal_line_search_N_1_AGDA', 'pjx': False, 'pjy': False}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 295 epoch: 295.0 OC: 295.0 SC: 295
+Current Complexity:
+iter: 50 epoch: 50.0 OC: 50.0 SC: 50
+Iterates Info:
+acc: 0.5 , loss: 9.418689882270145e+53 , primalF: 1.2364818754121859e+54
+||sto grad_x||^2: 2.341740261987138e+56 ||sto grad_y||^2: 5.892257743703423e+53
+||true grad_x||^2: 2.341740261987138e+56 ||true grad_y||^2: 5.892257743703423e+53
+lr_x: 0.022352495909830745 , lr_y: 0.5904900000000002
+mu: 1 , kappa: 20
+{'lr_x': 0.022352495909830745, 'lr_y': 0.5904900000000002, 'b': 1, 'eps': tensor(23.3240, device='cuda:0', grad_fn=<PowBackward0>), 'N': 1, 'K': 1000, 'real_K': 1000, 'L': 1.6935087808430282, 'mu': 1, 'std_x': 0, 'std_y': 0, 'is_force_b': False, 'method': 'primal_line_search_N_1_AGDA', 'pjx': False, 'pjy': False}
+-----------------------------------------------------------------------------------------------
+
+
+maximizer intial point not valid!!! Please debug from maximizer_solver!!!
+maximizer intial point not valid!!! Please debug from maximizer_solver!!!
+maximizer intial point not valid!!! Please debug from maximizer_solver!!!
+maximizer intial point not valid!!! Please debug from maximizer_solver!!!
+maximizer intial point not valid!!! Please debug from maximizer_solver!!!
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 345 epoch: 345.0 OC: 345.0 SC: 345
+Current Complexity:
+iter: 100 epoch: 100.0 OC: 100.0 SC: 100
+Iterates Info:
+acc: 0.5 , loss: 1.0718179770169166e+105 , primalF: 1.4070783929483672e+105
+||sto grad_x||^2: 2.664828486419137e+107 ||sto grad_y||^2: 6.705208318629012e+104
+||true grad_x||^2: 2.664828486419137e+107 ||true grad_y||^2: 6.705208318629012e+104
+lr_x: 0.022352495909830745 , lr_y: 0.5904900000000002
+mu: 1 , kappa: 20
+{'lr_x': 0.022352495909830745, 'lr_y': 0.5904900000000002, 'b': 1, 'eps': tensor(23.3240, device='cuda:0', grad_fn=<PowBackward0>), 'N': 1, 'K': 1000, 'real_K': 1000, 'L': 1.6935087808430282, 'mu': 1, 'std_x': 0, 'std_y': 0, 'is_force_b': False, 'method': 'primal_line_search_N_1_AGDA', 'pjx': False, 'pjy': False}
+-----------------------------------------------------------------------------------------------
+
+
+maximizer intial point not valid!!! Please debug from maximizer_solver!!!
+maximizer intial point not valid!!! Please debug from maximizer_solver!!!
+maximizer intial point not valid!!! Please debug from maximizer_solver!!!
+maximizer intial point not valid!!! Please debug from maximizer_solver!!!
+maximizer intial point not valid!!! Please debug from maximizer_solver!!!
+maximizer intial point not valid!!! Please debug from maximizer_solver!!!
+maximizer intial point not valid!!! Please debug from maximizer_solver!!!
+maximizer intial point not valid!!! Please debug from maximizer_solver!!!
+maximizer intial point not valid!!! Please debug from maximizer_solver!!!
+maximizer intial point not valid!!! Please debug from maximizer_solver!!!
+maximizer intial point not valid!!! Please debug from maximizer_solver!!!
+maximizer intial point not valid!!! Please debug from maximizer_solver!!!
+maximizer intial point not valid!!! Please debug from maximizer_solver!!!
+maximizer intial point not valid!!! Please debug from maximizer_solver!!!
+maximizer intial point not valid!!! Please debug from maximizer_solver!!!
+maximizer intial point not valid!!! Please debug from maximizer_solver!!!
+maximizer intial point not valid!!! Please debug from maximizer_solver!!!
+maximizer intial point not valid!!! Please debug from maximizer_solver!!!
+maximizer intial point not valid!!! Please debug from maximizer_solver!!!
+maximizer intial point not valid!!! Please debug from maximizer_solver!!!
+maximizer intial point not valid!!! Please debug from maximizer_solver!!!
+maximizer intial point not valid!!! Please debug from maximizer_solver!!!
+maximizer intial point not valid!!! Please debug from maximizer_solver!!!
+maximizer intial point not valid!!! Please debug from maximizer_solver!!!
+contraction 4 fails, the gap is nan
+Phi0 = 190.0
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 370 epoch: 370.0 OC: 370.0 SC: 370
+Current Complexity:
+iter: 0 epoch: 0 OC: 0 SC: 0
+Iterates Info:
+acc: 0.5 , loss: 190.0 , primalF: 190.0
+||sto grad_x||^2: 144400.0 ||sto grad_y||^2: 0.0
+||true grad_x||^2: 144400.0 ||true grad_y||^2: 0.0
+lr_x: 0.016294969518266613 , lr_y: 0.5314410000000002
+mu: 1 , kappa: 20
+{'lr_x': 0.016294969518266613, 'lr_y': 0.5314410000000002, 'b': 1, 'eps': tensor(27.3174, device='cuda:0', grad_fn=<PowBackward0>), 'N': 1, 'K': 1000, 'real_K': 1000, 'L': 1.8816764231589203, 'mu': 1, 'std_x': 0, 'std_y': 0, 'is_force_b': False, 'method': 'primal_line_search_N_1_AGDA', 'pjx': False, 'pjy': False}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 420 epoch: 420.0 OC: 420.0 SC: 420
+Current Complexity:
+iter: 50 epoch: 50.0 OC: 50.0 SC: 50
+Iterates Info:
+acc: 0.5 , loss: 258919716.1996025 , primalF: 441062630.5860547
+||sto grad_x||^2: 38905862083.59436 ||sto grad_y||^2: 364285828.77290446
+||true grad_x||^2: 38905862083.59436 ||true grad_y||^2: 364285828.77290446
+lr_x: 0.016294969518266613 , lr_y: 0.5314410000000002
+mu: 1 , kappa: 20
+{'lr_x': 0.016294969518266613, 'lr_y': 0.5314410000000002, 'b': 1, 'eps': tensor(27.3174, device='cuda:0', grad_fn=<PowBackward0>), 'N': 1, 'K': 1000, 'real_K': 1000, 'L': 1.8816764231589203, 'mu': 1, 'std_x': 0, 'std_y': 0, 'is_force_b': False, 'method': 'primal_line_search_N_1_AGDA', 'pjx': False, 'pjy': False}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 470 epoch: 470.0 OC: 470.0 SC: 470
+Current Complexity:
+iter: 100 epoch: 100.0 OC: 100.0 SC: 100
+Iterates Info:
+acc: 0.5 , loss: 8461693678731.568 , primalF: 14414262953531.18
+||sto grad_x||^2: 1271473227649312.2 ||sto grad_y||^2: 11905138549599.225
+||true grad_x||^2: 1271473227649312.2 ||true grad_y||^2: 11905138549599.225
+lr_x: 0.016294969518266613 , lr_y: 0.5314410000000002
+mu: 1 , kappa: 20
+{'lr_x': 0.016294969518266613, 'lr_y': 0.5314410000000002, 'b': 1, 'eps': tensor(27.3174, device='cuda:0', grad_fn=<PowBackward0>), 'N': 1, 'K': 1000, 'real_K': 1000, 'L': 1.8816764231589203, 'mu': 1, 'std_x': 0, 'std_y': 0, 'is_force_b': False, 'method': 'primal_line_search_N_1_AGDA', 'pjx': False, 'pjy': False}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 520 epoch: 520.0 OC: 520.0 SC: 520
+Current Complexity:
+iter: 150 epoch: 150.0 OC: 150.0 SC: 150
+Iterates Info:
+acc: 0.5 , loss: 2.7653459907814854e+17 , primalF: 4.710691001354321e+17
+||sto grad_x||^2: 4.155271421965591e+19 ||sto grad_y||^2: 3.890690021145675e+17
+||true grad_x||^2: 4.155271421965591e+19 ||true grad_y||^2: 3.890690021145675e+17
+lr_x: 0.016294969518266613 , lr_y: 0.5314410000000002
+mu: 1 , kappa: 20
+{'lr_x': 0.016294969518266613, 'lr_y': 0.5314410000000002, 'b': 1, 'eps': tensor(27.3174, device='cuda:0', grad_fn=<PowBackward0>), 'N': 1, 'K': 1000, 'real_K': 1000, 'L': 1.8816764231589203, 'mu': 1, 'std_x': 0, 'std_y': 0, 'is_force_b': False, 'method': 'primal_line_search_N_1_AGDA', 'pjx': False, 'pjy': False}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 570 epoch: 570.0 OC: 570.0 SC: 570
+Current Complexity:
+iter: 200 epoch: 200.0 OC: 200.0 SC: 200
+Iterates Info:
+acc: 0.5 , loss: 9.037361477587271e+21 , primalF: 1.5394897249882889e+22
+||sto grad_x||^2: 1.3579743729347507e+24 ||sto grad_y||^2: 1.271507154459123e+22
+||true grad_x||^2: 1.3579743729347507e+24 ||true grad_y||^2: 1.271507154459123e+22
+lr_x: 0.016294969518266613 , lr_y: 0.5314410000000002
+mu: 1 , kappa: 20
+{'lr_x': 0.016294969518266613, 'lr_y': 0.5314410000000002, 'b': 1, 'eps': tensor(27.3174, device='cuda:0', grad_fn=<PowBackward0>), 'N': 1, 'K': 1000, 'real_K': 1000, 'L': 1.8816764231589203, 'mu': 1, 'std_x': 0, 'std_y': 0, 'is_force_b': False, 'method': 'primal_line_search_N_1_AGDA', 'pjx': False, 'pjy': False}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 620 epoch: 620.0 OC: 620.0 SC: 620
+Current Complexity:
+iter: 250 epoch: 250.0 OC: 250.0 SC: 250
+Iterates Info:
+acc: 0.5 , loss: 2.9534786152924496e+26 , primalF: 5.0311697639754596e+26
+||sto grad_x||^2: 4.43796375803341e+28 ||sto grad_y||^2: 4.1553822973660186e+26
+||true grad_x||^2: 4.43796375803341e+28 ||true grad_y||^2: 4.1553822973660186e+26
+lr_x: 0.016294969518266613 , lr_y: 0.5314410000000002
+mu: 1 , kappa: 20
+{'lr_x': 0.016294969518266613, 'lr_y': 0.5314410000000002, 'b': 1, 'eps': tensor(27.3174, device='cuda:0', grad_fn=<PowBackward0>), 'N': 1, 'K': 1000, 'real_K': 1000, 'L': 1.8816764231589203, 'mu': 1, 'std_x': 0, 'std_y': 0, 'is_force_b': False, 'method': 'primal_line_search_N_1_AGDA', 'pjx': False, 'pjy': False}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 670 epoch: 670.0 OC: 670.0 SC: 670
+Current Complexity:
+iter: 300 epoch: 300.0 OC: 300.0 SC: 300
+Iterates Info:
+acc: 0.5 , loss: 9.652193234300871e+30 , primalF: 1.6442246273604563e+31
+||sto grad_x||^2: 1.4503603830942584e+33 ||sto grad_y||^2: 1.358010607860738e+31
+||true grad_x||^2: 1.4503603830942584e+33 ||true grad_y||^2: 1.358010607860738e+31
+lr_x: 0.016294969518266613 , lr_y: 0.5314410000000002
+mu: 1 , kappa: 20
+{'lr_x': 0.016294969518266613, 'lr_y': 0.5314410000000002, 'b': 1, 'eps': tensor(27.3174, device='cuda:0', grad_fn=<PowBackward0>), 'N': 1, 'K': 1000, 'real_K': 1000, 'L': 1.8816764231589203, 'mu': 1, 'std_x': 0, 'std_y': 0, 'is_force_b': False, 'method': 'primal_line_search_N_1_AGDA', 'pjx': False, 'pjy': False}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 720 epoch: 720.0 OC: 720.0 SC: 720
+Current Complexity:
+iter: 350 epoch: 350.0 OC: 350.0 SC: 350
+Iterates Info:
+acc: 0.5 , loss: 3.1544103197462204e+35 , primalF: 5.3734514080129475e+35
+||sto grad_x||^2: 4.739888281064845e+37 ||sto grad_y||^2: 4.438082176533454e+35
+||true grad_x||^2: 4.739888281064845e+37 ||true grad_y||^2: 4.438082176533454e+35
+lr_x: 0.016294969518266613 , lr_y: 0.5314410000000002
+mu: 1 , kappa: 20
+{'lr_x': 0.016294969518266613, 'lr_y': 0.5314410000000002, 'b': 1, 'eps': tensor(27.3174, device='cuda:0', grad_fn=<PowBackward0>), 'N': 1, 'K': 1000, 'real_K': 1000, 'L': 1.8816764231589203, 'mu': 1, 'std_x': 0, 'std_y': 0, 'is_force_b': False, 'method': 'primal_line_search_N_1_AGDA', 'pjx': False, 'pjy': False}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 770 epoch: 770.0 OC: 770.0 SC: 770
+Current Complexity:
+iter: 400 epoch: 400.0 OC: 400.0 SC: 400
+Iterates Info:
+acc: 0.5 , loss: 1.0308853359836754e+40 , primalF: 1.7560848775650216e+40
+||sto grad_x||^2: 1.5490316185447087e+42 ||sto grad_y||^2: 1.4503990831626921e+40
+||true grad_x||^2: 1.5490316185447087e+42 ||true grad_y||^2: 1.4503990831626921e+40
+lr_x: 0.016294969518266613 , lr_y: 0.5314410000000002
+mu: 1 , kappa: 20
+{'lr_x': 0.016294969518266613, 'lr_y': 0.5314410000000002, 'b': 1, 'eps': tensor(27.3174, device='cuda:0', grad_fn=<PowBackward0>), 'N': 1, 'K': 1000, 'real_K': 1000, 'L': 1.8816764231589203, 'mu': 1, 'std_x': 0, 'std_y': 0, 'is_force_b': False, 'method': 'primal_line_search_N_1_AGDA', 'pjx': False, 'pjy': False}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 820 epoch: 820.0 OC: 820.0 SC: 820
+Current Complexity:
+iter: 450 epoch: 450.0 OC: 450.0 SC: 450
+Iterates Info:
+acc: 0.5 , loss: 3.369011853954582e+44 , primalF: 5.73901923187374e+44
+||sto grad_x||^2: 5.062353399418434e+46 ||sto grad_y||^2: 4.740014755838318e+44
+||true grad_x||^2: 5.062353399418434e+46 ||true grad_y||^2: 4.740014755838318e+44
+lr_x: 0.016294969518266613 , lr_y: 0.5314410000000002
+mu: 1 , kappa: 20
+{'lr_x': 0.016294969518266613, 'lr_y': 0.5314410000000002, 'b': 1, 'eps': tensor(27.3174, device='cuda:0', grad_fn=<PowBackward0>), 'N': 1, 'K': 1000, 'real_K': 1000, 'L': 1.8816764231589203, 'mu': 1, 'std_x': 0, 'std_y': 0, 'is_force_b': False, 'method': 'primal_line_search_N_1_AGDA', 'pjx': False, 'pjy': False}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 870 epoch: 870.0 OC: 870.0 SC: 870
+Current Complexity:
+iter: 500 epoch: 500.0 OC: 500.0 SC: 500
+Iterates Info:
+acc: 0.5 , loss: 1.1010187530949758e+49 , primalF: 1.875555228827312e+49
+||sto grad_x||^2: 1.6544156771105673e+51 ||sto grad_y||^2: 1.5490729514646728e+49
+||true grad_x||^2: 1.6544156771105673e+51 ||true grad_y||^2: 1.5490729514646728e+49
+lr_x: 0.016294969518266613 , lr_y: 0.5314410000000002
+mu: 1 , kappa: 20
+{'lr_x': 0.016294969518266613, 'lr_y': 0.5314410000000002, 'b': 1, 'eps': tensor(27.3174, device='cuda:0', grad_fn=<PowBackward0>), 'N': 1, 'K': 1000, 'real_K': 1000, 'L': 1.8816764231589203, 'mu': 1, 'std_x': 0, 'std_y': 0, 'is_force_b': False, 'method': 'primal_line_search_N_1_AGDA', 'pjx': False, 'pjy': False}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 920 epoch: 920.0 OC: 920.0 SC: 920
+Current Complexity:
+iter: 550 epoch: 550.0 OC: 550.0 SC: 550
+Iterates Info:
+acc: 0.5 , loss: 3.598213206771314e+53 , primalF: 6.12945744604704e+53
+||sto grad_x||^2: 5.406756535376869e+55 ||sto grad_y||^2: 5.062488478551453e+53
+||true grad_x||^2: 5.406756535376869e+55 ||true grad_y||^2: 5.062488478551453e+53
+lr_x: 0.016294969518266613 , lr_y: 0.5314410000000002
+mu: 1 , kappa: 20
+{'lr_x': 0.016294969518266613, 'lr_y': 0.5314410000000002, 'b': 1, 'eps': tensor(27.3174, device='cuda:0', grad_fn=<PowBackward0>), 'N': 1, 'K': 1000, 'real_K': 1000, 'L': 1.8816764231589203, 'mu': 1, 'std_x': 0, 'std_y': 0, 'is_force_b': False, 'method': 'primal_line_search_N_1_AGDA', 'pjx': False, 'pjy': False}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 970 epoch: 970.0 OC: 970.0 SC: 970
+Current Complexity:
+iter: 600 epoch: 600.0 OC: 600.0 SC: 600
+Iterates Info:
+acc: 0.5 , loss: 1.1759235022100094e+58 , primalF: 2.0031534132104449e+58
+||sto grad_x||^2: 1.7669692470453163e+60 ||sto grad_y||^2: 1.6544598220008703e+58
+||true grad_x||^2: 1.7669692470453163e+60 ||true grad_y||^2: 1.6544598220008703e+58
+lr_x: 0.016294969518266613 , lr_y: 0.5314410000000002
+mu: 1 , kappa: 20
+{'lr_x': 0.016294969518266613, 'lr_y': 0.5314410000000002, 'b': 1, 'eps': tensor(27.3174, device='cuda:0', grad_fn=<PowBackward0>), 'N': 1, 'K': 1000, 'real_K': 1000, 'L': 1.8816764231589203, 'mu': 1, 'std_x': 0, 'std_y': 0, 'is_force_b': False, 'method': 'primal_line_search_N_1_AGDA', 'pjx': False, 'pjy': False}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 1020 epoch: 1020.0 OC: 1020.0 SC: 1020
+Current Complexity:
+iter: 650 epoch: 650.0 OC: 650.0 SC: 650
+Iterates Info:
+acc: 0.5 , loss: 3.843007636255778e+62 , primalF: 6.54645803837735e+62
+||sto grad_x||^2: 5.774590180961922e+64 ||sto grad_y||^2: 5.406900804243146e+62
+||true grad_x||^2: 5.774590180961922e+64 ||true grad_y||^2: 5.406900804243146e+62
+lr_x: 0.016294969518266613 , lr_y: 0.5314410000000002
+mu: 1 , kappa: 20
+{'lr_x': 0.016294969518266613, 'lr_y': 0.5314410000000002, 'b': 1, 'eps': tensor(27.3174, device='cuda:0', grad_fn=<PowBackward0>), 'N': 1, 'K': 1000, 'real_K': 1000, 'L': 1.8816764231589203, 'mu': 1, 'std_x': 0, 'std_y': 0, 'is_force_b': False, 'method': 'primal_line_search_N_1_AGDA', 'pjx': False, 'pjy': False}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 1070 epoch: 1070.0 OC: 1070.0 SC: 1070
+Current Complexity:
+iter: 700 epoch: 700.0 OC: 700.0 SC: 700
+Iterates Info:
+acc: 0.5 , loss: 1.2559241876332965e+67 , primalF: 2.139432385238518e+67
+||sto grad_x||^2: 1.8871800861176095e+69 ||sto grad_y||^2: 1.7670163952104432e+67
+||true grad_x||^2: 1.8871800861176095e+69 ||true grad_y||^2: 1.7670163952104432e+67
+lr_x: 0.016294969518266613 , lr_y: 0.5314410000000002
+mu: 1 , kappa: 20
+{'lr_x': 0.016294969518266613, 'lr_y': 0.5314410000000002, 'b': 1, 'eps': tensor(27.3174, device='cuda:0', grad_fn=<PowBackward0>), 'N': 1, 'K': 1000, 'real_K': 1000, 'L': 1.8816764231589203, 'mu': 1, 'std_x': 0, 'std_y': 0, 'is_force_b': False, 'method': 'primal_line_search_N_1_AGDA', 'pjx': False, 'pjy': False}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 1120 epoch: 1120.0 OC: 1120.0 SC: 1120
+Current Complexity:
+iter: 750 epoch: 750.0 OC: 750.0 SC: 750
+Iterates Info:
+acc: 0.5 , loss: 4.104455974017111e+71 , primalF: 6.99182810639669e+71
+||sto grad_x||^2: 6.167448365739392e+73 ||sto grad_y||^2: 5.774744264759159e+71
+||true grad_x||^2: 6.167448365739392e+73 ||true grad_y||^2: 5.774744264759159e+71
+lr_x: 0.016294969518266613 , lr_y: 0.5314410000000002
+mu: 1 , kappa: 20
+{'lr_x': 0.016294969518266613, 'lr_y': 0.5314410000000002, 'b': 1, 'eps': tensor(27.3174, device='cuda:0', grad_fn=<PowBackward0>), 'N': 1, 'K': 1000, 'real_K': 1000, 'L': 1.8816764231589203, 'mu': 1, 'std_x': 0, 'std_y': 0, 'is_force_b': False, 'method': 'primal_line_search_N_1_AGDA', 'pjx': False, 'pjy': False}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 1170 epoch: 1170.0 OC: 1170.0 SC: 1170
+Current Complexity:
+iter: 800 epoch: 800.0 OC: 800.0 SC: 800
+Iterates Info:
+acc: 0.5 , loss: 1.3413674972206221e+76 , primalF: 2.2849827181591375e+76
+||sto grad_x||^2: 2.015569135339635e+78 ||sto grad_y||^2: 1.887230441877031e+76
+||true grad_x||^2: 2.015569135339635e+78 ||true grad_y||^2: 1.887230441877031e+76
+lr_x: 0.016294969518266613 , lr_y: 0.5314410000000002
+mu: 1 , kappa: 20
+{'lr_x': 0.016294969518266613, 'lr_y': 0.5314410000000002, 'b': 1, 'eps': tensor(27.3174, device='cuda:0', grad_fn=<PowBackward0>), 'N': 1, 'K': 1000, 'real_K': 1000, 'L': 1.8816764231589203, 'mu': 1, 'std_x': 0, 'std_y': 0, 'is_force_b': False, 'method': 'primal_line_search_N_1_AGDA', 'pjx': False, 'pjy': False}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 1220 epoch: 1220.0 OC: 1220.0 SC: 1220
+Current Complexity:
+iter: 850 epoch: 850.0 OC: 850.0 SC: 850
+Iterates Info:
+acc: 0.5 , loss: 4.3836912223933964e+80 , primalF: 7.467497688493135e+80
+||sto grad_x||^2: 6.587033564644481e+82 ||sto grad_y||^2: 6.167612932199479e+80
+||true grad_x||^2: 6.587033564644481e+82 ||true grad_y||^2: 6.167612932199479e+80
+lr_x: 0.016294969518266613 , lr_y: 0.5314410000000002
+mu: 1 , kappa: 20
+{'lr_x': 0.016294969518266613, 'lr_y': 0.5314410000000002, 'b': 1, 'eps': tensor(27.3174, device='cuda:0', grad_fn=<PowBackward0>), 'N': 1, 'K': 1000, 'real_K': 1000, 'L': 1.8816764231589203, 'mu': 1, 'std_x': 0, 'std_y': 0, 'is_force_b': False, 'method': 'primal_line_search_N_1_AGDA', 'pjx': False, 'pjy': False}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 1270 epoch: 1270.0 OC: 1270.0 SC: 1270
+Current Complexity:
+iter: 900 epoch: 900.0 OC: 900.0 SC: 900
+Iterates Info:
+acc: 0.5 , loss: 1.432623704771956e+85 , primalF: 2.4404351632285194e+85
+||sto grad_x||^2: 2.152692776496688e+87 ||sto grad_y||^2: 2.0156229169131258e+85
+||true grad_x||^2: 2.152692776496688e+87 ||true grad_y||^2: 2.0156229169131258e+85
+lr_x: 0.016294969518266613 , lr_y: 0.5314410000000002
+mu: 1 , kappa: 20
+{'lr_x': 0.016294969518266613, 'lr_y': 0.5314410000000002, 'b': 1, 'eps': tensor(27.3174, device='cuda:0', grad_fn=<PowBackward0>), 'N': 1, 'K': 1000, 'real_K': 1000, 'L': 1.8816764231589203, 'mu': 1, 'std_x': 0, 'std_y': 0, 'is_force_b': False, 'method': 'primal_line_search_N_1_AGDA', 'pjx': False, 'pjy': False}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 1320 epoch: 1320.0 OC: 1320.0 SC: 1320
+Current Complexity:
+iter: 950 epoch: 950.0 OC: 950.0 SC: 950
+Iterates Info:
+acc: 0.5 , loss: 4.6819234643855365e+89 , primalF: 7.975528127848425e+89
+||sto grad_x||^2: 7.03516407575946e+91 ||sto grad_y||^2: 6.587209326925774e+89
+||true grad_x||^2: 7.03516407575946e+91 ||true grad_y||^2: 6.587209326925774e+89
+lr_x: 0.016294969518266613 , lr_y: 0.5314410000000002
+mu: 1 , kappa: 20
+{'lr_x': 0.016294969518266613, 'lr_y': 0.5314410000000002, 'b': 1, 'eps': tensor(27.3174, device='cuda:0', grad_fn=<PowBackward0>), 'N': 1, 'K': 1000, 'real_K': 1000, 'L': 1.8816764231589203, 'mu': 1, 'std_x': 0, 'std_y': 0, 'is_force_b': False, 'method': 'primal_line_search_N_1_AGDA', 'pjx': False, 'pjy': False}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 1370 epoch: 1370.0 OC: 1370.0 SC: 1370
+Current Complexity:
+iter: 1000 epoch: 1000.0 OC: 1000.0 SC: 1000
+Iterates Info:
+acc: 0.5 , loss: 1.5300882746355163e+94 , primalF: 2.6064633831104707e+94
+||sto grad_x||^2: 2.2991452432615317e+96 ||sto grad_y||^2: 2.1527502169499095e+94
+||true grad_x||^2: 2.2991452432615317e+96 ||true grad_y||^2: 2.1527502169499095e+94
+lr_x: 0.016294969518266613 , lr_y: 0.5314410000000002
+mu: 1 , kappa: 20
+{'lr_x': 0.016294969518266613, 'lr_y': 0.5314410000000002, 'b': 1, 'eps': tensor(27.3174, device='cuda:0', grad_fn=<PowBackward0>), 'N': 1, 'K': 1000, 'real_K': 1000, 'L': 1.8816764231589203, 'mu': 1, 'std_x': 0, 'std_y': 0, 'is_force_b': False, 'method': 'primal_line_search_N_1_AGDA', 'pjx': False, 'pjy': False}
+-----------------------------------------------------------------------------------------------
+
+
+Contraction 5 fails, gap=2.320672745431031e+96, lcondition=2.320672745431031e+96, rcondition=4.0040000000000004, Phi0=190.0, Phik=2.6064633831104707e+94
+
+Phi0 = 190.0
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 1370 epoch: 1370.0 OC: 1370.0 SC: 1370
+Current Complexity:
+iter: 0 epoch: 0 OC: 0 SC: 0
+Iterates Info:
+acc: 0.5 , loss: 190.0 , primalF: 190.0
+||sto grad_x||^2: 144400.0 ||sto grad_y||^2: 0.0
+||true grad_x||^2: 144400.0 ||true grad_y||^2: 0.0
+lr_x: 0.01187903277881636 , lr_y: 0.47829690000000014
+mu: 1 , kappa: 20
+{'lr_x': 0.01187903277881636, 'lr_y': 0.47829690000000014, 'b': 1, 'eps': tensor(31.9946, device='cuda:0', grad_fn=<PowBackward0>), 'N': 1, 'K': 1000, 'real_K': 1000, 'L': 2.090751581287689, 'mu': 1, 'std_x': 0, 'std_y': 0, 'is_force_b': False, 'method': 'primal_line_search_N_1_AGDA', 'pjx': False, 'pjy': False}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 1420 epoch: 1420.0 OC: 1420.0 SC: 1420
+Current Complexity:
+iter: 50 epoch: 50.0 OC: 50.0 SC: 50
+Iterates Info:
+acc: 0.5 , loss: -5.020563303022188e-08 , primalF: 1.1522788604417945e-07
+||sto grad_x||^2: 4.605975225213661e-06 ||sto grad_y||^2: 3.3086703814880267e-07
+||true grad_x||^2: 4.605975225213661e-06 ||true grad_y||^2: 3.3086703814880267e-07
+lr_x: 0.01187903277881636 , lr_y: 0.47829690000000014
+mu: 1 , kappa: 20
+{'lr_x': 0.01187903277881636, 'lr_y': 0.47829690000000014, 'b': 1, 'eps': tensor(31.9946, device='cuda:0', grad_fn=<PowBackward0>), 'N': 1, 'K': 1000, 'real_K': 1000, 'L': 2.090751581287689, 'mu': 1, 'std_x': 0, 'std_y': 0, 'is_force_b': False, 'method': 'primal_line_search_N_1_AGDA', 'pjx': False, 'pjy': False}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 1470 epoch: 1470.0 OC: 1470.0 SC: 1470
+Current Complexity:
+iter: 100 epoch: 100.0 OC: 100.0 SC: 100
+Iterates Info:
+acc: 0.5 , loss: 6.252698724401396e-17 , primalF: 2.1449202622667002e-16
+||sto grad_x||^2: 3.033590278033094e-15 ||sto grad_y||^2: 3.0393007796531205e-16
+||true grad_x||^2: 3.033590278033094e-15 ||true grad_y||^2: 3.0393007796531205e-16
+lr_x: 0.01187903277881636 , lr_y: 0.47829690000000014
+mu: 1 , kappa: 20
+{'lr_x': 0.01187903277881636, 'lr_y': 0.47829690000000014, 'b': 1, 'eps': tensor(31.9946, device='cuda:0', grad_fn=<PowBackward0>), 'N': 1, 'K': 1000, 'real_K': 1000, 'L': 2.090751581287689, 'mu': 1, 'std_x': 0, 'std_y': 0, 'is_force_b': False, 'method': 'primal_line_search_N_1_AGDA', 'pjx': False, 'pjy': False}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 1520 epoch: 1520.0 OC: 1520.0 SC: 1520
+Current Complexity:
+iter: 150 epoch: 150.0 OC: 150.0 SC: 150
+Iterates Info:
+acc: 0.5 , loss: 5.323433537936612e-26 , primalF: 1.1328190540368617e-25
+||sto grad_x||^2: 5.511927614485852e-24 ||sto grad_y||^2: 1.2009514004864004e-25
+||true grad_x||^2: 5.511927614485852e-24 ||true grad_y||^2: 1.2009514004864004e-25
+lr_x: 0.01187903277881636 , lr_y: 0.47829690000000014
+mu: 1 , kappa: 20
+{'lr_x': 0.01187903277881636, 'lr_y': 0.47829690000000014, 'b': 1, 'eps': tensor(31.9946, device='cuda:0', grad_fn=<PowBackward0>), 'N': 1, 'K': 1000, 'real_K': 1000, 'L': 2.090751581287689, 'mu': 1, 'std_x': 0, 'std_y': 0, 'is_force_b': False, 'method': 'primal_line_search_N_1_AGDA', 'pjx': False, 'pjy': False}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 1570 epoch: 1570.0 OC: 1570.0 SC: 1570
+Current Complexity:
+iter: 200 epoch: 200.0 OC: 200.0 SC: 200
+Iterates Info:
+acc: 0.5 , loss: 1.857786590300084e-35 , primalF: 3.103885294429108e-35
+||sto grad_x||^2: 2.8885252699132537e-33 ||sto grad_y||^2: 2.4921974082580494e-35
+||true grad_x||^2: 2.8885252699132537e-33 ||true grad_y||^2: 2.4921974082580494e-35
+lr_x: 0.01187903277881636 , lr_y: 0.47829690000000014
+mu: 1 , kappa: 20
+{'lr_x': 0.01187903277881636, 'lr_y': 0.47829690000000014, 'b': 1, 'eps': tensor(31.9946, device='cuda:0', grad_fn=<PowBackward0>), 'N': 1, 'K': 1000, 'real_K': 1000, 'L': 2.090751581287689, 'mu': 1, 'std_x': 0, 'std_y': 0, 'is_force_b': False, 'method': 'primal_line_search_N_1_AGDA', 'pjx': False, 'pjy': False}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 1620 epoch: 1620.0 OC: 1620.0 SC: 1620
+Current Complexity:
+iter: 250 epoch: 250.0 OC: 250.0 SC: 250
+Iterates Info:
+acc: 0.5 , loss: 3.029288468193575e-45 , primalF: 3.901033307241883e-45
+||sto grad_x||^2: 7.863306762865547e-43 ||sto grad_y||^2: 1.7434896780966156e-45
+||true grad_x||^2: 7.863306762865547e-43 ||true grad_y||^2: 1.7434896780966156e-45
+lr_x: 0.01187903277881636 , lr_y: 0.47829690000000014
+mu: 1 , kappa: 20
+{'lr_x': 0.01187903277881636, 'lr_y': 0.47829690000000014, 'b': 1, 'eps': tensor(31.9946, device='cuda:0', grad_fn=<PowBackward0>), 'N': 1, 'K': 1000, 'real_K': 1000, 'L': 2.090751581287689, 'mu': 1, 'std_x': 0, 'std_y': 0, 'is_force_b': False, 'method': 'primal_line_search_N_1_AGDA', 'pjx': False, 'pjy': False}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 1670 epoch: 1670.0 OC: 1670.0 SC: 1670
+Current Complexity:
+iter: 300 epoch: 300.0 OC: 300.0 SC: 300
+Iterates Info:
+acc: 0.5 , loss: -3.1475600797767645e-56 , primalF: 1.738044738345559e-56
+||sto grad_x||^2: 9.773744253813104e-53 ||sto grad_y||^2: 9.771209636244648e-56
+||true grad_x||^2: 9.773744253813104e-53 ||true grad_y||^2: 9.771209636244648e-56
+lr_x: 0.01187903277881636 , lr_y: 0.47829690000000014
+mu: 1 , kappa: 20
+{'lr_x': 0.01187903277881636, 'lr_y': 0.47829690000000014, 'b': 1, 'eps': tensor(31.9946, device='cuda:0', grad_fn=<PowBackward0>), 'N': 1, 'K': 1000, 'real_K': 1000, 'L': 2.090751581287689, 'mu': 1, 'std_x': 0, 'std_y': 0, 'is_force_b': False, 'method': 'primal_line_search_N_1_AGDA', 'pjx': False, 'pjy': False}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 1720 epoch: 1720.0 OC: 1720.0 SC: 1720
+Current Complexity:
+iter: 350 epoch: 350.0 OC: 350.0 SC: 350
+Iterates Info:
+acc: 0.5 , loss: -9.032034125094518e-66 , primalF: 2.480112998923013e-64
+||sto grad_x||^2: 3.731412264585572e-64 ||sto grad_y||^2: 5.1408666803479164e-64
+||true grad_x||^2: 3.731412264585572e-64 ||true grad_y||^2: 5.1408666803479164e-64
+lr_x: 0.01187903277881636 , lr_y: 0.47829690000000014
+mu: 1 , kappa: 20
+{'lr_x': 0.01187903277881636, 'lr_y': 0.47829690000000014, 'b': 1, 'eps': tensor(31.9946, device='cuda:0', grad_fn=<PowBackward0>), 'N': 1, 'K': 1000, 'real_K': 1000, 'L': 2.090751581287689, 'mu': 1, 'std_x': 0, 'std_y': 0, 'is_force_b': False, 'method': 'primal_line_search_N_1_AGDA', 'pjx': False, 'pjy': False}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 1770 epoch: 1770.0 OC: 1770.0 SC: 1770
+Current Complexity:
+iter: 400 epoch: 400.0 OC: 400.0 SC: 400
+Iterates Info:
+acc: 0.5 , loss: 9.624599372005393e-74 , primalF: 2.6934019179070727e-73
+||sto grad_x||^2: 6.450251945899484e-72 ||sto grad_y||^2: 3.4618839614130675e-73
+||true grad_x||^2: 6.450251945899484e-72 ||true grad_y||^2: 3.4618839614130675e-73
+lr_x: 0.01187903277881636 , lr_y: 0.47829690000000014
+mu: 1 , kappa: 20
+{'lr_x': 0.01187903277881636, 'lr_y': 0.47829690000000014, 'b': 1, 'eps': tensor(31.9946, device='cuda:0', grad_fn=<PowBackward0>), 'N': 1, 'K': 1000, 'real_K': 1000, 'L': 2.090751581287689, 'mu': 1, 'std_x': 0, 'std_y': 0, 'is_force_b': False, 'method': 'primal_line_search_N_1_AGDA', 'pjx': False, 'pjy': False}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 1820 epoch: 1820.0 OC: 1820.0 SC: 1820
+Current Complexity:
+iter: 450 epoch: 450.0 OC: 450.0 SC: 450
+Iterates Info:
+acc: 0.5 , loss: 5.871126152510432e-83 , primalF: 1.1558470981406437e-82
+||sto grad_x||^2: 6.9024766221847305e-81 ||sto grad_y||^2: 1.1374689657792013e-82
+||true grad_x||^2: 6.9024766221847305e-81 ||true grad_y||^2: 1.1374689657792013e-82
+lr_x: 0.01187903277881636 , lr_y: 0.47829690000000014
+mu: 1 , kappa: 20
+{'lr_x': 0.01187903277881636, 'lr_y': 0.47829690000000014, 'b': 1, 'eps': tensor(31.9946, device='cuda:0', grad_fn=<PowBackward0>), 'N': 1, 'K': 1000, 'real_K': 1000, 'L': 2.090751581287689, 'mu': 1, 'std_x': 0, 'std_y': 0, 'is_force_b': False, 'method': 'primal_line_search_N_1_AGDA', 'pjx': False, 'pjy': False}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 1870 epoch: 1870.0 OC: 1870.0 SC: 1870
+Current Complexity:
+iter: 500 epoch: 500.0 OC: 500.0 SC: 500
+Iterates Info:
+acc: 0.5 , loss: 1.6756390660406056e-92 , primalF: 2.617488649508981e-92
+||sto grad_x||^2: 2.9418728539690967e-90 ||sto grad_y||^2: 1.8836991669367517e-92
+||true grad_x||^2: 2.9418728539690967e-90 ||true grad_y||^2: 1.8836991669367517e-92
+lr_x: 0.01187903277881636 , lr_y: 0.47829690000000014
+mu: 1 , kappa: 20
+{'lr_x': 0.01187903277881636, 'lr_y': 0.47829690000000014, 'b': 1, 'eps': tensor(31.9946, device='cuda:0', grad_fn=<PowBackward0>), 'N': 1, 'K': 1000, 'real_K': 1000, 'L': 2.090751581287689, 'mu': 1, 'std_x': 0, 'std_y': 0, 'is_force_b': False, 'method': 'primal_line_search_N_1_AGDA', 'pjx': False, 'pjy': False}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 1920 epoch: 1920.0 OC: 1920.0 SC: 1920
+Current Complexity:
+iter: 550 epoch: 550.0 OC: 550.0 SC: 550
+Iterates Info:
+acc: 0.5 , loss: 1.9539772653475347e-102 , primalF: 2.264678192187901e-102
+||sto grad_x||^2: 6.615698930057829e-100 ||sto grad_y||^2: 6.214018536807332e-103
+||true grad_x||^2: 6.615698930057829e-100 ||true grad_y||^2: 6.214018536807332e-103
+lr_x: 0.01187903277881636 , lr_y: 0.47829690000000014
+mu: 1 , kappa: 20
+{'lr_x': 0.01187903277881636, 'lr_y': 0.47829690000000014, 'b': 1, 'eps': tensor(31.9946, device='cuda:0', grad_fn=<PowBackward0>), 'N': 1, 'K': 1000, 'real_K': 1000, 'L': 2.090751581287689, 'mu': 1, 'std_x': 0, 'std_y': 0, 'is_force_b': False, 'method': 'primal_line_search_N_1_AGDA', 'pjx': False, 'pjy': False}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 1970 epoch: 1970.0 OC: 1970.0 SC: 1970
+Current Complexity:
+iter: 600 epoch: 600.0 OC: 600.0 SC: 600
+Iterates Info:
+acc: 0.5 , loss: -1.5940596333370784e-112 , primalF: 3.061379758523404e-113
+||sto grad_x||^2: 5.633905279237879e-110 ||sto grad_y||^2: 3.8003952183788377e-112
+||true grad_x||^2: 5.633905279237879e-110 ||true grad_y||^2: 3.8003952183788377e-112
+lr_x: 0.01187903277881636 , lr_y: 0.47829690000000014
+mu: 1 , kappa: 20
+{'lr_x': 0.01187903277881636, 'lr_y': 0.47829690000000014, 'b': 1, 'eps': tensor(31.9946, device='cuda:0', grad_fn=<PowBackward0>), 'N': 1, 'K': 1000, 'real_K': 1000, 'L': 2.090751581287689, 'mu': 1, 'std_x': 0, 'std_y': 0, 'is_force_b': False, 'method': 'primal_line_search_N_1_AGDA', 'pjx': False, 'pjy': False}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 2020 epoch: 2020.0 OC: 2020.0 SC: 2020
+Current Complexity:
+iter: 650 epoch: 650.0 OC: 650.0 SC: 650
+Iterates Info:
+acc: 0.5 , loss: 6.114832240712378e-122 , primalF: 4.1397979295698774e-121
+||sto grad_x||^2: 8.778048821831368e-121 ||sto grad_y||^2: 7.0566294109972795e-121
+||true grad_x||^2: 8.778048821831368e-121 ||true grad_y||^2: 7.0566294109972795e-121
+lr_x: 0.01187903277881636 , lr_y: 0.47829690000000014
+mu: 1 , kappa: 20
+{'lr_x': 0.01187903277881636, 'lr_y': 0.47829690000000014, 'b': 1, 'eps': tensor(31.9946, device='cuda:0', grad_fn=<PowBackward0>), 'N': 1, 'K': 1000, 'real_K': 1000, 'L': 2.090751581287689, 'mu': 1, 'std_x': 0, 'std_y': 0, 'is_force_b': False, 'method': 'primal_line_search_N_1_AGDA', 'pjx': False, 'pjy': False}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 2070 epoch: 2070.0 OC: 2070.0 SC: 2070
+Current Complexity:
+iter: 700 epoch: 700.0 OC: 700.0 SC: 700
+Iterates Info:
+acc: 0.5 , loss: 1.2892374034660362e-130 , primalF: 3.1511980623203195e-130
+||sto grad_x||^2: 1.0697546252727679e-128 ||sto grad_y||^2: 3.7239213177085675e-130
+||true grad_x||^2: 1.0697546252727679e-128 ||true grad_y||^2: 3.7239213177085675e-130
+lr_x: 0.01187903277881636 , lr_y: 0.47829690000000014
+mu: 1 , kappa: 20
+{'lr_x': 0.01187903277881636, 'lr_y': 0.47829690000000014, 'b': 1, 'eps': tensor(31.9946, device='cuda:0', grad_fn=<PowBackward0>), 'N': 1, 'K': 1000, 'real_K': 1000, 'L': 2.090751581287689, 'mu': 1, 'std_x': 0, 'std_y': 0, 'is_force_b': False, 'method': 'primal_line_search_N_1_AGDA', 'pjx': False, 'pjy': False}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 2120 epoch: 2120.0 OC: 2120.0 SC: 2120
+Current Complexity:
+iter: 750 epoch: 750.0 OC: 750.0 SC: 750
+Iterates Info:
+acc: 0.5 , loss: 6.0991528220018715e-140 , primalF: 1.1197481339056225e-139
+||sto grad_x||^2: 8.057489172470614e-138 ||sto grad_y||^2: 1.0196657034108704e-139
+||true grad_x||^2: 8.057489172470614e-138 ||true grad_y||^2: 1.0196657034108704e-139
+lr_x: 0.01187903277881636 , lr_y: 0.47829690000000014
+mu: 1 , kappa: 20
+{'lr_x': 0.01187903277881636, 'lr_y': 0.47829690000000014, 'b': 1, 'eps': tensor(31.9946, device='cuda:0', grad_fn=<PowBackward0>), 'N': 1, 'K': 1000, 'real_K': 1000, 'L': 2.090751581287689, 'mu': 1, 'std_x': 0, 'std_y': 0, 'is_force_b': False, 'method': 'primal_line_search_N_1_AGDA', 'pjx': False, 'pjy': False}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 2170 epoch: 2170.0 OC: 2170.0 SC: 2170
+Current Complexity:
+iter: 800 epoch: 800.0 OC: 800.0 SC: 800
+Iterates Info:
+acc: 0.5 , loss: 1.4123632234699022e-149 , primalF: 2.0524094276099375e-149
+||sto grad_x||^2: 2.8447761360927797e-147 ||sto grad_y||^2: 1.280092408280071e-149
+||true grad_x||^2: 2.8447761360927797e-147 ||true grad_y||^2: 1.280092408280071e-149
+lr_x: 0.01187903277881636 , lr_y: 0.47829690000000014
+mu: 1 , kappa: 20
+{'lr_x': 0.01187903277881636, 'lr_y': 0.47829690000000014, 'b': 1, 'eps': tensor(31.9946, device='cuda:0', grad_fn=<PowBackward0>), 'N': 1, 'K': 1000, 'real_K': 1000, 'L': 2.090751581287689, 'mu': 1, 'std_x': 0, 'std_y': 0, 'is_force_b': False, 'method': 'primal_line_search_N_1_AGDA', 'pjx': False, 'pjy': False}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 2220 epoch: 2220.0 OC: 2220.0 SC: 2220
+Current Complexity:
+iter: 850 epoch: 850.0 OC: 850.0 SC: 850
+Iterates Info:
+acc: 0.5 , loss: 9.658049054549665e-160 , primalF: 9.938924389040651e-160
+||sto grad_x||^2: 5.172679597056359e-157 ||sto grad_y||^2: 5.617506689819743e-161
+||true grad_x||^2: 5.172679597056359e-157 ||true grad_y||^2: 5.617506689819743e-161
+lr_x: 0.01187903277881636 , lr_y: 0.47829690000000014
+mu: 1 , kappa: 20
+{'lr_x': 0.01187903277881636, 'lr_y': 0.47829690000000014, 'b': 1, 'eps': tensor(31.9946, device='cuda:0', grad_fn=<PowBackward0>), 'N': 1, 'K': 1000, 'real_K': 1000, 'L': 2.090751581287689, 'mu': 1, 'std_x': 0, 'std_y': 0, 'is_force_b': False, 'method': 'primal_line_search_N_1_AGDA', 'pjx': False, 'pjy': False}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 2270 epoch: 2270.0 OC: 2270.0 SC: 2270
+Current Complexity:
+iter: 900 epoch: 900.0 OC: 900.0 SC: 900
+Iterates Info:
+acc: 0.5 , loss: -1.8130842303747126e-169 , primalF: 2.2716562523160774e-169
+||sto grad_x||^2: 2.4379483814179826e-167 ||sto grad_y||^2: 8.16948096538158e-169
+||true grad_x||^2: 2.4379483814179826e-167 ||true grad_y||^2: 8.16948096538158e-169
+lr_x: 0.01187903277881636 , lr_y: 0.47829690000000014
+mu: 1 , kappa: 20
+{'lr_x': 0.01187903277881636, 'lr_y': 0.47829690000000014, 'b': 1, 'eps': tensor(31.9946, device='cuda:0', grad_fn=<PowBackward0>), 'N': 1, 'K': 1000, 'real_K': 1000, 'L': 2.090751581287689, 'mu': 1, 'std_x': 0, 'std_y': 0, 'is_force_b': False, 'method': 'primal_line_search_N_1_AGDA', 'pjx': False, 'pjy': False}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 2320 epoch: 2320.0 OC: 2320.0 SC: 2320
+Current Complexity:
+iter: 950 epoch: 950.0 OC: 950.0 SC: 950
+Iterates Info:
+acc: 0.5 , loss: 1.5298390430823152e-178 , primalF: 5.959141411050716e-178
+||sto grad_x||^2: 6.038282381050955e-177 ||sto grad_y||^2: 8.858604735936803e-178
+||true grad_x||^2: 6.038282381050955e-177 ||true grad_y||^2: 8.858604735936803e-178
+lr_x: 0.01187903277881636 , lr_y: 0.47829690000000014
+mu: 1 , kappa: 20
+{'lr_x': 0.01187903277881636, 'lr_y': 0.47829690000000014, 'b': 1, 'eps': tensor(31.9946, device='cuda:0', grad_fn=<PowBackward0>), 'N': 1, 'K': 1000, 'real_K': 1000, 'L': 2.090751581287689, 'mu': 1, 'std_x': 0, 'std_y': 0, 'is_force_b': False, 'method': 'primal_line_search_N_1_AGDA', 'pjx': False, 'pjy': False}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 2370 epoch: 2370.0 OC: 2370.0 SC: 2370
+Current Complexity:
+iter: 1000 epoch: 1000.0 OC: 1000.0 SC: 1000
+Iterates Info:
+acc: 0.5 , loss: 1.5720769579842747e-187 , primalF: 3.4715332458724923e-187
+||sto grad_x||^2: 1.5334912221357833e-185 ||sto grad_y||^2: 3.798912575776435e-187
+||true grad_x||^2: 1.5334912221357833e-185 ||true grad_y||^2: 3.798912575776435e-187
+lr_x: 0.01187903277881636 , lr_y: 0.47829690000000014
+mu: 1 , kappa: 20
+{'lr_x': 0.01187903277881636, 'lr_y': 0.47829690000000014, 'b': 1, 'eps': tensor(31.9946, device='cuda:0', grad_fn=<PowBackward0>), 'N': 1, 'K': 1000, 'real_K': 1000, 'L': 2.090751581287689, 'mu': 1, 'std_x': 0, 'std_y': 0, 'is_force_b': False, 'method': 'primal_line_search_N_1_AGDA', 'pjx': False, 'pjy': False}
+-----------------------------------------------------------------------------------------------
+
+
+Contraction 6 successes!!! Gap=-67.98227282329692, lcondition=1.5714803478935475e-185, rcondition=67.98227282329692, Phi0=190.0, Phik=3.4715332458724923e-187
+

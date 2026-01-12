@@ -6,8 +6,8 @@ from ALG.Utils import *
 import numpy as np
 
 
-DATA_LIMIT = 500
-PLOT_LIMIT = 500
+DATA_LIMIT = 2000
+PLOT_LIMIT = 2000
 stdx = 0
 stdy = 0
 b = 1
@@ -16,12 +16,15 @@ L = 20
 for kappa in [int(L/mu_y)]:
     data_name = f'Q_stdx_{stdx}_stdy_{stdy}' + '_toy_muy_' + str(mu_y) + '_kappa_' + str(kappa) + f'_b_{b}'
     data_path = f'./result_data/{data_name}'
-    for plot_part in ['z','lr_x','lr_y','ratio']:# ['x','y','z','loss','acc','lr_x','lr_y']:
+    for plot_part in ['lr_x','lr_y','z','ratio']:# ['x','y','z','loss','acc','lr_x','lr_y']:
         G = {}
+        G['GS-GDA-B,N=1'] = data_path +'/primal_line_search_N_1_AGDA'
         G['LS-GS-GDA-S'] = data_path +'/LS-GS-GDA-S'
         G['LS-GS-GDA'] = data_path +'/LS-GS-GDA'
         G['TiAda'] = data_path +'/TiAda'
         G['GS-GDA'] = data_path +'/AGDA'
+        G['NeAda'] = data_path + '/NeAda'
+
 
         plt.figure(dpi=150)
         fig, ax = plt.subplots()
@@ -42,12 +45,12 @@ for kappa in [int(L/mu_y)]:
                 total_sample_complexity_counter = min(record['total_sample_complexity_counter'], key=len)
                 total_iter_counter = min(record['total_iter_counter'], key=len)
                 total_epoch_counter = min(record['total_epoch_counter'], key=len)
-                #counter = total_oracle_complexity_counter[:data_xLimit]
-                counter = total_iter_counter[:data_xLimit]
+                counter = total_oracle_complexity_counter[:data_xLimit]
+                #counter = total_iter_counter[:data_xLimit]
                 data_xLimit = min(data_xLimit, len(counter))
 
                 # load y-axis data
-                valid_line_search = [i for i in range(len(record['acc'])) if len(record['acc'][i])>0]
+                valid_line_search = [i for i in range(len(record['acc'])) if len(record['acc'][i])>0 and record['acc'][i][-1]>=0]
                 print(valid_line_search)
 
                 acc = record['acc']
@@ -170,7 +173,7 @@ for kappa in [int(L/mu_y)]:
         elif plot_part == 'y':
             plt.yscale('log')
         elif plot_part == 'z':
-            plt.ylim(1e-120,100)
+            #plt.ylim(1e-120,100)
             plt.yscale('log')
         elif plot_part == 'acc':
             plt.ylim(0, 0.6)

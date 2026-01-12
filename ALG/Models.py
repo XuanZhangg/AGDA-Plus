@@ -5,7 +5,7 @@ from ALG.Utils import *
 import torch.nn.functional as F
 
 class Problem(nn.Module):
-    def __init__(self, mu_y, kappa, device, injected_noise_x=0,injected_noise_y=0):
+    def __init__(self, mu_y, kappa, device, injected_noise_x=0,injected_noise_y=0, has_sin=False):
         super(Problem,self).__init__()
         self.name = 'NN'
         self.device = device
@@ -16,6 +16,7 @@ class Problem(nn.Module):
         self.mu_y = mu_y
         self.kappa = kappa #only valid for Qmodel
         self.L = kappa*mu_y #only valid for Qmodel
+        self.has_sin = has_sin #only valid for Qmodel
 
     def forward(self):
         pass
@@ -53,10 +54,14 @@ class Problem(nn.Module):
         pass
 
 class ProblemQ(Problem):
-    def __init__(self, data_size, mu_y, kappa, device, injected_noise_x=0, injected_noise_y=0):
+    def __init__(self, data_size, mu_y, kappa, device, injected_noise_x=0, injected_noise_y=0, has_sin=False):
         super().__init__(mu_y, kappa, device,injected_noise_x,injected_noise_y)
         self.d_x, self.d_y = data_size
-        self.name = f'Q_stdx_{self.std_x}_stdy_{self.std_y}'
+        self.has_sin = has_sin
+        if has_sin:
+            self.name = f'sin_Q_stdx_{self.std_x}_stdy_{self.std_y}'
+        else:
+            self.name = f'Q_stdx_{self.std_x}_stdy_{self.std_y}'
         assert self.d_x == self.d_y # the way to generate the model only support the same dim of x and y
         self.reset_init()
         self.mu_y = mu_y
@@ -66,31 +71,56 @@ class ProblemQ(Problem):
             A = torch.tensor([[20.]])
             Q = torch.tensor([[-20.]])
         else:
-            try:
-                if self.std>0:
-                    A,Q = torch.load(f'data/sQ/AQ_kappa_{self.kappa}_mu_{self.mu_y}.pt')
-                else:
-                    A,Q = torch.load(f'data/Q/AQ_kappa_{self.kappa}_mu_{self.mu_y}.pt')
-            except:
-                Lambda_Q = np.diag(np.random.uniform(low=-1, high=1, size=self.d_x))
-                Lambda_Q = Lambda_Q/np.linalg.norm(Lambda_Q, ord=2)*self.L
-                if self.std>0:
-                    eps = 1e-1
-                else:
-                    eps = 1e-2
-                Lambda_A = (np.abs(Lambda_Q) * self.mu_y)**(1/2) + np.diag(np.random.uniform(low=eps, high=eps, size=self.d_x))
+            if not has_sin:
+                try:
+                    if self.std>0:
+                        A,Q = torch.load(f'data/sQ/AQ_kappa_{self.kappa}_mu_{self.mu_y}.pt')
+                    else:
+                        A,Q = torch.load(f'data/Q/AQ_kappa_{self.kappa}_mu_{self.mu_y}.pt')
+                except:
+                    Lambda_Q = np.diag(np.random.uniform(low=-1, high=1, size=self.d_x))
+                    Lambda_Q = Lambda_Q/np.linalg.norm(Lambda_Q, ord=2)*self.L
+                    if self.std>0:
+                        eps = 1e-1
+                    else:
+                        eps = 1e-2
+                    Lambda_A = (np.abs(Lambda_Q) * self.mu_y)**(1/2) + np.diag(np.random.uniform(low=eps, high=eps, size=self.d_x))
 
-                # generate a random n x n matrix
-                foo = np.random.rand(self.d_x, self.d_y)
-                # perform QR decomposition
-                V, _ = np.linalg.qr(foo)
-                A,Q = torch.from_numpy(V.T@Lambda_A@V), torch.from_numpy(V.T@Lambda_Q@V)
-                if self.std>0:
-                    torch.save([A,Q], f'data/sQ/AQ_kappa_{self.kappa}_mu_{self.mu_y}.pt')
-                else:
-                    torch.save([A,Q], f'data/Q/AQ_kappa_{self.kappa}_mu_{self.mu_y}.pt')
+                    # generate a random n x n matrix
+                    foo = np.random.rand(self.d_x, self.d_y)
+                    # perform QR decomposition
+                    V, _ = np.linalg.qr(foo)
+                    A,Q = torch.from_numpy(V.T@Lambda_A@V), torch.from_numpy(V.T@Lambda_Q@V)
+                    if self.std>0:
+                        torch.save([A,Q], f'data/sQ/AQ_kappa_{self.kappa}_mu_{self.mu_y}.pt')
+                    else:
+                        torch.save([A,Q], f'data/Q/AQ_kappa_{self.kappa}_mu_{self.mu_y}.pt')
+                assert np.abs(max([np.linalg.norm(A, ord=2), np.linalg.norm(Q, ord=2), self.mu_y])-self.L) <= 1
+            elif has_sin:
+                try:
+                    if self.std>0:
+                        A,Q = torch.load(f'data/sin_sQ/AQ_kappa_{self.kappa}_mu_{self.mu_y}.pt')
+                    else:
+                        A,Q = torch.load(f'data/sin_Q/AQ_kappa_{self.kappa}_mu_{self.mu_y}.pt')
+                except:
+                    Lambda_Q = np.diag(np.random.uniform(low=-1, high=1, size=self.d_x))
+                    Lambda_Q = Lambda_Q/np.linalg.norm(Lambda_Q, ord=2)
+                    if self.std>0:
+                        eps = 1e-1
+                    else:
+                        eps = 1e-2
+                    Lambda_A = (np.abs(Lambda_Q) * self.mu_y)**(1/2) + np.diag(np.random.uniform(low=eps, high=eps, size=self.d_x))
 
-        assert np.abs(max([np.linalg.norm(A, ord=2), np.linalg.norm(Q, ord=2), self.mu_y])-self.L) <= 1
+                    # generate a random n x n matrix
+                    foo = np.random.rand(self.d_x, self.d_y)
+                    # perform QR decomposition
+                    V, _ = np.linalg.qr(foo)
+                    A,Q = torch.from_numpy(V.T@Lambda_A@V), torch.from_numpy(V.T@Lambda_Q@V)
+                    if self.std>0:
+                        torch.save([A,Q], f'data/sin_sQ/AQ_kappa_{self.kappa}_mu_{self.mu_y}.pt')
+                    else:
+                        torch.save([A,Q], f'data/sin_Q/AQ_kappa_{self.kappa}_mu_{self.mu_y}.pt')
+
         self.register_buffer('Q', Q)
         self.register_buffer('A', A)
 
@@ -113,8 +143,16 @@ class ProblemQ(Problem):
     
     def loss(self, *args):
         L = self.kappa/self.mu_y
-        loss = self.x.T @ self.A @ self.dual_y + 1 / 2 * self.x.T @ self.Q @ self.x 
-        return loss - self.mu_y / 2 * torch.norm(self.dual_y)**2 + torch.sin(np.sqrt(L)*torch.sum(self.x))
+        loss = self.x.T @ self.A @ self.dual_y + 1 / 2 * self.x.T @ self.Q @ self.x - self.mu_y / 2 * torch.norm(self.dual_y)**2
+        if self.d_x == 1:
+            if self.has_sin:
+                loss += torch.sin(np.sqrt(L)*torch.sum(self.x))
+            return loss  # + torch.sin(np.sqrt(L)*torch.sum(self.x))
+        else:
+            if self.has_sin:
+                c = np.sqrt((L-1)/self.d_x)
+                loss += + torch.sin(c*torch.sum(self.x)) # torch.sin( np.sqrt(L-1) * torch.sqrt(self.x.T @ self.x + 1) )
+            return loss
 
     def exact_y_opt(self,input=None,idx=None,target=None):
         # this function is to avoid memory issues
@@ -122,7 +160,7 @@ class ProblemQ(Problem):
 
 
 class FairCNN(Problem):
-    def __init__(self, data_size,  mu_y, kappa, device, injected_noise_x=0 ,injected_noise_y=0):
+    def __init__(self, data_size,  mu_y, kappa, device, injected_noise_x=0 ,injected_noise_y=0, has_sin=False):
         super().__init__(mu_y, kappa, device, injected_noise_x, injected_noise_y)
         self.channel,self.d_x = data_size[0]
         self.n = data_size[1]
@@ -176,8 +214,9 @@ class FairCNN(Problem):
     
     def predict(self, x):
         return self.forward(x).argmax(dim=1)
+    
 class ProblemDRO(Problem):
-    def __init__(self, data_size, mu_y, kappa, device, injected_noise_x=0 ,injected_noise_y=0):
+    def __init__(self, data_size, mu_y, kappa, device, injected_noise_x=0 ,injected_noise_y=0, has_sin=False):
         super().__init__(mu_y, kappa, device, injected_noise_x ,injected_noise_y)
         self.d_x, self.d_y = data_size
         self.fc = nn.Sequential(
@@ -289,4 +328,3 @@ class ProblemDRO(Problem):
         self.L_estimated = torch.norm(hessian, p=2) + self.mu_y
         print(f'L={self.L_estimated}')
         return self.L_estimated
-
