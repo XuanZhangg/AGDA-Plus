@@ -1,0 +1,189 @@
+data:gisette,number_of_data:6000,dim_features:5000
+L:0.053220038704550165, mu:0.01, kappa: 5.322003870455016
+GDA: lr_y=18.78991493319795,lr_x=0.029382944615477646
+AGDA: lr_y=18.78991493319795,lr_x=0.1567090379492141
+Phi0 = 0.6932174911522169
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 0 epoch: 0 OC: 0 SC: 0
+Current Complexity:
+iter: 0 epoch: 0 OC: 0 SC: 0
+Iterates Info:
+acc: 0.5073333333333333 , loss: 0.6932174911522169 , primalF: 0.6932174911522169
+||sto grad_x||^2: 0.1504417868814839 ||sto grad_y||^2: 9.349462580397175e-30
+||true grad_x||^2: 0.1504417868814839 ||true grad_y||^2: 9.349462580397175e-30
+lr_x: 7.9143619992218674 , lr_y: 90.0
+mu: 0.01 , kappa: 10
+{'lr_x': 7.9143619992218674, 'lr_y': 90.0, 'b': 6000, 'eps': tensor(0.0432, device='cuda:0', grad_fn=<PowBackward0>), 'N': 1, 'K': 3000, 'real_K': 3000, 'L': 0.011111111111111112, 'mu': 0.01, 'std_x': 0.0, 'std_y': 0.0, 'is_force_b': False, 'method': 'primal_line_search_N_1_AGDA', 'pjx': False, 'pjy': True}
+positive number of yi(batch): 6000 max y_i: 0.00016665649414093764 min y_i: 0.00016665649414093764
+positive number of yi(total): 6000 max y_i: 0.00016665649414093764 min y_i: 0.00016665649414093764
+-----------------------------------------------------------------------------------------------
+
+
+contraction 0 fails, the gap is nan
+Phi0 = 0.6932174911522169
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 4 epoch: 4.0 OC: 24000.0 SC: 24000
+Current Complexity:
+iter: 0 epoch: 0 OC: 0 SC: 0
+Iterates Info:
+acc: 0.5073333333333333 , loss: 0.6932174911522169 , primalF: 0.6932174911522169
+||sto grad_x||^2: 0.1504417868814839 ||sto grad_y||^2: 1.1542546395552069e-29
+||true grad_x||^2: 0.1504417868814839 ||true grad_y||^2: 1.1542546395552069e-29
+lr_x: 5.769569897432742 , lr_y: 81.0
+mu: 0.01 , kappa: 10
+{'lr_x': 5.769569897432742, 'lr_y': 81.0, 'b': 6000, 'eps': tensor(0.0506, device='cuda:0', grad_fn=<PowBackward0>), 'N': 1, 'K': 3000, 'real_K': 3000, 'L': 0.012345679012345678, 'mu': 0.01, 'std_x': 0.0, 'std_y': 0.0, 'is_force_b': False, 'method': 'primal_line_search_N_1_AGDA', 'pjx': False, 'pjy': True}
+positive number of yi(batch): 6000 max y_i: 0.00016665649414093764 min y_i: 0.00016665649414093764
+positive number of yi(total): 6000 max y_i: 0.00016665649414093764 min y_i: 0.00016665649414093764
+-----------------------------------------------------------------------------------------------
+
+
+contraction 1 fails, the gap is nan
+Phi0 = 0.6932174911522169
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 9 epoch: 9.0 OC: 54000.0 SC: 54000
+Current Complexity:
+iter: 0 epoch: 0 OC: 0 SC: 0
+Iterates Info:
+acc: 0.5073333333333333 , loss: 0.6932174911522169 , primalF: 0.6932174911522169
+||sto grad_x||^2: 0.1504417868814839 ||sto grad_y||^2: 1.4250057278459346e-29
+||true grad_x||^2: 0.1504417868814839 ||true grad_y||^2: 1.4250057278459346e-29
+lr_x: 4.20601645522847 , lr_y: 72.9
+mu: 0.01 , kappa: 10
+{'lr_x': 4.20601645522847, 'lr_y': 72.9, 'b': 6000, 'eps': tensor(0.0593, device='cuda:0', grad_fn=<PowBackward0>), 'N': 1, 'K': 3000, 'real_K': 3000, 'L': 0.013717421124828532, 'mu': 0.01, 'std_x': 0.0, 'std_y': 0.0, 'is_force_b': False, 'method': 'primal_line_search_N_1_AGDA', 'pjx': False, 'pjy': True}
+positive number of yi(batch): 6000 max y_i: 0.00016665649414093764 min y_i: 0.00016665649414093764
+positive number of yi(total): 6000 max y_i: 0.00016665649414093764 min y_i: 0.00016665649414093764
+-----------------------------------------------------------------------------------------------
+
+
+contraction 2 fails, the gap is nan
+Phi0 = 0.6932174911522169
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 14 epoch: 14.0 OC: 84000.0 SC: 84000
+Current Complexity:
+iter: 0 epoch: 0 OC: 0 SC: 0
+Iterates Info:
+acc: 0.5073333333333333 , loss: 0.6932174911522169 , primalF: 0.6932174911522169
+||sto grad_x||^2: 0.1504417868814839 ||sto grad_y||^2: 1.759266330673994e-29
+||true grad_x||^2: 0.1504417868814839 ||true grad_y||^2: 1.759266330673994e-29
+lr_x: 3.066185995861554 , lr_y: 65.61
+mu: 0.01 , kappa: 10
+{'lr_x': 3.066185995861554, 'lr_y': 65.61, 'b': 6000, 'eps': tensor(0.0694, device='cuda:0', grad_fn=<PowBackward0>), 'N': 1, 'K': 3000, 'real_K': 3000, 'L': 0.015241579027587257, 'mu': 0.01, 'std_x': 0.0, 'std_y': 0.0, 'is_force_b': False, 'method': 'primal_line_search_N_1_AGDA', 'pjx': False, 'pjy': True}
+positive number of yi(batch): 6000 max y_i: 0.00016665649414093764 min y_i: 0.00016665649414093764
+positive number of yi(total): 6000 max y_i: 0.00016665649414093764 min y_i: 0.00016665649414093764
+-----------------------------------------------------------------------------------------------
+
+
+contraction 3 fails, the gap is nan
+Phi0 = 0.6932174911522169
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 19 epoch: 19.0 OC: 114000.0 SC: 114000
+Current Complexity:
+iter: 0 epoch: 0 OC: 0 SC: 0
+Iterates Info:
+acc: 0.5073333333333333 , loss: 0.6932174911522169 , primalF: 0.6932174911522169
+||sto grad_x||^2: 0.1504417868814839 ||sto grad_y||^2: 2.1719337415728316e-29
+||true grad_x||^2: 0.1504417868814839 ||true grad_y||^2: 2.1719337415728316e-29
+lr_x: 2.2352495909830723 , lr_y: 59.049
+mu: 0.01 , kappa: 10
+{'lr_x': 2.2352495909830723, 'lr_y': 59.049, 'b': 6000, 'eps': tensor(0.0813, device='cuda:0', grad_fn=<PowBackward0>), 'N': 1, 'K': 3000, 'real_K': 3000, 'L': 0.016935087808430286, 'mu': 0.01, 'std_x': 0.0, 'std_y': 0.0, 'is_force_b': False, 'method': 'primal_line_search_N_1_AGDA', 'pjx': False, 'pjy': True}
+positive number of yi(batch): 6000 max y_i: 0.00016665649414093764 min y_i: 0.00016665649414093764
+positive number of yi(total): 6000 max y_i: 0.00016665649414093764 min y_i: 0.00016665649414093764
+-----------------------------------------------------------------------------------------------
+
+
+contraction 4 fails, the gap is nan
+Phi0 = 0.6932174911522169
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 25 epoch: 25.0 OC: 150000.0 SC: 150000
+Current Complexity:
+iter: 0 epoch: 0 OC: 0 SC: 0
+Iterates Info:
+acc: 0.5073333333333333 , loss: 0.6932174911522169 , primalF: 0.6932174911522169
+||sto grad_x||^2: 0.1504417868814839 ||sto grad_y||^2: 2.681399680954113e-29
+||true grad_x||^2: 0.1504417868814839 ||true grad_y||^2: 2.681399680954113e-29
+lr_x: 1.62949695182666 , lr_y: 53.1441
+mu: 0.01 , kappa: 10
+{'lr_x': 1.62949695182666, 'lr_y': 53.1441, 'b': 6000, 'eps': tensor(0.0953, device='cuda:0', grad_fn=<PowBackward0>), 'N': 1, 'K': 3000, 'real_K': 3000, 'L': 0.018816764231589206, 'mu': 0.01, 'std_x': 0.0, 'std_y': 0.0, 'is_force_b': False, 'method': 'primal_line_search_N_1_AGDA', 'pjx': False, 'pjy': True}
+positive number of yi(batch): 6000 max y_i: 0.00016665649414093764 min y_i: 0.00016665649414093764
+positive number of yi(total): 6000 max y_i: 0.00016665649414093764 min y_i: 0.00016665649414093764
+-----------------------------------------------------------------------------------------------
+
+
+contraction 5 fails, the gap is nan
+Phi0 = 0.6932174911522169
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 31 epoch: 31.0 OC: 186000.0 SC: 186000
+Current Complexity:
+iter: 0 epoch: 0 OC: 0 SC: 0
+Iterates Info:
+acc: 0.5073333333333333 , loss: 0.6932174911522169 , primalF: 0.6932174911522169
+||sto grad_x||^2: 0.1504417868814839 ||sto grad_y||^2: 3.3103699764865584e-29
+||true grad_x||^2: 0.1504417868814839 ||true grad_y||^2: 3.3103699764865584e-29
+lr_x: 1.1879032778816354 , lr_y: 47.82969000000001
+mu: 0.01 , kappa: 10
+{'lr_x': 1.1879032778816354, 'lr_y': 47.82969000000001, 'b': 6000, 'eps': tensor(0.1116, device='cuda:0', grad_fn=<PowBackward0>), 'N': 1, 'K': 3000, 'real_K': 3000, 'L': 0.020907515812876896, 'mu': 0.01, 'std_x': 0.0, 'std_y': 0.0, 'is_force_b': False, 'method': 'primal_line_search_N_1_AGDA', 'pjx': False, 'pjy': True}
+positive number of yi(batch): 6000 max y_i: 0.00016665649414093764 min y_i: 0.00016665649414093764
+positive number of yi(total): 6000 max y_i: 0.00016665649414093764 min y_i: 0.00016665649414093764
+-----------------------------------------------------------------------------------------------
+
+
+contraction 6 fails, the gap is nan
+Phi0 = 0.6932174911522169
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 39 epoch: 39.0 OC: 234000.0 SC: 234000
+Current Complexity:
+iter: 0 epoch: 0 OC: 0 SC: 0
+Iterates Info:
+acc: 0.5073333333333333 , loss: 0.6932174911522169 , primalF: 0.6932174911522169
+||sto grad_x||^2: 0.1504417868814839 ||sto grad_y||^2: 0.0
+||true grad_x||^2: 0.1504417868814839 ||true grad_y||^2: 0.0
+lr_x: 0.8659814895757123 , lr_y: 43.046721000000005
+mu: 0.01 , kappa: 10
+{'lr_x': 0.8659814895757123, 'lr_y': 43.046721000000005, 'b': 6000, 'eps': tensor(0.1307, device='cuda:0', grad_fn=<PowBackward0>), 'N': 1, 'K': 3000, 'real_K': 3000, 'L': 0.023230573125418773, 'mu': 0.01, 'std_x': 0.0, 'std_y': 0.0, 'is_force_b': False, 'method': 'primal_line_search_N_1_AGDA', 'pjx': False, 'pjy': True}
+positive number of yi(batch): 6000 max y_i: 0.00016665649414093764 min y_i: 0.00016665649414093764
+positive number of yi(total): 6000 max y_i: 0.00016665649414093764 min y_i: 0.00016665649414093764
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 89 epoch: 89.0 OC: 534000.0 SC: 534000
+Current Complexity:
+iter: 50 epoch: 50.0 OC: 300000.0 SC: 300000
+Iterates Info:
+acc: 0.5 , loss: 11.523817476265904 , primalF: 11.523817478231184
+||sto grad_x||^2: 21.24695271904394 ||sto grad_y||^2: 0.0
+||true grad_x||^2: 21.24695271904394 ||true grad_y||^2: 0.0
+lr_x: 0.8659814895757123 , lr_y: 43.046721000000005
+mu: 0.01 , kappa: 10
+{'lr_x': 0.8659814895757123, 'lr_y': 43.046721000000005, 'b': 6000, 'eps': tensor(0.1307, device='cuda:0', grad_fn=<PowBackward0>), 'N': 1, 'K': 3000, 'real_K': 3000, 'L': 0.023230573125418773, 'mu': 0.01, 'std_x': 0.0, 'std_y': 0.0, 'is_force_b': False, 'method': 'primal_line_search_N_1_AGDA', 'pjx': False, 'pjy': True}
+positive number of yi(batch): 6000 max y_i: 0.00016665649411606864 min y_i: 0.00016665649411606864
+positive number of yi(total): 6000 max y_i: 0.00016665649411606864 min y_i: 0.00016665649411606864
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 139 epoch: 139.0 OC: 834000.0 SC: 834000
+Current Complexity:
+iter: 100 epoch: 100.0 OC: 600000.0 SC: 600000
+Iterates Info:
+acc: 0.5 , loss: 11.523966684293963 , primalF: 11.523966687241916
+||sto grad_x||^2: 21.246904872618632 ||sto grad_y||^2: 0.0
+||true grad_x||^2: 21.246904872618643 ||true grad_y||^2: 0.0
+lr_x: 0.8659814895757123 , lr_y: 43.046721000000005
+mu: 0.01 , kappa: 10
+{'lr_x': 0.8659814895757123, 'lr_y': 43.046721000000005, 'b': 6000, 'eps': tensor(0.1307, device='cuda:0', grad_fn=<PowBackward0>), 'N': 1, 'K': 3000, 'real_K': 3000, 'L': 0.023230573125418773, 'mu': 0.01, 'std_x': 0.0, 'std_y': 0.0, 'is_force_b': False, 'method': 'primal_line_search_N_1_AGDA', 'pjx': False, 'pjy': True}
+positive number of yi(batch): 6000 max y_i: 0.00016665649411606864 min y_i: 0.00016665649411606864
+positive number of yi(total): 6000 max y_i: 0.00016665649411606864 min y_i: 0.00016665649411606864
+-----------------------------------------------------------------------------------------------
+
+

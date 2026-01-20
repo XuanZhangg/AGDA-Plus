@@ -18,13 +18,12 @@ for kappa in [int(L/mu_y)]:
     data_path = f'./result_data/{data_name}'
     for plot_part in ['lr_x','lr_y','z','ratio']:# ['x','y','z','loss','acc','lr_x','lr_y']:
         G = {}
-        G['GS-GDA-B,N=1'] = data_path +'/primal_line_search_N_1_AGDA'
         G['LS-GS-GDA-S'] = data_path +'/LS-GS-GDA-S'
         G['LS-GS-GDA'] = data_path +'/LS-GS-GDA'
         G['TiAda'] = data_path +'/TiAda'
-        G['GS-GDA'] = data_path +'/AGDA'
         G['NeAda'] = data_path + '/NeAda'
-
+        G['GS-GDA-B,N=1'] = data_path +'/primal_line_search_N_1_AGDA'
+        G['GS-GDA'] = data_path +'/AGDA'
 
         plt.figure(dpi=150)
         fig, ax = plt.subplots()
@@ -85,28 +84,28 @@ for kappa in [int(L/mu_y)]:
                 N = record['config'][-1]['N']
 
                 if plot_part == 'x':
-                    shadowplot(counter, norm_sqaure_full_grad_x, label_input=alg_name, alpha=0.5, center=C, is_log=is_log,
+                    shadowplot(counter, norm_sqaure_full_grad_x, label_input=alg_name, alpha=0.2, center=C, is_log=is_log,
                                is_var=True, alg_name=alg_name)
                 elif plot_part == 'y':
-                    shadowplot(counter, norm_sqaure_full_grad_y, label_input=alg_name, alpha=0.5, center=C, is_log=is_log,
+                    shadowplot(counter, norm_sqaure_full_grad_y, label_input=alg_name, alpha=0.2, center=C, is_log=is_log,
                                is_var=True, alg_name=alg_name)
                 elif plot_part == 'z':
-                    shadowplot(counter, norm_sqaure_full_grad_z, label_input=alg_name, alpha=0.5, center=C, is_log=is_log,
+                    shadowplot(counter, norm_sqaure_full_grad_z, label_input=alg_name, alpha=0.2, center=C, is_log=is_log,
                                is_var=True, alg_name=alg_name)
                 elif plot_part == 'acc':
-                    shadowplot(counter, error, label_input=alg_name, alpha=0.5, center=C, is_log=is_log, is_var=True,
+                    shadowplot(counter, error, label_input=alg_name, alpha=0.2, center=C, is_log=is_log, is_var=True,
                                alg_name=alg_name)
                 elif plot_part == 'loss':
-                    shadowplot(counter, loss, label_input=alg_name, alpha=0.5, center=C, is_log=is_log, is_var=True,
+                    shadowplot(counter, loss, label_input=alg_name, alpha=0.2, center=C, is_log=is_log, is_var=True,
                                alg_name=alg_name)
                 elif plot_part == 'lr_x':
-                    shadowplot(counter, lr_x, label_input=alg_name, alpha=0.5, center=C, is_log=is_log, is_var=True,
+                    shadowplot(counter, lr_x, label_input=alg_name, alpha=0.2, center=C, is_log=is_log, is_var=True,
                                alg_name=alg_name, is_step = 'LS' in alg_name, is_speical= alg_name=='GS-GDA',plot_part=plot_part)
                 elif plot_part == 'lr_y':
-                    shadowplot(counter, lr_y, label_input=alg_name, alpha=0.5, center=C, is_log=is_log, is_var=True,
+                    shadowplot(counter, lr_y, label_input=alg_name, alpha=0.2, center=C, is_log=is_log, is_var=True,
                                alg_name=alg_name, is_step = 'LS' in alg_name, is_speical= alg_name=='GS-GDA',plot_part=plot_part)
                 elif plot_part == 'ratio':
-                    shadowplot(counter, lr_ratio, label_input=alg_name, alpha=0.5, center=C, is_log=is_log, is_var=True,
+                    shadowplot(counter, lr_ratio, label_input=alg_name, alpha=0.2, center=C, is_log=is_log, is_var=True,
                                alg_name=alg_name, is_step = 'LS' in alg_name, is_speical= alg_name=='GS-GDA',plot_part=plot_part)
 
                 

@@ -16,18 +16,17 @@ for is_last in [False,True]:
             G = {}
             # G['GS-GDA-B,N=2'] = data_path +'/primal_line_search_N_2_AGDA'
             # G['GS-GDA-B,N=5'] = data_path +'/primal_line_search_N_5_AGDA'
-            G['GS-GDA-B,N=1'] = data_path +'/primal_line_search_N_1_AGDA'
+            # G['GS-GDA-B,N=1'] = data_path +'/primal_line_search_N_1_AGDA'
+            # G['LS-GS-GDA-R'] = data_path +'/LS-GS-GDA-R'
+            # G['LS-GS-GDA-S-R'] = data_path + '/LS-GS-GDA-S-R'
             G['LS-GS-GDA-S'] = data_path + '/LS-GS-GDA-S'
             G['LS-GS-GDA'] = data_path +'/LS-GS-GDA'
-            # G['GS-GDA-B,N=1'] = data_path +'/primal_line_search_N_1_AGDA'
             G['TiAda'] = data_path +'/TiAda'
-            #G['LS-GS-GDA-R'] = data_path +'/LS-GS-GDA-R'
-            # G['LS-GS-GDA-S-R'] = data_path + '/LS-GS-GDA-S-R'
-            #G['Smooth-AGDA'] = data_path + '/Smooth-AGDA'
-            G['GS-GDA'] = data_path +'/AGDA'
-            G['J-GDA'] = data_path +'/GDA'
             G['NeAda'] = data_path + '/NeAda'
-
+            G['GS-GDA-B,N=1'] = data_path +'/primal_line_search_N_1_AGDA'
+            G['J-GDA'] = data_path +'/GDA'
+            G['GS-GDA'] = data_path +'/AGDA'
+            # G['Smooth-AGDA'] = data_path + '/Smooth-AGDA'
 
             plt.figure(dpi=150)
             fig, ax = plt.subplots()
@@ -86,26 +85,26 @@ for is_last in [False,True]:
                     N = record['config'][-1]['N']
                     
                     if plot_part == 'x':
-                        shadowplot(counter, norm_sqaure_full_grad_x, label_input=alg_name, alpha=0.5, center=C, is_log=is_log,
+                        shadowplot(counter, norm_sqaure_full_grad_x, label_input=alg_name, alpha=0.2, center=C, is_log=is_log,
                                     is_var=False, alg_name=alg_name, is_last=is_last)
                     elif plot_part == 'y':
-                        shadowplot(counter, norm_sqaure_full_grad_y, label_input=alg_name, alpha=0.5, center=C, is_log=is_log,
+                        shadowplot(counter, norm_sqaure_full_grad_y, label_input=alg_name, alpha=0.2, center=C, is_log=is_log,
                                     is_var=False, alg_name=alg_name, is_last=is_last)
                     elif plot_part == 'z':
-                        shadowplot(counter, norm_sqaure_full_grad_z, label_input=alg_name, alpha=0.5, center=C, is_log=is_log,
+                        shadowplot(counter, norm_sqaure_full_grad_z, label_input=alg_name, alpha=0.2, center=C, is_log=is_log,
                                     is_var=False, alg_name=alg_name, is_last=is_last)
                     elif plot_part == 'acc':
                         #error = [smooth_data(ele,100) for ele in error]
-                        shadowplot(counter, error, label_input=alg_name, alpha=0.5, center=C, is_log=is_log, is_var=False,
+                        shadowplot(counter, error, label_input=alg_name, alpha=0.2, center=C, is_log=is_log, is_var=False,
                                     alg_name=alg_name, is_last=is_last)
                     elif plot_part == 'loss':
-                        shadowplot(counter, loss, label_input=alg_name, alpha=0.5, center=C, is_log=is_log, is_var=False,
+                        shadowplot(counter, loss, label_input=alg_name, alpha=0.2, center=C, is_log=is_log, is_var=False,
                                     alg_name=alg_name, is_last=is_last)
                     elif plot_part == 'lr_x':
-                        shadowplot(counter, lr_x, label_input=alg_name, alpha=0.5, center=C, is_log=is_log, is_var=False,
+                        shadowplot(counter, lr_x, label_input=alg_name, alpha=0.2, center=C, is_log=is_log, is_var=False,
                                     alg_name=alg_name)
                     elif plot_part == 'lr_y':
-                        shadowplot(counter, lr_y, label_input=alg_name, alpha=0.5, center=C, is_log=is_log, is_var=False,
+                        shadowplot(counter, lr_y, label_input=alg_name, alpha=0.2, center=C, is_log=is_log, is_var=False,
                                     alg_name=alg_name)
 
             if plot_part == 'x':

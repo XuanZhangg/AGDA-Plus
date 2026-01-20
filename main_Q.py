@@ -59,7 +59,7 @@ for mu_y in [1]:
         gamma1 = gamma2**2
 
         my_optimizer.max_iter = max_iter_SGDA_B
-        # result = my_optimizer.line_search(N=1,T=1)
+        result = my_optimizer.line_search(N=1,T=1)
 
         my_optimizer.max_iter = max_iter
         # result = my_optimizer.line_search_one_step(gamma1 = gamma1, gamma2 = gamma2, isMaxSolver=True, isRestart=False,verbose=False)
@@ -71,4 +71,4 @@ for mu_y in [1]:
         # result = my_optimizer.optimizer(lr_x=1/3/L, lr_y=1/144/L,p=2*L,beta=mu_y/144/L/1600, method='Smooth-AGDA', b=sgd_b)
         # result = my_optimizer.optimizer(lr_x=1/16/(kappa+1)**2/L,lr_y=1/L,method='GDA',b=sgd_b)
         # result = my_optimizer.optimizer(lr_x=1/3/L/(1+kappa)**2,lr_y=1/L,method='AGDA',b=sgd_b)
-        result = my_optimizer.optimizer(lr_x=100, lr_y=100, method='NeAda', b=sgd_b)
+        # result = my_optimizer.optimizer(lr_x=100, lr_y=100, method='NeAda', b=sgd_b)

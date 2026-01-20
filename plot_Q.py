@@ -5,6 +5,8 @@ import matplotlib.ticker as ticker
 from ALG.Utils import *
 import numpy as np
 
+Q_show_limit_x = {10:30000,20:30000,50:30000,100:30000,1000:30000,10000:30000}
+sinQ_show_limit_x = {10:10000,20:10000,50:10000,100:20000,1000:30000,10000:30000}
 
 DATA_LIMIT = 500000
 PLOT_LIMIT = 30000
@@ -13,25 +15,29 @@ for is_last in [True,False]:
     stdy = 0
     b = 1
     mu_y = 1
-    for kappa in [10000]:# 5,10,20,50,100,1000,10000
+    for kappa in [10,20,50,100,1000,10000]:# 5,10,20,50,100,1000,10000
         print(kappa)
-        data_name = f'sin_Q_stdx_{stdx}_stdy_{stdy}' + '_muy_' + str(mu_y) + '_kappa_' + str(kappa) + f'_b_{b}'
+        data_name = f'Q_stdx_{stdx}_stdy_{stdy}' + '_muy_' + str(mu_y) + '_kappa_' + str(kappa) + f'_b_{b}'
         data_path = f'./result_data/{data_name}'
+        if "sin" in data_name:
+            PLOT_LIMIT = sinQ_show_limit_x[kappa]
+        else:
+            PLOT_LIMIT = Q_show_limit_x[kappa]
+
         for plot_part in ['z']:#,'lr_x','lr_y']:# ['x','y','z','loss','acc','lr_x','lr_y']:
             G = {}
             # G['GS-GDA-B,N=2'] = data_path +'/primal_line_search_N_2_AGDA'
             # G['GS-GDA-B,N=5'] = data_path +'/primal_line_search_N_5_AGDA'
-            G['LS-GS-GDA-S'] = data_path + '/LS-GS-GDA-S'
-            G['LS-GS-GDA'] = data_path +'/LS-GS-GDA'
-            G['GS-GDA-B,N=1'] = data_path +'/primal_line_search_N_1_AGDA'
-            G['TiAda'] = data_path +'/TiAda'
             # #G['LS-GS-GDA-R'] = data_path +'/LS-GS-GDA-R'
             # # G['LS-GS-GDA-S-R'] = data_path + '/LS-GS-GDA-S-R'
-            G['Smooth-AGDA'] = data_path + '/Smooth-AGDA'
-            G['GS-GDA'] = data_path +'/AGDA'
+            G['LS-GS-GDA-S'] = data_path + '/LS-GS-GDA-S'
+            G['LS-GS-GDA'] = data_path +'/LS-GS-GDA'
+            G['TiAda'] = data_path +'/TiAda'
+            G['NeAda'] = data_path + '/NeAda'
+            G['GS-GDA-B,N=1'] = data_path +'/primal_line_search_N_1_AGDA'
             G['J-GDA'] = data_path +'/GDA'
-            # G['NeAda'] = data_path + '/NeAda'
-
+            G['GS-GDA'] = data_path +'/AGDA'
+            G['Smooth-AGDA'] = data_path + '/Smooth-AGDA'
 
             plt.figure(dpi=150)
             fig, ax = plt.subplots()
@@ -113,25 +119,25 @@ for is_last in [True,False]:
                     N = record['config'][-1]['N']
 
                     if plot_part == 'x':
-                        shadowplot(counter, norm_sqaure_full_grad_x, label_input=alg_name, alpha=0.5, center=C, is_log=is_log,
+                        shadowplot(counter, norm_sqaure_full_grad_x, label_input=alg_name, alpha=0.2, center=C, is_log=is_log,
                                 is_var=True, alg_name=alg_name)
                     elif plot_part == 'y':
-                        shadowplot(counter, norm_sqaure_full_grad_y, label_input=alg_name, alpha=0.5, center=C, is_log=is_log,
+                        shadowplot(counter, norm_sqaure_full_grad_y, label_input=alg_name, alpha=0.2, center=C, is_log=is_log,
                                 is_var=False, alg_name=alg_name)
                     elif plot_part == 'z':
-                        shadowplot(counter, norm_sqaure_full_grad_z, label_input=alg_name, alpha=0.5, center=C, is_log=is_log,
+                        shadowplot(counter, norm_sqaure_full_grad_z, label_input=alg_name, alpha=0.2, center=C, is_log=is_log,
                                 is_var=False, alg_name=alg_name, is_last=is_last)
                     elif plot_part == 'acc':
-                        shadowplot(counter, error, label_input=alg_name, alpha=0.5, center=C, is_log=is_log, is_var=True,
+                        shadowplot(counter, error, label_input=alg_name, alpha=0.2, center=C, is_log=is_log, is_var=True,
                                 alg_name=alg_name, is_last=is_last)
                     elif plot_part == 'loss':
-                        shadowplot(counter, loss, label_input=alg_name, alpha=0.5, center=C, is_log=is_log, is_var=True,
+                        shadowplot(counter, loss, label_input=alg_name, alpha=0.2, center=C, is_log=is_log, is_var=True,
                                 alg_name=alg_name, is_last=is_last)
                     elif plot_part == 'lr_x':
-                        shadowplot(counter, lr_x, label_input=alg_name, alpha=0.5, center=C, is_log=is_log, is_var=True,
+                        shadowplot(counter, lr_x, label_input=alg_name, alpha=0.2, center=C, is_log=is_log, is_var=True,
                                 alg_name=alg_name)
                     elif plot_part == 'lr_y':
-                        shadowplot(counter, lr_y, label_input=alg_name, alpha=0.5, center=C, is_log=is_log, is_var=True,
+                        shadowplot(counter, lr_y, label_input=alg_name, alpha=0.2, center=C, is_log=is_log, is_var=True,
                                 alg_name=alg_name)
 
 

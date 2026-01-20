@@ -158,7 +158,7 @@ def getNthPrime(x):
                 return num
         num = num + 1
 
-def shadowplot(x: list, y: list, alg_name: str, center=0, alpha=0.5, label_input=None, is_var=False,is_log=False,is_step = False,is_speical=False, plot_part=None, is_last=False):
+def shadowplot(x: list, y: list, alg_name: str, center=0, alpha=0.2, label_input=None, is_var=False,is_log=False,is_step = False,is_speical=False, plot_part=None, is_last=False):
     temp = []
     colors = {'GS-GDA-B,N=1': 'y',
               'GS-GDA-B,N=5': 'g','GS-GDA-B,N=10': 'y','GS-GDA-B,N=2': 'y','primal_line_search_100': 'saddlebrown',\
