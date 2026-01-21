@@ -1,3 +1,4 @@
+nohup: ignoring input
 data:gisette,number_of_data:6000,dim_features:5000
 L:0.053220038704550165, mu:0.01, kappa: 5.322003870455016
 GDA: lr_y=18.78991493319795,lr_x=0.029382944615477646
@@ -86,7 +87,7 @@ Current Complexity:
 iter: 0 epoch: 0 OC: 0 SC: 0
 Iterates Info:
 acc: 0.5073333333333333 , loss: 0.6932174911522169 , primalF: 0.6932174911522169
-||sto grad_x||^2: 0.1504417868814839 ||sto grad_y||^2: 2.1719337415728316e-29
+||sto grad_x||^2: 0.15044178688148394 ||sto grad_y||^2: 2.1719337415728316e-29
 ||true grad_x||^2: 0.1504417868814839 ||true grad_y||^2: 2.1719337415728316e-29
 lr_x: 2.2352495909830723 , lr_y: 59.049
 mu: 0.01 , kappa: 10
@@ -179,6 +180,23 @@ Iterates Info:
 acc: 0.5 , loss: 11.523966684293963 , primalF: 11.523966687241916
 ||sto grad_x||^2: 21.246904872618632 ||sto grad_y||^2: 0.0
 ||true grad_x||^2: 21.246904872618643 ||true grad_y||^2: 0.0
+lr_x: 0.8659814895757123 , lr_y: 43.046721000000005
+mu: 0.01 , kappa: 10
+{'lr_x': 0.8659814895757123, 'lr_y': 43.046721000000005, 'b': 6000, 'eps': tensor(0.1307, device='cuda:0', grad_fn=<PowBackward0>), 'N': 1, 'K': 3000, 'real_K': 3000, 'L': 0.023230573125418773, 'mu': 0.01, 'std_x': 0.0, 'std_y': 0.0, 'is_force_b': False, 'method': 'primal_line_search_N_1_AGDA', 'pjx': False, 'pjy': True}
+positive number of yi(batch): 6000 max y_i: 0.00016665649411606864 min y_i: 0.00016665649411606864
+positive number of yi(total): 6000 max y_i: 0.00016665649411606864 min y_i: 0.00016665649411606864
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 189 epoch: 189.0 OC: 1134000.0 SC: 1134000
+Current Complexity:
+iter: 150 epoch: 150.0 OC: 900000.0 SC: 900000
+Iterates Info:
+acc: 0.5 , loss: 11.524155187787601 , primalF: 11.524155189752936
+||sto grad_x||^2: 21.246890428236085 ||sto grad_y||^2: 0.0
+||true grad_x||^2: 21.246890428236085 ||true grad_y||^2: 0.0
 lr_x: 0.8659814895757123 , lr_y: 43.046721000000005
 mu: 0.01 , kappa: 10
 {'lr_x': 0.8659814895757123, 'lr_y': 43.046721000000005, 'b': 6000, 'eps': tensor(0.1307, device='cuda:0', grad_fn=<PowBackward0>), 'N': 1, 'K': 3000, 'real_K': 3000, 'L': 0.023230573125418773, 'mu': 0.01, 'std_x': 0.0, 'std_y': 0.0, 'is_force_b': False, 'method': 'primal_line_search_N_1_AGDA', 'pjx': False, 'pjy': True}

@@ -33,7 +33,7 @@ print(f'data:{data_name},number_of_data:{train_set.data.shape[0]},dim_features:{
 # FairCNN: for FMINST,MNIST,CIFAR10 or any image m-classification task. 
 b=1
 for mu_y in [1]:
-    for kappa in [5,10,20,50,100,1000,10000]: # 5,10,20,50,100, 5,10,20,50,100,1000,
+    for kappa in [10,20,50,100,1000,10000]: # 5,10,20,50,100, 5,10,20,50,100,1000,
         model_type = 'Q' # Q: projection_y=False,DRO,FairCNN: projection_y=True
         sim_time = 10
         max_iter = 30000
@@ -72,17 +72,18 @@ for mu_y in [1]:
         # my_optimizer.max_iter = my_optimizer.max_iter*b/sgd_b
         # result = my_optimizer.optimizer(lr_x=100, lr_y=100, method='TiAda', b=sgd_b) 
 
-        my_optimizer.max_iter = max_iter_SGDA_B
-        result = my_optimizer.line_search(N=1,T=1)
+        # my_optimizer.max_iter = max_iter_SGDA_B
+        # result = my_optimizer.line_search(N=1,T=1)
 
         my_optimizer.max_iter = max_iter
         # result = my_optimizer.line_search_one_step(gamma1 = gamma1, gamma2 = gamma2, isMaxSolver=False, isRestart=False,verbose=False)
         # result = my_optimizer.line_search_one_step(gamma1 = gamma1, gamma2 = gamma2, isMaxSolver=True, isRestart=False,verbose=False)
         
-        sgd_b = b
+        # sgd_b = b
         my_optimizer.max_iter = my_optimizer.max_iter*b/sgd_b
         # result = my_optimizer.optimizer(lr_x=100, lr_y=100, method='TiAda', b=sgd_b)
         # result = my_optimizer.optimizer(lr_x=1/3/L, lr_y=1/144/L,p=2*L,beta=mu_y/144/L/1600, method='Smooth-AGDA', b=sgd_b)
         # result = my_optimizer.optimizer(lr_x=1/16/(kappa+1)**2/L,lr_y=1/L,method='GDA',b=sgd_b)
         # result = my_optimizer.optimizer(lr_x=1/3/L/(1+kappa)**2,lr_y=1/L,method='AGDA',b=sgd_b)
-        # result = my_optimizer.optimizer(lr_x=100, lr_y=100, method='NeAda', b=sgd_b)
+        # result = my_optimizer.optimizer(lr_x=1, lr_y=1, method='NeAda', b=sgd_b)
+        result = my_optimizer.PF_AGP_NSC(b=sgd_b, gamma2=0.9, method='PF-AGP-NSC', tol=1e-6)

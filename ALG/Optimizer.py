@@ -1224,7 +1224,7 @@ class ALG():
         return self.record
 
     
-    def PF_AGP_NSC(self, gamma2=0.9, method='PF-AGP-NSC', max_iter=None, tol=1e-6):
+    def PF_AGP_NSC(self, b, gamma2=0.9, method='PF-AGP-NSC', max_iter=None, tol=1e-6):
         """
         Parameter-free alternating gradient projection (PF-AGP-NSC) algorithm
         for nonconvex-strongly concave minimax problems.
@@ -1240,7 +1240,7 @@ class ALG():
         
         if not max_iter:
             max_iter = self.max_iter
-        
+                    
         # Generate full block for gradient computation
         N = 1
         flattened_x = torch.cat([param.flatten() for name, param in self.start_model.named_parameters() if name!='dual_y'])
@@ -1264,22 +1264,18 @@ class ALG():
             self.record['config'][s]['pjx'] = self.projection_x
             self.record['config'][s]['pjy'] = self.projection_y
             
+            #initialize the data loader and full batch
+            full_batch = torch.arange(self.total_number_data).to(self.device)
+            data_loader_dumb = self.batchselect() # torch.randperm(self.total_number_data).to(self.device)
+            batch_start = 0
+            
             # Load the start model
             start = self.start_model
             self.model_curr = Model(data_size=self.data_size, mu_y=self.mu_y, kappa=self.kappa, 
                                    device=self.device, injected_noise_x=self.std_x, 
                                    injected_noise_y=self.std_y, has_sin=self.has_sin).to(self.device)
             self.model_curr.load_state_dict(copy.deepcopy(start.state_dict()))
-            
-            # For Q problem, use full batch (deterministic)
-            if self.model_type == 'Q':
-                full_batch = torch.arange(self.total_number_data).to(self.device)
-                data_by_batch = self.data
-                target_by_batch = self.targets
-                batch_index = full_batch
-            else:
-                raise NotImplementedError("PF-AGP-NSC currently only supports Q problems")
-            
+                        
             # Step 1: Initialize parameters
             # Following AGDA+ initialization
             l_init = self.mu_y / gamma2
@@ -1327,6 +1323,27 @@ class ALG():
                 inner_converged = False
                 max_inner_iter = 1000  
                 backtrack_count_this_k = 0  # Track backtracks for this outer iteration
+                
+                #select data by batch index
+                if self.optimize_batch and torch.sum(self.model_curr.dual_y.flatten()[data_loader_dumb[batch_start:batch_start+b]])==0:
+                    # skip if the batch are all invalid
+                    data_loader_dumb = self.batchselect()
+                    batch_start = 0
+                    continue
+                elif batch_start+b <= len(data_loader_dumb):
+                    batch_index = data_loader_dumb[batch_start:batch_start+b]
+                    batch_start += b
+                elif b >= len(data_loader_dumb):
+                    batch_index = data_loader_dumb
+                    batch_start = 0
+                else:
+                    #drop the incomplete data if they can not form a full batch
+                    #data_loader_dumb = torch.randperm(self.total_number_data).to(self.device)
+                    data_loader_dumb = self.batchselect()
+                    batch_start = 0
+                    continue
+                data_by_batch = torch.index_select(self.data,0,index=batch_index) #unseueeze is to make [64,28,28] to [64,1,28,28]
+                target_by_batch = torch.index_select(self.targets,0,index=batch_index)
                 
                 for inner_iter in range(1, max_inner_iter):
                     # (b): Update x_{k,i} and y_{k,i}

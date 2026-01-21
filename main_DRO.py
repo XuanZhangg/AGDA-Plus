@@ -69,7 +69,8 @@ for mu_y in [0.01]:
     # result = my_optimizer.optimizer(lr_x=1, lr_y=1, method='TiAda', b=sgd_b)
     # result = my_optimizer.optimizer(lr_x=1/3/L/(1+kappa)**2,lr_y=1/L,method='AGDA',b=sgd_b)
     # result = my_optimizer.optimizer(lr_x=1/16/(kappa+1)**2/L,lr_y=1/L,method='GDA',b=sgd_b)
-    # result = my_optimizer.optimizer(lr_x=1, lr_y=1, method='NeAda', b=b)
+    # result = my_optimizer.optimizer(lr_x=1, lr_y=1, method='NeAda', b=sgd_b)
+    result = my_optimizer.PF_AGP_NSC(b=sgd_b, gamma2=0.9, method='PF-AGP-NSC', tol=1e-6)
 
     # L = ?
     # result = my_optimizer.optimizer(lr_x=1/3/L, lr_y=1/144/L,p=2*L,beta=1/144/L*mu_y/1600, method='Smooth-AGDA', b=sgd_b)

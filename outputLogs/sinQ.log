@@ -1,29 +1,230 @@
+nohup: ignoring input
 data:gisette,number_of_data:6000,dim_features:5000
-/home/ec2-user/workspace_shared/AGDA-Plus/.venv/lib64/python3.12/site-packages/torch/serialization.py:1601: RuntimeWarning: The default behavior of tarfile extraction has been changed to disallow common exploits (including CVE-2007-4559). By default, absolute/parent paths are disallowed and some mode bits are cleared. See https://access.redhat.com/articles/7004769 for more details.
-  tar.extract("storages", path=tmpdir)
-Traceback (most recent call last):
-  File "/home/ec2-user/workspace_shared/AGDA-Plus/main_sinQ.py", line 44, in <module>
-    my_optimizer = ALG(train_set=train_set,data_name=data_name,mu_y=mu_y,kappa=kappa,
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/ec2-user/workspace_shared/AGDA-Plus/ALG/Optimizer.py", line 97, in __init__
-    self.load_initial_model(0)
-  File "/home/ec2-user/workspace_shared/AGDA-Plus/ALG/Optimizer.py", line 147, in load_initial_model
-    start = torch.load(self.initial_model_pt_name, weights_only=False)
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/ec2-user/workspace_shared/AGDA-Plus/.venv/lib64/python3.12/site-packages/torch/serialization.py", line 1495, in load
-    return _legacy_load(
-           ^^^^^^^^^^^^^
-  File "/home/ec2-user/workspace_shared/AGDA-Plus/.venv/lib64/python3.12/site-packages/torch/serialization.py", line 1727, in _legacy_load
-    return legacy_load(f)
-           ^^^^^^^^^^^^^^
-  File "/home/ec2-user/workspace_shared/AGDA-Plus/.venv/lib64/python3.12/site-packages/torch/serialization.py", line 1601, in legacy_load
-    tar.extract("storages", path=tmpdir)
-  File "/usr/lib64/python3.12/tarfile.py", line 2418, in extract
-    tarinfo, unfiltered = self._get_extract_tarinfo(
-                          ^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/lib64/python3.12/tarfile.py", line 2432, in _get_extract_tarinfo
-    unfiltered = self.getmember(member)
-                 ^^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/lib64/python3.12/tarfile.py", line 2045, in getmember
-    raise KeyError("filename %r not found" % name)
-KeyError: "filename 'storages' not found"
+L:10, mu:1, kappa: 10
+GDA: lr_y=0.1,lr_x=5.165289256198347e-05
+AGDA: lr_y=0.1,lr_x=0.0002754820936639118
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 0 epoch: 0 OC: 0 SC: 0
+Current Complexity:
+iter: 0 epoch: 0 OC: 0 SC: 0
+Iterates Info:
+acc: 0.5 , loss: 10314.100729835644 , primalF: 10772.655911009295
+||sto grad_x||^2: 17036.242201728837 ||sto grad_y||^2: 917.1103623473005
+||true grad_x||^2: 17036.242201728837 ||true grad_y||^2: 917.1103623473005
+lr_x: 0.8999999999999999 , lr_y: 0.8999999999999999
+mu: 1 , kappa: 10
+{'N': 1, 'K': 30000.0, 'std_x': 0, 'std_y': 0, 'method': 'PF-AGP-NSC', 'pjx': False, 'pjy': False}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 100 epoch: 100.0 OC: 100.0 SC: 100
+Current Complexity:
+iter: 100 epoch: 100.0 OC: 100.0 SC: 100
+Iterates Info:
+acc: 0.5 , loss: 233.6410246777311 , primalF: 233.6412633940815
+||sto grad_x||^2: 4.518089305897869 ||sto grad_y||^2: 0.0004774327046359118
+||true grad_x||^2: 4.518089305897869 ||true grad_y||^2: 0.0004774327046359118
+lr_x: 0.010973957549300013 , lr_y: 0.44999999999999996
+mu: 1 , kappa: 10
+{'N': 1, 'K': 30000.0, 'std_x': 0, 'std_y': 0, 'method': 'PF-AGP-NSC', 'pjx': False, 'pjy': False}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 200 epoch: 200.0 OC: 200.0 SC: 200
+Current Complexity:
+iter: 200 epoch: 200.0 OC: 200.0 SC: 200
+Iterates Info:
+acc: 0.5 , loss: 230.9712986027246 , primalF: 230.97135317565179
+||sto grad_x||^2: 1.2829057344465564 ||sto grad_y||^2: 0.00010914585667263741
+||true grad_x||^2: 1.2829057344465564 ||true grad_y||^2: 0.00010914585667263741
+lr_x: 0.010973957549300013 , lr_y: 0.44999999999999996
+mu: 1 , kappa: 10
+{'N': 1, 'K': 30000.0, 'std_x': 0, 'std_y': 0, 'method': 'PF-AGP-NSC', 'pjx': False, 'pjy': False}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 300 epoch: 300.0 OC: 300.0 SC: 300
+Current Complexity:
+iter: 300 epoch: 300.0 OC: 300.0 SC: 300
+Iterates Info:
+acc: 0.5 , loss: 230.03156279533673 , primalF: 230.0315841779528
+||sto grad_x||^2: 0.5776829238089781 ||sto grad_y||^2: 4.2765230349963335e-05
+||true grad_x||^2: 0.5776829238089781 ||true grad_y||^2: 4.2765230349963335e-05
+lr_x: 0.010973957549300013 , lr_y: 0.44999999999999996
+mu: 1 , kappa: 10
+{'N': 1, 'K': 30000.0, 'std_x': 0, 'std_y': 0, 'method': 'PF-AGP-NSC', 'pjx': False, 'pjy': False}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 400 epoch: 400.0 OC: 400.0 SC: 400
+Current Complexity:
+iter: 400 epoch: 400.0 OC: 400.0 SC: 400
+Iterates Info:
+acc: 0.5 , loss: 229.54695191143261 , primalF: 229.5469633414818
+||sto grad_x||^2: 0.3473344265078766 ||sto grad_y||^2: 2.2860105810741372e-05
+||true grad_x||^2: 0.3473344265078766 ||true grad_y||^2: 2.2860105810741372e-05
+lr_x: 0.010973957549300013 , lr_y: 0.44999999999999996
+mu: 1 , kappa: 10
+{'N': 1, 'K': 30000.0, 'std_x': 0, 'std_y': 0, 'method': 'PF-AGP-NSC', 'pjx': False, 'pjy': False}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 500 epoch: 500.0 OC: 500.0 SC: 500
+Current Complexity:
+iter: 500 epoch: 500.0 OC: 500.0 SC: 500
+Iterates Info:
+acc: 0.5 , loss: 229.22179320156147 , primalF: 229.22180101380263
+||sto grad_x||^2: 0.26139314113015616 ||sto grad_y||^2: 1.56244776681716e-05
+||true grad_x||^2: 0.26139314113015616 ||true grad_y||^2: 1.56244776681716e-05
+lr_x: 0.010973957549300013 , lr_y: 0.44999999999999996
+mu: 1 , kappa: 10
+{'N': 1, 'K': 30000.0, 'std_x': 0, 'std_y': 0, 'method': 'PF-AGP-NSC', 'pjx': False, 'pjy': False}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 600 epoch: 600.0 OC: 600.0 SC: 600
+Current Complexity:
+iter: 600 epoch: 600.0 OC: 600.0 SC: 600
+Iterates Info:
+acc: 0.5 , loss: 228.9501013382231 , primalF: 228.95011005751607
+||sto grad_x||^2: 0.2611047974602089 ||sto grad_y||^2: 1.7438580493497022e-05
+||true grad_x||^2: 0.2611047974602089 ||true grad_y||^2: 1.7438580493497022e-05
+lr_x: 0.010973957549300013 , lr_y: 0.44999999999999996
+mu: 1 , kappa: 10
+{'N': 1, 'K': 30000.0, 'std_x': 0, 'std_y': 0, 'method': 'PF-AGP-NSC', 'pjx': False, 'pjy': False}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 700 epoch: 700.0 OC: 700.0 SC: 700
+Current Complexity:
+iter: 700 epoch: 700.0 OC: 700.0 SC: 700
+Iterates Info:
+acc: 0.5 , loss: 222.65454313090171 , primalF: 222.65458837693618
+||sto grad_x||^2: 1.0354644177886938 ||sto grad_y||^2: 9.049206749694626e-05
+||true grad_x||^2: 1.0354644177886938 ||true grad_y||^2: 9.049206749694626e-05
+lr_x: 0.010225838125964368 , lr_y: 0.44999999999999996
+mu: 1 , kappa: 10
+{'N': 1, 'K': 30000.0, 'std_x': 0, 'std_y': 0, 'method': 'PF-AGP-NSC', 'pjx': False, 'pjy': False}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 800 epoch: 800.0 OC: 800.0 SC: 800
+Current Complexity:
+iter: 800 epoch: 800.0 OC: 800.0 SC: 800
+Iterates Info:
+acc: 0.5 , loss: 222.08442262061195 , primalF: 222.0844351120824
+||sto grad_x||^2: 0.3517735283808311 ||sto grad_y||^2: 2.4982939134435653e-05
+||true grad_x||^2: 0.3517735283808311 ||true grad_y||^2: 2.4982939134435653e-05
+lr_x: 0.010225838125964368 , lr_y: 0.44999999999999996
+mu: 1 , kappa: 10
+{'N': 1, 'K': 30000.0, 'std_x': 0, 'std_y': 0, 'method': 'PF-AGP-NSC', 'pjx': False, 'pjy': False}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 900 epoch: 900.0 OC: 900.0 SC: 900
+Current Complexity:
+iter: 900 epoch: 900.0 OC: 900.0 SC: 900
+Iterates Info:
+acc: 0.5 , loss: 221.79816661759415 , primalF: 221.79817329879498
+||sto grad_x||^2: 0.23394618349590401 ||sto grad_y||^2: 1.3362405686479746e-05
+||true grad_x||^2: 0.23394618349590401 ||true grad_y||^2: 1.3362405686479746e-05
+lr_x: 0.010225838125964368 , lr_y: 0.44999999999999996
+mu: 1 , kappa: 10
+{'N': 1, 'K': 30000.0, 'std_x': 0, 'std_y': 0, 'method': 'PF-AGP-NSC', 'pjx': False, 'pjy': False}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 1000 epoch: 1000.0 OC: 1000.0 SC: 1000
+Current Complexity:
+iter: 1000 epoch: 1000.0 OC: 1000.0 SC: 1000
+Iterates Info:
+acc: 0.5 , loss: 221.58357434140905 , primalF: 221.58357919038733
+||sto grad_x||^2: 0.19344837367210416 ||sto grad_y||^2: 9.697958201309444e-06
+||true grad_x||^2: 0.19344837367210416 ||true grad_y||^2: 9.697958201309444e-06
+lr_x: 0.010225838125964368 , lr_y: 0.44999999999999996
+mu: 1 , kappa: 10
+{'N': 1, 'K': 30000.0, 'std_x': 0, 'std_y': 0, 'method': 'PF-AGP-NSC', 'pjx': False, 'pjy': False}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 1100 epoch: 1100.0 OC: 1100.0 SC: 1100
+Current Complexity:
+iter: 1100 epoch: 1100.0 OC: 1100.0 SC: 1100
+Iterates Info:
+acc: 0.5 , loss: 221.3959510830279 , primalF: 221.39595542500928
+||sto grad_x||^2: 0.17807693460322724 ||sto grad_y||^2: 8.683965704886515e-06
+||true grad_x||^2: 0.17807693460322724 ||true grad_y||^2: 8.683965704886515e-06
+lr_x: 0.010225838125964368 , lr_y: 0.44999999999999996
+mu: 1 , kappa: 10
+{'N': 1, 'K': 30000.0, 'std_x': 0, 'std_y': 0, 'method': 'PF-AGP-NSC', 'pjx': False, 'pjy': False}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 1200 epoch: 1200.0 OC: 1200.0 SC: 1200
+Current Complexity:
+iter: 1200 epoch: 1200.0 OC: 1200.0 SC: 1200
+Iterates Info:
+acc: 0.5 , loss: 221.186986375896 , primalF: 221.18699989563115
+||sto grad_x||^2: 0.39896611720009895 ||sto grad_y||^2: 2.7039470804487216e-05
+||true grad_x||^2: 0.39896611720009895 ||true grad_y||^2: 2.7039470804487216e-05
+lr_x: 0.010225838125964368 , lr_y: 0.44999999999999996
+mu: 1 , kappa: 10
+{'N': 1, 'K': 30000.0, 'std_x': 0, 'std_y': 0, 'method': 'PF-AGP-NSC', 'pjx': False, 'pjy': False}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 1300 epoch: 1300.0 OC: 1300.0 SC: 1300
+Current Complexity:
+iter: 1300 epoch: 1300.0 OC: 1300.0 SC: 1300
+Iterates Info:
+acc: 0.5 , loss: 214.9134981838043 , primalF: 214.91352379452027
+||sto grad_x||^2: 0.57299559521821 ||sto grad_y||^2: 5.122142641964975e-05
+||true grad_x||^2: 0.57299559521821 ||true grad_y||^2: 5.122142641964975e-05
+lr_x: 0.010225838125964368 , lr_y: 0.44999999999999996
+mu: 1 , kappa: 10
+{'N': 1, 'K': 30000.0, 'std_x': 0, 'std_y': 0, 'method': 'PF-AGP-NSC', 'pjx': False, 'pjy': False}
+-----------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Total Complexity:
+sim times: 0 iter: 1400 epoch: 1400.0 OC: 1400.0 SC: 1400
+Current Complexity:
+iter: 1400 epoch: 1400.0 OC: 1400.0 SC: 1400
+Iterates Info:
+acc: 0.5 , loss: 214.53872714291086 , primalF: 214.53873587275305
+||sto grad_x||^2: 0.2519032739217875 ||sto grad_y||^2: 1.745968238645093e-05
+||true grad_x||^2: 0.2519032739217875 ||true grad_y||^2: 1.745968238645093e-05
+lr_x: 0.010225838125964368 , lr_y: 0.44999999999999996
+mu: 1 , kappa: 10
+{'N': 1, 'K': 30000.0, 'std_x': 0, 'std_y': 0, 'method': 'PF-AGP-NSC', 'pjx': False, 'pjy': False}
+-----------------------------------------------------------------------------------------------
+
+
