@@ -164,19 +164,19 @@ def shadowplot(x: list, y: list, alg_name: str, center=0, alpha=0.2, label_input
               'GS-GDA-B,N=5': 'g','GS-GDA-B,N=10': 'y','GS-GDA-B,N=2': 'y','primal_line_search_100': 'saddlebrown',\
               'LS-GS-GDA':'r', 'LS-GS-GDA-S':'g', 'LS-GS-GDA-R':'lightgreen', 'LS-GS-GDA-S-R':'r', \
               'J-GDA': 'saddlebrown', 'GS-GDA': 'b', 'TiAda': 'c','NeAda': 'orange', \
-              'Smooth-AGDA':'m',
+              'Smooth-AGDA':'m', "PF_AGP_NSC": "olivedrab",
               }
     linestyle_input = {'GS-GDA-B,N=1': '-', 'J-GDA':'-','GS-GDA':'-' ,'TiAda':'-','NeAda':'-',\
                        'GS-GDA-B,N=5': '-','GS-GDA-B,N=10': '-','GS-GDA-B,N=2': '-','GS-GDA-B,N=100': '-', \
                        'LS-GS-GDA': '-','LS-GS-GDA-S': '-','LS-GS-GDA-R': '-','LS-GS-GDA-S-R': '-',\
-                       'Smooth-AGDA':'-',
+                       'Smooth-AGDA':'-',"PF_AGP_NSC":'-',
                        }
     if is_speical:
         label = {'GS-GDA_lr_y':r'AGDA,$\sigma=1/L$','GS-GDA_lr_x':r'AGDA,$\tau=\Theta(\frac{1}{L\kappa^2})$','GS-GDA_ratio':r'AGDA,$\sigma/\tau =\Theta(\kappa^2)$'}
     else:
         label = {'TiAda':'TiAda','NeAda':'NeAda', 'J-GDA': 'GDA', 'GS-GDA': 'AGDA','Smooth-AGDA':'Sm-AGDA',\
             'LS-GS-GDA':'AGDA+','LS-GS-GDA-S': 'AGDA+ max','LS-GS-GDA-R': 'RAGDA+','LS-GS-GDA-S-R': 'ADGA+SR',\
-            'GS-GDA-B,N=1':'SGDA-B'
+            'GS-GDA-B,N=1':'SGDA-B', "PF_AGP_NSC":'PF_AGP_NSC',
                        }
     if is_last:
         for i in range(len(y)):

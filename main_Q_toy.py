@@ -58,6 +58,7 @@ for mu_y in [1]:
         gamma1 = 0.95**2
         gamma2 = 0.95
         sgd_b = b
+        result = my_optimizer.PF_AGP_NSC(gamma2=0.9, method='PF-AGP-NSC', tol=1e-6)
         # my_optimizer.max_iter = max_iter_SGDA_B
         # result = my_optimizer.line_search(N=1,T=1)
         # my_optimizer.max_iter = max_iter
@@ -65,6 +66,6 @@ for mu_y in [1]:
         # result = my_optimizer.line_search_one_step(gamma1 = gamma1, gamma2 = gamma2, isMaxSolver=True, isRestart=False, verbose=False)
         # result = my_optimizer.optimizer(lr_x=1, lr_y=1, method='TiAda', b=sgd_b)
         # result = my_optimizer.optimizer(lr_x=1/3/L/(1+kappa)**2,lr_y=1/L,method='AGDA',b=sgd_b)
-        result = my_optimizer.optimizer(lr_x=1, lr_y=1, method='NeAda', b=sgd_b)
+        # result = my_optimizer.optimizer(lr_x=1, lr_y=1, method='NeAda', b=sgd_b)
 
 2

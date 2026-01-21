@@ -1223,6 +1223,325 @@ class ALG():
 
         return self.record
 
+    
+    def PF_AGP_NSC(self, gamma2=0.9, method='PF-AGP-NSC', max_iter=None, tol=1e-6):
+        """
+        Parameter-free alternating gradient projection (PF-AGP-NSC) algorithm
+        for nonconvex-strongly concave minimax problems.
+        
+        Args:
+            gamma2: parameter to initialize l values (default: 0.9)
+            method: method name for recording
+            max_iter: maximum iterations
+            tol: tolerance for stopping criterion
+        """
+        self.reset_all()
+        Model = call_model(self.model_type)
+        
+        if not max_iter:
+            max_iter = self.max_iter
+        
+        # Generate full block for gradient computation
+        N = 1
+        flattened_x = torch.cat([param.flatten() for name, param in self.start_model.named_parameters() if name!='dual_y'])
+        indices = np.arange(flattened_x.shape[0])
+        full_block = copy.deepcopy(indices)
+        
+        # Helper function for sign
+        def sgn(x):
+            """Sign function: returns 1 if x>0, -1 if x<0, 0 if x==0"""
+            if isinstance(x, torch.Tensor):
+                return torch.sign(x)
+            else:
+                return np.sign(x)
+        
+        for s in range(self.sim_time):
+            self.load_initial_model(s)
+            self.reset_contraction(s)
+            self.record['contraction_times'][s] += 1
+            self.record['config'][s] = {'N': N, 'K': max_iter, 'std_x': self.start_model.std_x, 'std_y': self.start_model.std_y}
+            self.record['config'][s]['method'] = method
+            self.record['config'][s]['pjx'] = self.projection_x
+            self.record['config'][s]['pjy'] = self.projection_y
+            
+            # Load the start model
+            start = self.start_model
+            self.model_curr = Model(data_size=self.data_size, mu_y=self.mu_y, kappa=self.kappa, 
+                                   device=self.device, injected_noise_x=self.std_x, 
+                                   injected_noise_y=self.std_y, has_sin=self.has_sin).to(self.device)
+            self.model_curr.load_state_dict(copy.deepcopy(start.state_dict()))
+            
+            # For Q problem, use full batch (deterministic)
+            if self.model_type == 'Q':
+                full_batch = torch.arange(self.total_number_data).to(self.device)
+                data_by_batch = self.data
+                target_by_batch = self.targets
+                batch_index = full_batch
+            else:
+                raise NotImplementedError("PF-AGP-NSC currently only supports Q problems")
+            
+            # Step 1: Initialize parameters
+            # Following AGDA+ initialization
+            l_init = self.mu_y / gamma2
+            l_11_k = l_init
+            l_12_k = l_init
+            l_22_k = l_init
+            mu_k = self.mu_y
+            beta_k = l_init 
+            gamma_k = l_init
+            
+            k = 1  # Outer iteration counter
+            
+            # Store x_k and y_k at the beginning of each outer iteration
+            x_k = {}
+            y_k = {}
+            
+            # Statistics for tracking backtracking
+            total_inner_iters = 0
+            num_backtracks = 0
+            
+            while True:
+                # Step 2: Update x_k and y_k
+                # (a): Set i=0, initialize inner iteration parameters
+                i = 0
+                l_11_ki = l_11_k
+                l_12_ki = l_12_k
+                l_22_ki = l_22_k
+                mu_ki = mu_k
+                beta_ki = beta_k
+                gamma_ki = gamma_k
+                
+                # Store x_k, y_k for this outer iteration
+                for name, param in self.model_curr.named_parameters():
+                    if name != 'dual_y':
+                        if name not in x_k:
+                            x_k[name] = param.data.clone()
+                        else:
+                            x_k[name] = param.data.clone()
+                    else:
+                        if 'dual_y' not in y_k:
+                            y_k['dual_y'] = param.data.clone()
+                        else:
+                            y_k['dual_y'] = param.data.clone()
+                
+                inner_converged = False
+                max_inner_iter = 1000  
+                backtrack_count_this_k = 0  # Track backtracks for this outer iteration
+                
+                for inner_iter in range(1, max_inner_iter):
+                    # (b): Update x_{k,i} and y_{k,i}
+                    
+                    # First compute gradient at (x_k, y_k)
+                    self.model_bk.load_state_dict(self.model_curr.state_dict())
+                    # Load x_k, y_k
+                    for name, param in self.model_bk.named_parameters():
+                        if name != 'dual_y':
+                            param.data = x_k[name].clone()
+                        else:
+                            param.data = y_k['dual_y'].clone()
+                    
+                    self.model_bk.zero_grad()
+                    f_k = computeGrad(self.model_bk, data_by_batch, target_by_batch, batch_index, len(batch_index))
+                    
+                    # Get gradients at (x_k, y_k)
+                    gx_k, gy_k = getxyFromStateModel(self.model_bk, grad=True)
+                    
+                    # Update x_{k,i} = P_X(x_k - 1/beta_{k,i} * grad_x f(x_k, y_k))
+                    x_ki = {}
+                    lr_x_ki = 1.0 / beta_ki
+                    for name, param in self.model_bk.named_parameters():
+                        if name != 'dual_y':
+                            if self.projection_x:
+                                projection_center = x_k[name] - lr_x_ki * param.grad.data
+                                x_ki[name] = torch.tensor(pj_x(projection_center.cpu().detach().numpy()), 
+                                                         dtype=torch.float64, device=self.device)
+                            else:
+                                x_ki[name] = x_k[name] - lr_x_ki * param.grad.data
+                    
+                    # Compute gradient at (x_{k,i}, y_k) for y update
+                    for name, param in self.model_bk.named_parameters():
+                        if name != 'dual_y':
+                            param.data = x_ki[name].clone()
+                        else:
+                            param.data = y_k['dual_y'].clone()
+                    
+                    self.model_bk.zero_grad()
+                    f_ki_k = computeGrad(self.model_bk, data_by_batch, target_by_batch, batch_index, len(batch_index))
+                    
+                    # Get gradient at (x_{k,i}, y_k)
+                    gx_ki_k, gy_ki_k = getxyFromStateModel(self.model_bk, grad=True)
+                    
+                    # Update y_{k,i} = P_Y(y_k + 1/gamma_{k,i} * grad_y f(x_{k,i}, y_k))
+                    lr_y_ki = 1.0 / gamma_ki
+                    if self.projection_y:
+                        projection_center = y_k['dual_y'] + lr_y_ki * gy_ki_k.squeeze()
+                        y_ki = torch.tensor(pj_y(projection_center.cpu().detach().numpy()), 
+                                          dtype=torch.float64, device=self.device).unsqueeze(1)
+                    else:
+                        y_ki = y_k['dual_y'] + lr_y_ki * gy_ki_k
+                    
+                    # (c): Compute C1, C2, C3, C4
+                    # Need to compute gradient at (x_{k,i}, y_{k,i})
+                    for name, param in self.model_bk.named_parameters():
+                        if name != 'dual_y':
+                            param.data = x_ki[name].clone()
+                        else:
+                            param.data = y_ki.clone() if len(y_ki.shape) > 1 else y_ki.unsqueeze(1).clone()
+                    
+                    self.model_bk.zero_grad()
+                    f_ki_ki = computeGrad(self.model_bk, data_by_batch, target_by_batch, batch_index, len(batch_index))
+                    
+                    gx_ki_ki, gy_ki_ki = getxyFromStateModel(self.model_bk, grad=True)
+                    
+                    # Compute x_{k,i} - x_k and y_{k,i} - y_k
+                    x_ki_minus_xk = torch.cat([x_ki[name].flatten() - x_k[name].flatten() 
+                                              for name in x_ki.keys()])
+                    y_ki_minus_yk = y_ki.squeeze() - y_k['dual_y'].squeeze() if len(y_ki.shape) > 1 else y_ki - y_k['dual_y'].squeeze()
+                    
+                    # Ensure proper dimensions
+                    gx_k_flat = gx_k.flatten()
+                    gy_k_flat = gy_k.flatten()
+                    gy_ki_k_flat = gy_ki_k.flatten()
+                    gy_ki_ki_flat = gy_ki_ki.flatten()
+                    
+                    # C1: f(x_{k,i}, y_k) - f(x_k, y_k) - <grad_x f(x_k, y_k), x_{k,i} - x_k> - l_11^{k,i}/2 ||x_{k,i} - x_k||^2 <= 0
+                    C1 = f_ki_k - f_k - torch.dot(gx_k_flat, x_ki_minus_xk) - (l_11_ki / 2.0) * torch.norm(x_ki_minus_xk) ** 2
+                    
+                    # C2: ||grad_y f(x_{k,i}, y_k) - grad_y f(x_k, y_k)|| - l_12^{k,i} ||x_{k,i} - x_k|| <= 0
+                    C2 = torch.norm(gy_ki_k_flat - gy_k_flat) - l_12_ki * torch.norm(x_ki_minus_xk)
+                    
+                    # C3: l_22^{k,i} <grad_y f(x_{k,i}, y_{k,i}) - grad_y f(x_{k,i}, y_k), y_{k,i} - y_k>
+                    #     + ||grad_y f(x_{k,i}, y_{k,i}) - grad_y f(x_{k,i}, y_k)||^2 <= 0
+                    gy_diff = gy_ki_ki_flat - gy_ki_k_flat
+                    y_ki_minus_yk_flat = y_ki_minus_yk.flatten() if isinstance(y_ki_minus_yk, torch.Tensor) and len(y_ki_minus_yk.shape) > 0 else y_ki_minus_yk.unsqueeze(0) if isinstance(y_ki_minus_yk, torch.Tensor) else torch.tensor([y_ki_minus_yk], device=self.device)
+                    C3 = l_22_ki * torch.dot(gy_diff, y_ki_minus_yk_flat) + torch.norm(gy_diff) ** 2
+                    
+                    # # C4: <grad_y f(x_{k,i}, y_{k,i}) - grad_y f(x_{k,i}, y_k), y_{k,i} - y_k> + mu_{k,i} ||y_{k,i} - y_k||^2 <= 0
+                    # C4 = torch.dot(gy_diff, y_ki_minus_yk_flat) + mu_ki * torch.norm(y_ki_minus_yk_flat) ** 2
+                    
+                    # (e): Check if all conditions are satisfied
+                    if C1 <= 0 and C2 <= 0 and C3 <= 0:
+                        # Accept the step
+                        # Update x_{k+1}, y_{k+1}
+                        for name in x_ki.keys():
+                            self.model_curr.state_dict()[name].copy_(x_ki[name])
+                        
+                        # Ensure y_ki has the right shape
+                        if len(y_ki.shape) == 1:
+                            self.model_curr.dual_y.data = y_ki.unsqueeze(1)
+                        elif len(y_ki.shape) == 0:
+                            self.model_curr.dual_y.data = y_ki.unsqueeze(0).unsqueeze(1)
+                        else:
+                            self.model_curr.dual_y.data = y_ki
+                        
+                        # Compute gradient at the new point for recording purposes
+                        self.model_curr.zero_grad()
+                        computeGrad(self.model_curr, data_by_batch, target_by_batch, batch_index, len(batch_index))
+                        
+                        # Update l values for next iteration (mu_k stays constant = self.mu_y)
+                        l_11_k = l_11_ki
+                        l_12_k = l_12_ki
+                        l_22_k = l_22_ki
+                        # mu_k = mu_ki  # No need to update since mu is fixed at self.mu_y
+                        beta_k = beta_ki
+                        gamma_k = gamma_ki
+                        
+                        # Statistics tracking
+                        total_inner_iters += (i + 1)
+                        if i > 0:
+                            num_backtracks += 1
+                            backtrack_count_this_k = i
+                        
+                        inner_converged = True
+                        break
+                    else:
+                        # Step 2(d): Update l values first (before computing beta and gamma)
+                        l_11_ki = (sgn(C1) + 3) / 2.0 * l_11_ki
+                        l_12_ki = (sgn(C2) + 3) / 2.0 * l_12_ki
+                        l_22_ki = (sgn(C3) + 3) / 2.0 * l_22_ki
+                        # mu_ki = 2.0 / (sgn(C4) + 3) * mu_ki
+                        mu_ki = mu_k
+                        
+                        # Step 2(e): Otherwise branch - increment i and update beta, gamma
+                        i = i + 1
+                        
+                        # Update beta_{k,i}, gamma_{k,i} using the UPDATED l values
+                        beta_ki = l_11_ki + l_12_ki + (32 * (l_12_ki ** 2) * (l_12_k + l_22_k)) / (mu_ki * mu_k)
+                        gamma_ki = l_12_ki + l_22_ki
+                
+                if not inner_converged:
+                    print(f"Warning: Inner loop did not converge after {max_inner_iter} iterations")
+                    break
+                
+                # Save and show results
+                lr_x_eff = 1.0 / beta_k
+                lr_y_eff = 1.0 / gamma_k
+                self.save_iterates_info(s, batch_index, lr_x_eff, lr_y_eff, full_block)
+                
+                # Store as scalar values for consistency
+                if isinstance(lr_x_eff, torch.Tensor):
+                    lr_x_eff = lr_x_eff.item()
+                if isinstance(lr_y_eff, torch.Tensor):
+                    lr_y_eff = lr_y_eff.item()
+                    
+                self.record['lr_x'][s].append(lr_x_eff)
+                self.record['lr_y'][s].append(lr_y_eff)
+                
+                if self.is_show_result and self.record['iter'][s] % self.freq == 0:
+                    self.show_result(s, batch_index, sim_done=False)
+                    if backtrack_count_this_k > 0:
+                        print(f"  [Backtracking] Outer iter {k}: {backtrack_count_this_k} inner iterations")
+                
+                # Update complexity and iterations
+                real_iter = inner_iter
+                self.record['total_sample_complexity'][s] += len(batch_index) * real_iter
+                self.record['total_oracle_complexity'][s] += len(batch_index) * real_iter / N
+                self.record['total_iter'][s] += real_iter
+                self.record['total_epoch'][s] += len(batch_index) * real_iter / self.data_number_in_each_epoch
+                
+                self.record['sample_complexity'][s] += len(batch_index) * real_iter
+                self.record['oracle_complexity'][s] += len(batch_index) / N * real_iter
+                self.record['iter'][s] += real_iter
+                self.record['epoch'][s] += len(batch_index) / self.data_number_in_each_epoch * real_iter
+                
+                # Step 3: Check stopping condition
+                # Only use max iterations for fair comparison with other algorithms
+                if self.record['total_iter'][s] >= max_iter:
+                    break
+                
+                k += 1
+            
+            # Print backtracking statistics at the end of each simulation
+            print(f"\n{'='*80}")
+            print(f"PF-AGP-NSC Backtracking Statistics (Simulation {s+1}):")
+            print(f"  Total outer iterations: {k}")
+            print(f"  Total inner iterations: {total_inner_iters}")
+            print(f"  Average inner iters per outer iter: {total_inner_iters/k:.2f}")
+            print(f"  Number of outer iters that needed backtracking: {num_backtracks}")
+            print(f"  Backtracking percentage: {100*num_backtracks/k:.1f}%")
+            print(f"{'='*80}\n")
+            
+            # Show this simulation result
+            self.show_result(s, batch_index, sim_done=True)
+            if self.is_save_data:
+                if self.model_type == 'Q':
+                    foo = self.start_model.name
+                    if self.toymodel:
+                        foo += '_toy'
+                    save_kappa = self.kappa
+                else:
+                    foo = self.data_name
+                    save_kappa = 1
+                import os
+                folder_path = './result_data/' + foo + '_muy_' + str(self.mu_y) + '_kappa_' + str(save_kappa) + '_b_1'
+                if not os.path.exists(folder_path):
+                    os.makedirs(folder_path)
+                file_name = folder_path + '/' + method
+                with open(file_name, "wb") as fp:
+                    pickle.dump(self.record, fp)
+        
+        return self.record
+
     def maximizer_solver(self,start,lr_y=None,b=None,tol=None,max_iter = 1e5):
         from torch import optim
         import time

@@ -33,9 +33,9 @@ print(f'data:{data_name},number_of_data:{train_set.data.shape[0]},dim_features:{
 # FairCNN: for FMINST,MNIST,CIFAR10 or any image m-classification task. 
 b=1
 for mu_y in [1]:
-    for kappa in [5,10,20,50,100,1000,10000]: #5,10,20,50,100,
+    for kappa in [1000]: #5,10,20,50,100,10000
         model_type = 'Q' # Q: projection_y=False,DRO,FairCNN: projection_y=True
-        sim_time=10
+        sim_time=1
         max_iter=30000
         max_iter_SGDA_B = 5000
         freq=100# print result by freq
@@ -59,7 +59,7 @@ for mu_y in [1]:
         gamma1 = gamma2**2
 
         my_optimizer.max_iter = max_iter_SGDA_B
-        result = my_optimizer.line_search(N=1,T=1)
+        # result = my_optimizer.line_search(N=1,T=1)
 
         my_optimizer.max_iter = max_iter
         # result = my_optimizer.line_search_one_step(gamma1 = gamma1, gamma2 = gamma2, isMaxSolver=True, isRestart=False,verbose=False)
@@ -67,6 +67,7 @@ for mu_y in [1]:
         
         sgd_b = b
         my_optimizer.max_iter = my_optimizer.max_iter*b/sgd_b
+        result = my_optimizer.PF_AGP_NSC(gamma2=0.9, method='PF-AGP-NSC', tol=1e-6)
         # result = my_optimizer.optimizer(lr_x=100, lr_y=100, method='TiAda', b=sgd_b)
         # result = my_optimizer.optimizer(lr_x=1/3/L, lr_y=1/144/L,p=2*L,beta=mu_y/144/L/1600, method='Smooth-AGDA', b=sgd_b)
         # result = my_optimizer.optimizer(lr_x=1/16/(kappa+1)**2/L,lr_y=1/L,method='GDA',b=sgd_b)

@@ -15,8 +15,8 @@ for is_last in [True,False]:
     stdy = 0
     b = 1
     mu_y = 1
-    for kappa in [10,20,50,100,1000,10000]:# 5,10,20,50,100,1000,10000
-        print(kappa)
+    for kappa in [10]:#,20,50,100,1000,10000]:# 5,10,20,50,100,1000,10000
+        print(f"processing kappa={kappa}")
         data_name = f'Q_stdx_{stdx}_stdy_{stdy}' + '_muy_' + str(mu_y) + '_kappa_' + str(kappa) + f'_b_{b}'
         data_path = f'./result_data/{data_name}'
         if "sin" in data_name:
@@ -35,6 +35,7 @@ for is_last in [True,False]:
             G['TiAda'] = data_path +'/TiAda'
             G['NeAda'] = data_path + '/NeAda'
             G['GS-GDA-B,N=1'] = data_path +'/primal_line_search_N_1_AGDA'
+            G['PF_AGP_NSC'] = data_path +'/PF-AGP-NSC'
             G['J-GDA'] = data_path +'/GDA'
             G['GS-GDA'] = data_path +'/AGDA'
             G['Smooth-AGDA'] = data_path + '/Smooth-AGDA'
@@ -50,7 +51,6 @@ for is_last in [True,False]:
                 with open(file_name, "rb") as fp:  # Unpickling
                     record = pickle.load(fp)
                     # load x-axis data
-
                     if 'GS-GDA-B' in alg_name:
                         func = max
                     else:
@@ -150,9 +150,9 @@ for is_last in [True,False]:
             elif plot_part == 'z':
                 if not is_last:
                     plt.ylabel(r"$\|\nabla\mathcal{L}(x,y)||^2$", fontsize=15)
-                    plt.ylabel(r"$\frac{||\nabla\mathcal{L}(x_k,y_k)||^2}{||\nabla\mathcal{L}(x_0,y_0)||^2}$", fontsize=15)
+                    plt.ylabel(r"$\frac{||\nabla\mathcal{L}(x_k,y_k)||^2}{||\nabla\mathcal{L}(x_0,y_0)||^2}$", fontsize=20)
                 else:
-                    plt.ylabel(r"$\min_{i=0,1,...,k} \frac{||\nabla\mathcal{L}(x_i,y_i)||^2}{||\nabla\mathcal{L}(x_0,y_0)||^2}$", fontsize=15)
+                    plt.ylabel(r"$\min_{i=0,1,...,k} \frac{||\nabla\mathcal{L}(x_i,y_i)||^2}{||\nabla\mathcal{L}(x_0,y_0)||^2}$", fontsize=20)
             elif plot_part == 'acc':
                 plt.ylabel(r"Train Error", fontsize=15)
             elif plot_part == 'loss':
@@ -161,10 +161,6 @@ for is_last in [True,False]:
                 plt.ylabel(r"Step size $\tau$", fontsize=15)
             elif plot_part == 'lr_y':
                 plt.ylabel(r"Step size $\sigma$", fontsize=15)
-
-            # set label size here
-            plt.rc('xtick', labelsize=15)
-            plt.rc('ytick', labelsize=15)
 
             # set x,y range here
             # plt.ylim(1e-2,)
@@ -211,25 +207,29 @@ for is_last in [True,False]:
 
 
             if plot_part == 'x':
-                plt.legend(fontsize=15, loc='upper right')
+                plt.legend(fontsize=10, loc='upper right')
             elif plot_part == 'y':
-                plt.legend(fontsize=15, loc='upper right')
+                plt.legend(fontsize=10, loc='upper right')
             elif plot_part == 'z':
                 if "sin" in data_name:
-                    plt.legend(fontsize=15, loc='lower left')
+                    plt.legend(fontsize=10, loc='lower left')
                 if mu_y == 0.0001:
-                    plt.legend(fontsize=15, loc='lower right')
+                    plt.legend(fontsize=10, loc='lower right')
                 else:
-                    plt.legend(fontsize=15, loc='lower left')
-                plt.legend(fontsize=15, loc='upper right')
+                    plt.legend(fontsize=10, loc='lower left')
+                plt.legend(fontsize=10, loc='upper right')
             elif plot_part == 'acc':
-                plt.legend(fontsize=15, loc='upper right')
+                plt.legend(fontsize=10, loc='upper right')
             elif plot_part == 'loss':
-                plt.legend(fontsize=15, loc='upper right')
+                plt.legend(fontsize=10, loc='upper right')
             elif plot_part == 'lr_x':
-                plt.legend(fontsize=15, loc='lower right')
+                plt.legend(fontsize=10, loc='lower right')
             elif plot_part == 'lr_y':
-                plt.legend(fontsize=15, loc='lower right')
+                plt.legend(fontsize=10, loc='lower right')
+                
+            # set label size here
+            plt.rc('xtick', labelsize=15)
+            plt.rc('ytick', labelsize=15)
             
             data_name_tmp = list(data_name)
             for i in range(len(data_name_tmp)):
@@ -239,4 +239,5 @@ for is_last in [True,False]:
                 name = f'./figure/{"".join(data_name_tmp)}_{plot_part}_last.pdf'
             else:
                 name = f'./figure/{"".join(data_name_tmp)}_{plot_part}.pdf'
+                
             plt.savefig(name, bbox_inches='tight', facecolor='w', dpi=150)
